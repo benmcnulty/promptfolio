@@ -1,3 +1,4 @@
+// components/ui/ModeToggle.tsx
 "use client";
 
 import * as React from "react";
@@ -11,6 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import strings from "@/lib/strings";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
@@ -26,13 +28,13 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+          {strings.modeToggle.light}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+          {strings.modeToggle.dark}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+          {strings.modeToggle.system}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
