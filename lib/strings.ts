@@ -1,26 +1,33 @@
 // lib/strings.ts
-
 const strings = {
   header: {
-    siteTitle: "Ben's Promptfolio",
-    siteSubtitle: "Engineering Custom GPTs for Your Needs",
+    siteTitle: "Promptfolio by Ben McNulty",
+    siteSubtitle: "AI Prompt Crafting, Engineering & Applications",
   },
   modeToggle: {
-    light: "Light",
-    dark: "Dark",
-    system: "System",
+    descriptor: "Toggle Theme",
+    light: "Glow",
+    dark: "Shade",
+    system: "Auto",
   },
   welcomeSection: {
-    heading: "Welcome to Ben's Promptfolio",
+    heading: "Welcome!",
+    introduction: "I am truly delighted you are reading this text.",
+    content:
+      "Promptfolio.dev is a collection of my work in the field of AI Prompt Crafting, Engineering & Applications. I use continuous integration and deployment, so check in frequently to see the latest iterations and new creations. I hope you enjoy it!",
+    conclusion: "Email Ben at this domain to commission your custom GPT.",
   },
-  gptListing: {
-    heading: "Hand-Crafted, Artisnal Custom GPTs",
+  listing: {
+    heading: "Custom GPTs Optimized for Software Development Use Cases",
+    tryIt: "Chat with  ",
   },
   contactForm: {
-    heading: "Reach Out to Ben",
+    heading: "Say Hello!",
   },
   footer: {
-    content: "©2023 | Ben McNulty",
+    heading: "Thanks for stopping by! ❤️",
+    subheading: "More GPTs coming soon! 🚀",
+    copyright: "©2023 | Made with ✨ by Ben McNulty",
   },
 };
 
