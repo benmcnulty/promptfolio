@@ -11,7 +11,7 @@ const strings = {
     system: "Auto",
   },
   welcomeSection: {
-    heading: "Welcome!",
+    heading: "Hello and welcome!",
     introduction: "I am truly delighted you are reading this text.",
     content:
       "Promptfolio.dev is a collection of my work in the field of AI Prompt Crafting, Engineering & Applications. I use continuous integration and deployment, so check in frequently to see the latest iterations and new creations. I hope you enjoy it!",
