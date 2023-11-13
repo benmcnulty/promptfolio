@@ -109,3 +109,11 @@
   display: inline-block;
   margin: 0.5rem 1.5rem;
 }
+
+h3 {
+  text-shadow:
+    -1px -1px 0 hsl(var(--accent)),
+    1px -1px 0 hsl(var(--accent)),
+    -1px 1px 0 hsl(var(--accent)),
+    1px 1px 0 hsl(var(--accent));
+}

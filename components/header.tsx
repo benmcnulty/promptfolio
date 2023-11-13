@@ -24,7 +24,7 @@ export function Header() {
             {strings.header.siteSubtitle}
           </h2>
         </div>
-        <div className="bg-black bg-opacity-80 p-4 rounded block max-w-2xl mx-auto shadow-lg">
+        <div className="bg-black bg-opacity-60 p-4 rounded block max-w-2xl mx-auto shadow-lg">
           <h3 className="text-2xl font-semibold tracking-tight mb-4 text-white">
             {strings.welcomeSection.heading}
           </h3>
