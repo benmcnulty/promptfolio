@@ -21,7 +21,6 @@ export function Persona({ personaData }: PersonaProps) {
           alt={personaData.name}
           src={personaData.image}
           className="object-cover w-full"
-          layout="responsive"
           width={100}
           height={100}
         />
@@ -38,7 +37,7 @@ export function Persona({ personaData }: PersonaProps) {
               rel="noopener noreferrer"
               target="_blank"
             >
-              {strings.listing.tryIt + personaData.name + "! ✨"}
+              {strings.listing.tryIt + personaData.name + " ✨"}
             </Link>
           </Button>
         </div>

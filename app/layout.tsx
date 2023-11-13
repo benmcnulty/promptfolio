@@ -7,8 +7,8 @@ import "@/styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ben's Promptfolio",
-  description: "Evolving from software to prompt engineer.",
+  title: "Promptfolio by Ben McNulty",
+  description: "AI Prompt Crafting, Engineering & Applications.",
 };
 
 export default function RootLayout({
