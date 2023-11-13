@@ -5,20 +5,16 @@ import { ModeToggle } from "./ui/ModeToggle";
 
 export function Footer() {
   return (
-    <footer className="relative w-full">
-      {/* Footer content */}
-      <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+    <footer className="flex flex-col items-center justify-center p-6 text-center">
+      <h4 className="text-xl font-semibold tracking-tight mb-4">
         {strings.footer.heading}
       </h4>
-      <h5 className="scroll-m-20 text-xl font-semibold tracking-tight">
+      <h5 className="text-xl font-semibold tracking-tight mb-4">
         {strings.footer.subheading}
       </h5>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        {strings.footer.copyright}
-      </p>
+      <p className="leading-7">{strings.footer.copyright}</p>
 
-      {/* Mode toggle container */}
-      <div className="absolute bottom-0 right-0 m-4">
+      <div className="fixed bottom-0 left-0 m-4">
         <ModeToggle />
       </div>
     </footer>
