@@ -85,6 +85,14 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1 {
+    font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 2vw + 1rem, 2.5rem);
+  }
 }
 
 .persona-card {
@@ -94,15 +102,15 @@
 
 .text-shadow {
   text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 hsl(var(--primary)),
+    1px -1px 0 hsl(var(--primary)),
+    -1px 1px 0 hsl(var(--primary)),
+    1px 1px 0 hsl(var(--primary));
 }
 
 .sparkle-divider {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .sparkle-divider span {
@@ -112,8 +120,60 @@
 
 h3 {
   text-shadow:
-    -1px -1px 0 hsl(var(--accent)),
-    1px -1px 0 hsl(var(--accent)),
-    -1px 1px 0 hsl(var(--accent)),
-    1px 1px 0 hsl(var(--accent));
+    -1px -1px 0 hsl(var(--primary)),
+    1px -1px 0 hsl(var(--primary)),
+    -1px 1px 0 hsl(var(--primary)),
+    1px 1px 0 hsl(var(--primary));
+}
+
+.hero-image {
+  background-image: url('/hero.png');
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-image {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-container p {
+    line-height: 1.2;
+  }
+}
+
+.text-container {
+  padding: 0 15px;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .hero-image {
+    height: auto;
+  }
+
+  .text-container {
+    max-width: 1200px;
+    margin: 1rem auto;
+  }
+
+  .sparkle-divider {
+    font-size: 2rem;
+  }
+}
+
+h1 {
+  font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2vw + 1rem, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 1.5vw + 1rem, 2rem);
 }
