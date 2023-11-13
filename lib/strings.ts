@@ -15,7 +15,6 @@ const strings = {
     introduction: "I am truly delighted you are reading this text.",
     content:
       "Promptfolio.dev is a collection of my work in the field of AI Prompt Crafting, Engineering & Applications. I use continuous integration and deployment, so check in frequently to see the latest iterations and new creations. I hope you enjoy it!",
-    conclusion: "Email Ben at this domain to commission your custom GPT.",
   },
   listing: {
     heading: "Custom GPTs Optimized for Software Development Use Cases",
@@ -25,9 +24,11 @@ const strings = {
     heading: "Say Hello!",
   },
   footer: {
-    heading: "Thanks for stopping by! ❤️",
-    subheading: "More GPTs coming soon! 🚀",
-    copyright: "©2023 | Made with ✨ by Ben McNulty",
+    heading: "Thanks for stopping by! 😍",
+    conclusion: "Email Ben at this domain to commission your own custom GPT 🚀",
+    subheading: "More GPTs coming soon! 🤖",
+    copyright: "©2023 | Ben McNulty",
+    extra: "Made with ✨ & ❤️",
   },
 };
 

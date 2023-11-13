@@ -9,7 +9,6 @@ export function Welcome() {
       </h3>
       <p className="leading-7 mb-6">{strings.welcomeSection.introduction}</p>
       <p className="leading-7 mb-6">{strings.welcomeSection.content}</p>
-      <p className="leading-7">{strings.welcomeSection.conclusion}</p>
     </section>
   );
 }

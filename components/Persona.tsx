@@ -15,35 +15,33 @@ interface PersonaProps {
 
 export function Persona({ personaData }: PersonaProps) {
   return (
-    <div className="flex flex-col justify-between items-center w-full max-w-md p-8 mx-auto my-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
-      <div>
+    <div className="flex flex-col justify-between w-full max-w-md mx-auto my-4 bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="relative w-full">
         <Image
-          alt="Profile image"
-          height={128}
-          width={128}
+          alt={personaData.name}
           src={personaData.image}
-          className="object-cover w-32 h-32 mx-auto rounded-full"
+          className="object-cover w-full"
+          layout="responsive"
+          width={100}
+          height={100}
         />
-        <div className="flex-1 w-full text-center">
-          <h1 className="text-xl font-medium text-gray-700 dark:text-white">
-            {personaData.name}
-          </h1>
-          <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-            {personaData.description}
-          </p>
+        <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-2 text-center">
+          <h2 className="text-xl font-bold">{personaData.name}</h2>
         </div>
       </div>
-      <div className="w-full self-center mt-4">
-        <Button variant="default" asChild className="w-full h-12">
-          <Link
-            href={personaData.link}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="block text-center overflow-hidden whitespace-nowrap overflow-ellipsis"
-          >
-            {strings.listing.tryIt + personaData.name + " ✨"}
-          </Link>
-        </Button>
+      <div className="flex-1 p-4 flex flex-col justify-between">
+        <p className="text-sm text-gray-500">{personaData.description}</p>
+        <div className="w-full mt-4">
+          <Button variant="default" asChild className="w-full">
+            <Link
+              href={personaData.link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {strings.listing.tryIt + personaData.name + "! ✨"}
+            </Link>
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -4,65 +4,76 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    /* Base Colors */
+    --background: 240 20% 98%;
+    /* Soft lilac shade for light theme background */
+    --foreground: 240 30% 20%;
+    /* Complementary dark text for light theme */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card: 240 20% 100%;
+    --card-foreground: 240 30% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+    --popover: 240 20% 100%;
+    --popover-foreground: 240 30% 20%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    /* Vibrant Lilac Brand Color */
+    --brand-lilac: 270;
+    /* Base hue for lilac */
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --primary: var(--brand-lilac) 50% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --secondary: var(--brand-lilac) 45% 70%;
+    --secondary-foreground: 240 30% 20%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --muted: 240 15% 90%;
+    --muted-foreground: 240 25% 30%;
 
-    --destructive: 0 84.2% 60.2%;
+    --accent: var(--brand-lilac) 45% 80%;
+    /* Bright lilac for accent */
+    --accent-foreground: 240 30% 20%;
+
+    --destructive: var(--brand-lilac) 55% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: 240 15% 80%;
+    --input: 240 15% 80%;
+    --ring: 240 30% 20%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 240 30% 12%;
+    /* Darker lilac shade for dark theme background */
+    --foreground: 240 50% 98%;
+    /* Lighter text for dark theme */
 
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 240 30% 15%;
+    --card-foreground: 240 50% 98%;
 
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 240 30% 15%;
+    --popover-foreground: 240 50% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary: var(--brand-lilac) 55% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: var(--brand-lilac) 50% 40%;
+    --secondary-foreground: 240 50% 100%;
 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: 240 25% 20%;
+    --muted-foreground: 240 40% 70%;
 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: var(--brand-lilac) 50% 30%;
+    /* Darker lilac for dark mode accent */
+    --accent-foreground: 240 50% 100%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: var(--brand-lilac) 60% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 240 25% 25%;
+    --input: 240 25% 25%;
+    --ring: 240 50% 75%;
   }
 }
 
@@ -78,7 +89,5 @@
 
 .persona-card {
   flex: 1 1 calc(33.333% - 1rem);
-  /* Adjusts width to allow 3 cards per line */
   max-width: calc(33.333% - 1rem);
-  /* Ensures cards do not exceed 33.333% width */
 }
