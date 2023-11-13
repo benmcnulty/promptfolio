@@ -21,8 +21,8 @@ export function Persona({ personaData }: PersonaProps) {
           alt={personaData.name}
           src={personaData.image}
           className="object-cover w-full"
-          width={100}
-          height={100}
+          width={1024}
+          height={1024}
         />
         <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-2 text-center">
           <h2 className="text-xl font-bold">{personaData.name}</h2>
