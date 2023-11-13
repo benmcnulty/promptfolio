@@ -16,21 +16,28 @@ export function Header() {
         />
       </div>
       <div className="relative z-10 p-4">
-        <div className="bg-black bg-opacity-50 p-4 rounded mb-4 inline-block">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-white">
+        <div className="mb-4 inline-block">
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-white text-shadow">
             {strings.header.siteTitle}
           </h1>
-          <h2 className="text-3xl font-semibold tracking-tight border-b pb-2 text-white block">
+          <h2 className="text-3xl font-semibold tracking-tight border-b pb-2 text-white text-shadow">
             {strings.header.siteSubtitle}
           </h2>
         </div>
-        <div className="bg-black bg-opacity-50 p-4 rounded block max-w-2xl mx-auto">
+        <div className="bg-black bg-opacity-80 p-4 rounded block max-w-2xl mx-auto shadow-lg">
           <h3 className="text-2xl font-semibold tracking-tight mb-4 text-white">
             {strings.welcomeSection.heading}
           </h3>
-          <p className="leading-7 mb-6 text-white">
+          <p className="leading-7 text-white">
             {strings.welcomeSection.introduction}
           </p>
+
+          <div className="sparkle-divider">
+            <span>✨</span>
+            <span>✨</span>
+            <span>✨</span>
+          </div>
+
           <p className="leading-7 text-white">
             {strings.welcomeSection.content}
           </p>

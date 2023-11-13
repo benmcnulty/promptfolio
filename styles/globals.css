@@ -91,3 +91,21 @@
   flex: 1 1 calc(33.333% - 1rem);
   max-width: calc(33.333% - 1rem);
 }
+
+.text-shadow {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.sparkle-divider {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.sparkle-divider span {
+  display: inline-block;
+  margin: 0.5rem 1.5rem;
+}
