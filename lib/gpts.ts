@@ -84,6 +84,27 @@ export const gpts = [
     link: "https://chat.openai.com/g/g-5CLlLJFKC-prompt-engineer",
     image: "/prompt-engineer.png",
   },
+  {
+    name: "Red Team",
+    description:
+      "Go! Vulnerability, exploit, and security testing consultation for custom GPT prompting.",
+    link: "https://chat.openai.com/g/g-H3mThO591-red-team",
+    image: "/red-team.png",
+  },
+  {
+    name: "Trainer",
+    description:
+      "Your guide for structured learning experiences, focusing on theoretical and practical aspects, with a coherent and contextually aware lesson plan.",
+    link: "https://chat.openai.com/g/g-M1wiP785c-trainer",
+    image: "/trainer.png",
+  },
+  {
+    name: "Social",
+    description:
+      "Assists in crafting accessible and inclusive social media content and campaigns, emphasizing the integration of text, images, alt text, and strategic planning for diverse audiences.",
+    link: "https://chat.openai.com/g/g-PkHEjLWzQ-social",
+    image: "/social.png",
+  },
 ];
 
 export default gpts;
