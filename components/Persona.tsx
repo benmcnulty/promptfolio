@@ -10,6 +10,7 @@ interface PersonaProps {
     description: string;
     link: string;
     image: string;
+    alt: string;
   };
 }
 
@@ -18,7 +19,7 @@ export function Persona({ personaData }: PersonaProps) {
     <div className="flex flex-col justify-between w-full max-w-md mx-auto my-4 bg-white rounded-lg shadow-md overflow-hidden">
       <div className="relative w-full">
         <Image
-          alt={personaData.name}
+          alt={personaData.alt}
           src={personaData.image}
           className="object-cover w-full"
           width={1024}
@@ -37,7 +38,9 @@ export function Persona({ personaData }: PersonaProps) {
               rel="noopener noreferrer"
               target="_blank"
             >
-              {strings.listing.tryIt + personaData.name + " ✨"}
+              {strings.listing.button +
+                personaData.name +
+                strings.listing.buttonCap}
             </Link>
           </Button>
         </div>
