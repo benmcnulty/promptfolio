@@ -26,7 +26,7 @@ export function ModeToggle() {
           <span className="sr-only">{strings.modeToggle.descriptor}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="center">
         <DropdownMenuItem onClick={() => setTheme("light")}>
           {strings.modeToggle.light}
         </DropdownMenuItem>
