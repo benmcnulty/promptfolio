@@ -2,8 +2,9 @@
 const strings = {
   header: {
     siteTitle: "Promptfolio",
-    siteAuthor: "by Ben McNulty",
-    siteSubtitle: "AI Prompt Crafting, Engineering & Applications",
+    siteAuthor: "Crafted by Ben McNulty",
+    siteSubtitle:
+      "Innovative AI Prompt Solutions: Crafting, Engineering & Beyond",
   },
   modeToggle: {
     descriptor: "Toggle Theme",
@@ -12,23 +13,24 @@ const strings = {
     system: "Auto",
   },
   welcomeSection: {
-    heading: "Hello and welcome!",
+    heading: "Welcome to Promptfolio!",
     content:
-      "Promptfolio.dev is a collection of my work in the field of AI Prompt Crafting, Engineering & Applications. I use continuous integration and deployment, so check in frequently to see the latest iterations and new creations. I hope you enjoy it!",
+      "Explore the realm of AI Prompt Crafting, Engineering & Applications at Promptfolio.dev. My passion for innovation drives continuous updates and fresh creations. Dive into the latest iterations and discover new wonders with each visit. Excited to share this journey with you!",
   },
   listing: {
-    heading: "Custom GPTs Optimized for Software Development Use Cases",
-    tryIt: "✨ Chat with  ",
+    heading: "Custom GPTs for Your Software Development Needs",
+    button: "✨ Chat with  ",
+    buttonCap: " ✨",
   },
   contactForm: {
     heading: "Say Hello!",
   },
   footer: {
-    heading: "Thanks for stopping by! 😍",
-    conclusion: "Email Ben at this domain to commission your own custom GPT 🚀",
-    subheading: "More GPTs coming soon! 🤖",
-    copyright: "©2023 | Ben McNulty",
-    extra: "Made with ✨ & ❤️",
+    heading: "Delighted You Visited! 😍",
+    conclusion: "Request Custom GPTs: Your Ideas, Our Expertise 🌟",
+    subheading: "Exciting New GPTs on the Horizon! 🤖",
+    copyright: "Ben McNulty's Creation ©2023",
+    extra: "Crafted with ✨ & ❤️",
   },
 };
 
