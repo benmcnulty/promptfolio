@@ -181,3 +181,17 @@ h3 {
 .theme-responsive-icon {
   fill: hsl(var(--foreground));
 }
+
+@layer components {
+  .bg-primary {
+    @apply bg-[var(--primary)];
+  }
+
+  .bg-secondary {
+    @apply bg-[var(--secondary)];
+  }
+
+  .hover\:bg-secondary:hover {
+    @apply bg-[var(--secondary)];
+  }
+}
