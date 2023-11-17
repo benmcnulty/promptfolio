@@ -93,6 +93,12 @@
   h2 {
     font-size: clamp(1.25rem, 2vw + 1rem, 2.5rem);
   }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .persona-card {

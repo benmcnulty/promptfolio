@@ -24,7 +24,7 @@ export const Time = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen space-y-4">
+    <div className="flex flex-col items-center justify-center space-y-4">
       <h2 className="text-3xl font-semibold tracking-tight text-foreground text-shadow">
         Time API
       </h2>
