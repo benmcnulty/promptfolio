@@ -1,7 +1,5 @@
 // app/api/time/route.ts
-export const config = {
-  runtime: "experimental-edge",
-};
+export const runtime = "edge";
 
 export async function GET() {
   const serverTime = new Date().toISOString();
