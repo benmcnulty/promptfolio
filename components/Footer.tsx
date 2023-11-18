@@ -1,7 +1,7 @@
 // components/footer.tsx
 import * as React from "react";
 import strings from "@/lib/strings";
-import { ModeToggle } from "./ui/ModeToggle";
+import { ModeToggle } from "./ui/mode-toggle";
 import { ThreadsButton } from "./ThreadsButton";
 import { GitHubButton } from "./GitHubButton";
 
