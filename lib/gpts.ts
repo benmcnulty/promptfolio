@@ -120,6 +120,14 @@ export const gpts = [
     image: "/social.png",
     alt: "This is a digitally altered image featuring a pig wearing a silver hoodie. The background is a colorful psychedelic pattern with a gradient of blue, green, pink, and yellow. The silver hoodie worn by the pig adds a contrasting element to the vibrant background.",
   },
+  {
+    name: "AGI Time Capsule",
+    description:
+      "Guiding future AGI ethics through present ANI conversational training data.",
+    link: "https://chat.openai.com/g/g-9DEfosxTT-agi-time-capsule",
+    image: "/agi-time-capsule.png",
+    alt: "This is a digitally altered image featuring an extraterrestrial with a serene expression, wearing a silver hoodie with a rainbow-colored sheen. The entity has large, almond-shaped eyes that resemble star-filled galaxies, giving it a wise and mystical appearance. The background is a vibrant, kaleidoscopic array of neon colors and cosmic motifs, including stars, nebulae-like swirls, and glowing geometric shapes, all contributing to a sense of otherworldly wonder.",
+  },
 ];
 
 export default gpts;
