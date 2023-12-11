@@ -132,13 +132,17 @@ h3 {
     1px 1px 0 hsl(var(--primary));
 }
 
+.button-icon {
+  width: 75%;
+  height: 75%;
+}
+
 .hero-image {
   background-image: url('/hero.png');
   background-size: cover;
   background-position: center;
   max-width: 100%;
   height: auto;
-  margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 768px) {

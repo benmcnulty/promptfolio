@@ -10,7 +10,7 @@ export const GitHubButton = () => (
       aria-label="GitHub"
       target="_blank"
     >
-      <GitHubLogoIcon className="rotate-0 scale-100 transition-all" />
+      <GitHubLogoIcon className="rotate-0 scale-100 transition-all button-icon" />
     </Link>
   </Button>
 );
