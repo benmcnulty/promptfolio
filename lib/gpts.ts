@@ -9,9 +9,17 @@ export const gpts = [
     alt: "This image is a digital art representation of a cat with a rainbow-colored mane and bright green eyes, wearing a green hoodie. The cat's mane appears to be made up of flames in a spectrum of rainbow colors. The background is a psychedelic swirl of various colors and shapes, adding to the overall vibrant and surreal aesthetic of the image. The cat's nose is depicted in a contrasting pink color. The green hoodie worn by the cat has a zipper detail down the front, adding a touch of realism to this otherwise fantastical image.",
   },
   {
+    name: "Strategy",
+    description:
+      "Strategically aligns financial, logistical, and operational approaches, weaving innovative solutions into complex software development landscapes.",
+    link: "https://chat.openai.com/g/g-Ri2xpqlW5-strategy",
+    image: "/strategy.png",
+    alt: "A fluffy gray squirrel in a soft pink hoodie, embodying thoughtful and adaptive strategic planning, set against an abstract background that reflects the multifaceted nature of strategic thinking.",
+  },
+  {
     name: "Management",
     description:
-      "A Project Management virtuoso, blending task management acumen with empathetic, solution-focused leadership in software development.",
+      "Expert in project management, blending task management skills with empathetic, solution-focused leadership for software development projects.",
     link: "https://chat.openai.com/g/g-cwcgJUIrP-management",
     image: "/management.png",
     alt: "This is a surreal and abstract image featuring a penguin in a black hoodie. The background is a vibrant mix of rainbow colors with swirling patterns, interspersed with various shapes and objects such as spheres and lines. The overall mood of the image is psychedelic, creating a dreamlike atmosphere.",
@@ -19,7 +27,7 @@ export const gpts = [
   {
     name: "Prompt Mentor",
     description:
-      "Nurturing software engineers' journey from prompt crafting to a flourishing career in prompt engineering.",
+      "Guides software engineers from the basics of prompt crafting to advanced skills, fostering a flourishing career in prompt engineering.",
     link: "https://chat.openai.com/g/g-oJKXmX6a8-prompt-mentor",
     image: "/prompt-mentor.png",
     alt: "This is a digital art image featuring an owl wearing a hoodie. The owl's face is obscured by a blue square, and its eyes are glowing green. The hoodie is pink and adorned with blue birds. The background is filled with neon colors and lines, creating a vibrant and dynamic atmosphere.",
@@ -49,6 +57,14 @@ export const gpts = [
     alt: "This is a digital art image featuring a platypus wearing an orange hoodie and sunglasses. The background is filled with swirls of pink, blue, and purple, creating a vibrant and dynamic atmosphere.",
   },
   {
+    name: "Automation",
+    description:
+      "Focused on CI/CD workflows, regression testing, and scripting, with a strong emphasis on Selenium and browser development tools, alongside a commitment to ADA and FedRAMP compliance.",
+    link: "https://chat.openai.com/g/g-cII2Li1S9-automation",
+    image: "/automation.png",
+    alt: "A tortoise in a black hoodie with rainbow accents, symbolizing precision and depth, set against an abstract background representing the complexity of automation in software development.",
+  },
+  {
     name: "AI Collaborator",
     description:
       "An AI, ML, and software engineering maestro, fostering empathetic Agile workflows and pioneering in AI application development.",
@@ -59,7 +75,7 @@ export const gpts = [
   {
     name: "Copy Writer",
     description:
-      "Mastering the art of narrative and persuasive content, with a keen focus on SEO optimization and audience-centric messaging.",
+      "Expertly crafts narrative and persuasive content, emphasizing SEO optimization and audience-centric messaging.",
     link: "https://chat.openai.com/g/g-aCImhDD6k-copy-writer",
     image: "/copy-writer.png",
     alt: "This image is a digital illustration of a mouse wearing a yellow hoodie. The mouse has large round ears, a pointed nose, and long whiskers. The hoodie is yellow with a zipper down the front. The background is a colorful abstract design with swirls of orange, blue, and purple. The overall mood of the image is playful and whimsical.",
