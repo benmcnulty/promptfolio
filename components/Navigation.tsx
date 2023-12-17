@@ -1,3 +1,4 @@
+// components/Navigation.tsx
 "use client";
 
 import * as React from "react";
@@ -39,14 +40,14 @@ export function Navigation() {
   return (
     <NavigationMenu className="mx-auto my-2">
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="custom-nav-item">
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <HomeIcon className="h-4 w-4" />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="custom-nav-item">
           <NavigationMenuTrigger>GPTs</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 w-[376px] lg:grid-cols-[.75fr_1fr]">
@@ -81,7 +82,7 @@ export function Navigation() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="custom-nav-item">
           <NavigationMenuTrigger>Demos</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[376px] gap-3 p-4 md:grid-cols-2">
@@ -97,14 +98,14 @@ export function Navigation() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="custom-nav-item">
           <Link href="/blog" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Blog
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="custom-nav-item">
           <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About
