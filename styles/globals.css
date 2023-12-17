@@ -99,6 +99,80 @@
     margin: 0;
     padding: 0;
   }
+
+  @layer base {
+    .radial-gradient-bg {
+      background: radial-gradient(circle at center,
+          hsl(var(--brand-lilac) 60% 80%) 0%,
+          hsl(var(--brand-lilac) 50% 60%) 70%,
+          hsl(var(--brand-lilac) 45% 50%) 100%);
+      background-size: 200% 200%;
+      animation: GradientShift 30s ease infinite;
+    }
+
+    @keyframes GradientShift {
+      0% {
+        background-position: 100% 100%;
+      }
+
+      25% {
+        background-position: 0% 100%;
+      }
+
+      50% {
+        background-position: 0% 0%;
+      }
+
+      75% {
+        background-position: 100% 0%;
+      }
+
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+  }
+
+  .welcome-shadow {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .dark .welcome-shadow {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+  }
+
+  .hero-image {
+    background-image: url('/hero.png');
+    background-size: 110% 110%;
+    /* Increase size to prevent repeating */
+    background-position: center;
+    animation: subtleMove 60s linear infinite;
+  }
+
+  @keyframes subtleMove {
+
+    0%,
+    100% {
+      background-position: center;
+    }
+
+    50% {
+      background-position: calc(50% + 5%) calc(50% + 5%);
+    }
+  }
+
+  .text-container h1,
+  .text-container h2 {
+    color: hsl(var(--foreground));
+  }
+
+  .dark .text-container h1,
+  .dark .text-container h2 {
+    color: hsl(var(--card-foreground));
+  }
 }
 
 .persona-card {
@@ -112,16 +186,6 @@
     1px -1px 0 hsl(var(--primary)),
     -1px 1px 0 hsl(var(--primary)),
     1px 1px 0 hsl(var(--primary));
-}
-
-.sparkle-divider {
-  text-align: center;
-  font-size: 1.25rem;
-}
-
-.sparkle-divider span {
-  display: inline-block;
-  margin: 0.5rem 1.5rem;
 }
 
 h3 {
@@ -173,10 +237,6 @@ h3 {
   .text-container {
     max-width: 1200px;
     margin: 1rem auto;
-  }
-
-  .sparkle-divider {
-    font-size: 2rem;
   }
 
   .heading-sparkle {
