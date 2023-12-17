@@ -5,7 +5,13 @@ import Link from "next/link";
 import strings from "@/lib/strings";
 
 import { cn } from "@/lib/utils";
-import { StarFilledIcon, HomeIcon } from "@radix-ui/react-icons";
+import {
+  StarFilledIcon,
+  HomeIcon,
+  BackpackIcon,
+  ChatBubbleIcon,
+  Pencil2Icon,
+} from "@radix-ui/react-icons";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -50,8 +56,8 @@ export function Navigation() {
                     className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b select-none from-muted/50 to-muted p-6 no-underline focus:shadow-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     href="/listing#featured"
                   >
-                    <StarFilledIcon className="h-6 w-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
+                      <StarFilledIcon className="mx-auto mb-4 h-6 w-6" />
                       Custom Prompted AI Agents
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
@@ -61,13 +67,16 @@ export function Navigation() {
                 </NavigationMenuLink>
               </li>
               <ListItem href="/listing#work" title="Work">
-                Relevant domain experts for your working needs.
+                <BackpackIcon className="h-4 w-4" />
+                Domain experts for your work
               </ListItem>
               <ListItem href="/listing#chat" title="Chat">
-                Guided conversations with a variety of personalities.
+                <ChatBubbleIcon className="h-4 w-4" />
+                Guided conversations with AI
               </ListItem>
               <ListItem href="/listing#art" title="Art">
-                Unique artists with their own styles and preferences.
+                <Pencil2Icon className="h-4 w-4" />
+                Unique styles for your art
               </ListItem>
             </ul>
           </NavigationMenuContent>
