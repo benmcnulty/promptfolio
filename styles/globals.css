@@ -154,6 +154,10 @@ h3 {
   .text-container p {
     line-height: 1.2;
   }
+
+  .heading-sparkle {
+    height: 4rem;
+  }
 }
 
 .text-container {
@@ -173,6 +177,10 @@ h3 {
 
   .sparkle-divider {
     font-size: 2rem;
+  }
+
+  .heading-sparkle {
+    height: 6rem;
   }
 }
 
@@ -204,4 +212,13 @@ h3 {
   .hover\:bg-secondary:hover {
     @apply bg-[var(--secondary)];
   }
+}
+
+.flip {
+  transform: scaleX(-1);
+}
+
+.shadow {
+  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
 }
