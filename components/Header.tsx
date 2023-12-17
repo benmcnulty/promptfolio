@@ -6,7 +6,7 @@ import { Sparkle } from "./ui/sparkle";
 
 export function Header() {
   return (
-    <header className="text-center relative block w-full mt-0 hero-image animated-bg">
+    <header className="text-center relative block w-full my-0 hero-image animated-bg">
       <div className="relative z-10 p-4 text-container">
         <div className="mb-1 inline-block">
           <div className="flex justify-center items-center">
