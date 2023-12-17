@@ -26,12 +26,12 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "Time API",
     href: "/time",
-    description: "A simple endpoint that returns the current time.",
+    description: "Endpoint that returns the current time",
   },
   {
     title: "Privacy Policy",
     href: "/privacy",
-    description: "Outlines how we handle your data and privacy.",
+    description: "Outlines how we handle your data",
   },
 ];
 
@@ -57,26 +57,26 @@ export function Navigation() {
                     href="/listing#featured"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      <StarFilledIcon className="mx-auto mb-4 h-6 w-6" />
                       Custom Prompted AI Agents
                     </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
+                    <StarFilledIcon className="mx-auto my-4 h-8 w-8" />
+                    <p className="text-sm leading-tight text-muted-foreground mb-6">
                       Engineered for Work, Chat, &amp; Art
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
               <ListItem href="/listing#work" title="Work">
-                <BackpackIcon className="h-4 w-4" />
-                Domain experts for your work
+                Domain experts
+                <BackpackIcon className="h-5 w-5 mx-auto mt-2 mb-1" />
               </ListItem>
               <ListItem href="/listing#chat" title="Chat">
-                <ChatBubbleIcon className="h-4 w-4" />
-                Guided conversations with AI
+                Guided conversations
+                <ChatBubbleIcon className="h-5 w-5 mx-auto mt-2 mb-1" />
               </ListItem>
               <ListItem href="/listing#art" title="Art">
-                <Pencil2Icon className="h-4 w-4" />
-                Unique styles for your art
+                Unique styles
+                <Pencil2Icon className="h-5 w-5 mx-auto mt-2 mb-1" />
               </ListItem>
             </ul>
           </NavigationMenuContent>
