@@ -33,7 +33,7 @@ export function Persona({ personaData }: PersonaProps) {
       <div className="flex-1 p-4 flex flex-col justify-between">
         <p className="text-sm text-gray-500">{personaData.description}</p>
         <div className="w-full mt-4">
-          <Button variant="default" asChild className="w-[90%] h-[3rem]">
+          <Button variant="default" asChild className="w-full h-[3rem]">
             <Link
               href={personaData.link}
               rel="noopener noreferrer"
