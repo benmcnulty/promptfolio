@@ -39,9 +39,9 @@ export function Persona({ personaData }: PersonaProps) {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Sparkle width="10%" className="flip sparkle shaded mx-4" />
+              <Sparkle width="12%" className="flip sparkle shaded mx-4" />
               {strings.listing.button + personaData.name}
-              <Sparkle width="10%" className="sparkle shaded mx-4" />
+              <Sparkle width="12%" className="sparkle shaded mx-4" />
             </Link>
           </Button>
         </div>
