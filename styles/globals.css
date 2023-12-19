@@ -315,13 +315,19 @@ h3 {
 }
 
 .flip {
-  transform: scaleX(-1);
+  transform: scale(-1, 1);
 }
 
 .shadow {
   box-shadow: none;
-  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
-  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+  -webkit-filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, .7));
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, .7));
+}
+
+.shaded {
+  box-shadow: none;
+  -webkit-filter: drop-shadow(0.15rem 0.15rem 0.15rem rgba(0, 0, 0, .7));
+  filter: drop-shadow(0.15rem 0.15rem 0.15rem rgba(0, 0, 0, .7));
 }
 
 .custom-nav-item>a,
@@ -344,16 +350,34 @@ a:hover .sparkle {
   animation: pulse 1.5s infinite ease-in-out;
 }
 
+a:hover .sparkle.flip {
+  animation: flip-pulse 1.5s infinite ease-in-out;
+}
+
 @keyframes pulse {
 
   0%,
   100% {
-    transform: scale(1);
+    transform: scale(1, 1);
     opacity: 1;
   }
 
   50% {
-    transform: scale(1.4);
+    transform: scale(1.4, 1.4);
+    opacity: 0.8;
+  }
+}
+
+@keyframes flip-pulse {
+
+  0%,
+  100% {
+    transform: scale(-1, 1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(-1.4, 1.4);
     opacity: 0.8;
   }
 }
