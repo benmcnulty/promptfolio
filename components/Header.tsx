@@ -13,7 +13,7 @@ export function Header() {
             <div className="flex-1 heading-sparkle">
               <Sparkle className="flip shadow" />
             </div>
-            <div className="flex flex-col items-center px-4">
+            <div className="flex flex-col items-center px-1 md:px-4">
               <h1 className="text-5xl font-extrabold tracking-tight lg:text-5xl text-white header-shadow">
                 {strings.header.siteTitle}
               </h1>
@@ -25,7 +25,7 @@ export function Header() {
               <Sparkle className="shadow" />
             </div>
           </div>
-          <h2 className="text-2xl font-semibold tracking-tight text-white header-shadow inline-block border-b">
+          <h2 className="text-1xl font-semibold tracking-tight text-white header-shadow inline-block border-b">
             {strings.header.siteSubtitle}
           </h2>
         </div>
