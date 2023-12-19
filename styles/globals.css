@@ -325,11 +325,35 @@ h3 {
 }
 
 .custom-nav-item>a,
-.custom-nav-item>button {
+.custom-nav-item>button,
+.shaded-button {
   box-shadow: 0 0 0.4rem hsl(var(--brand-lilac) 45% 50%);
 }
 
 .dark .custom-nav-item>a,
-.dark .custom-nav-item>button {
+.dark .custom-nav-item>button,
+.dark .shaded-button {
   box-shadow: 0 0 0.4rem hsl(var(--brand-lilac) 60% 80%);
+}
+
+.sparkle {
+  transition: transform 0.3s ease-in-out;
+}
+
+a:hover .sparkle {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.8;
+  }
 }

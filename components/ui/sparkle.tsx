@@ -1,18 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
+// components/ui/sparkle.tsx
 import React from "react";
 
 interface SparkleProps {
-  size?: number | string;
+  width?: number | string;
+  height?: number | string;
   className?: string;
 }
 
 export const Sparkle: React.FC<SparkleProps> = ({
-  size = "100%",
+  width = "100%",
+  height = "100%",
   className,
 }) => (
   <div
     className={className}
-    style={{ width: size, height: size, position: "relative" }}
+    style={{ width: width, height: height, position: "relative" }}
   >
     <img
       src="/sparkle.svg"

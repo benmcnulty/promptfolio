@@ -22,12 +22,32 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { ModeToggle } from "./ui/mode-toggle";
 
-const components: { title: string; href: string; description: string }[] = [
+const demos: { title: string; href: string; description: string }[] = [
   {
     title: "Time API",
     href: "/time",
     description: "Endpoint that returns the current time",
+  },
+  {
+    title: "OpenAI API Moderator",
+    href: "https://github.com/benmcnulty/moderator",
+    description: "GitHub repo implementing OpenAI Moderation API",
+  },
+];
+
+const links: { title: string; href: string; description: string }[] = [
+  {
+    title: "Blog",
+    href: "/blog",
+    description:
+      "Latest News & Articles on our Custom GPTs & Prompt Engineering",
+  },
+  {
+    title: "About",
+    href: "/about",
+    description: "About us and our mission",
   },
   {
     title: "Privacy Policy",
@@ -50,7 +70,7 @@ export function Navigation() {
         <NavigationMenuItem className="custom-nav-item">
           <NavigationMenuTrigger>GPTs</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 w-[376px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-3 p-4 w-[100%] sm:w-[22.4rem] grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
@@ -58,11 +78,11 @@ export function Navigation() {
                     href="/listing#featured"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      Custom Prompted AI Agents
+                      Featured AI Agents
                     </div>
                     <StarFilledIcon className="mx-auto my-4 h-8 w-8" />
                     <p className="text-sm leading-tight text-muted-foreground mb-6">
-                      Engineered for Work, Chat, &amp; Art
+                      GPTs Engineered for Work, Chat, &amp; Art
                     </p>
                   </a>
                 </NavigationMenuLink>
@@ -85,8 +105,8 @@ export function Navigation() {
         <NavigationMenuItem className="custom-nav-item">
           <NavigationMenuTrigger>Demos</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[376px] gap-3 p-4 md:grid-cols-2">
-              {components.map((component) => (
+            <ul className="grid gap-3 p-4 w-[100%] sm:w-[22.4rem]">
+              {demos.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -99,18 +119,25 @@ export function Navigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="custom-nav-item">
-          <Link href="/blog" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Blog
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuTrigger>More</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-4 w-[100%] sm:w-[22.4rem]">
+              {links.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="custom-nav-item">
-          <Link href="/about" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              About
-            </NavigationMenuLink>
-          </Link>
+          <div className="rounded-md bg-card shaded-button">
+            <ModeToggle />
+          </div>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

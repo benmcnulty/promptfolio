@@ -19,8 +19,7 @@ const strings = {
   },
   listing: {
     heading: "Custom GPTs for Your Software Development Needs",
-    button: "✨ Chat with  ",
-    buttonCap: " ✨",
+    button: "Chat with  ",
   },
   contactForm: {
     heading: "Say Hello!",
