@@ -1,15 +1,5 @@
 // utils/filterCatalog.ts
-interface CatalogItem {
-  name: string;
-  description: string;
-  link: string;
-  image: string;
-  alt: string;
-  listed: Date;
-  labels: string[];
-  tags: string[];
-  media: string[];
-}
+import CatalogItem from "../lib/types";
 
 const filterCatalog = (catalog: CatalogItem[], filters: string[]) => {
   return catalog.filter((item) =>

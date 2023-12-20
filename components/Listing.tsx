@@ -6,18 +6,21 @@ import strings from "@/lib/strings";
 import { Persona } from "@/components/Persona";
 import filterCatalog from "@/utils/filterCatalog";
 import catalog from "@/lib/catalog";
+import CatalogItem from "@/lib/types";
 
 export function Listing() {
-  const [filteredCatalog, setFilteredCatalog] = useState(() => {
-    const initialSearchParams = new URLSearchParams(window.location.search);
-    const initialFilter = initialSearchParams.get("filter");
-    return initialFilter ? filterCatalog(catalog, [initialFilter]) : catalog;
-  });
+  const [filteredCatalog, setFilteredCatalog] =
+    useState<CatalogItem[]>(catalog);
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const filter = searchParams.get("filter");
-    setFilteredCatalog(filter ? filterCatalog(catalog, [filter]) : catalog);
+    // Client-side URL processing
+    if (typeof window !== "undefined") {
+      const initialFilter = searchParams.get("filter");
+      setFilteredCatalog(
+        initialFilter ? filterCatalog(catalog, [initialFilter]) : catalog
+      );
+    }
   }, [searchParams]);
 
   // Add label toggle UI component here
