@@ -1,4 +1,4 @@
-// app/privacy/PrivacyPolicyPage.tsx
+// app/listing/page.tsx
 import React from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";

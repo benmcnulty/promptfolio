@@ -1,4 +1,4 @@
-// lib/gpts.ts
+// lib/catalog.ts
 export const catalog = [
   {
     name: "Brainstormer",
@@ -7,6 +7,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-o7HL1rpw9-brainstormer",
     image: "/brainstormer.png",
     alt: "This image is a digital art representation of a cat with a rainbow-colored mane and bright green eyes, wearing a green hoodie. The cat's mane appears to be made up of flames in a spectrum of rainbow colors. The background is a psychedelic swirl of various colors and shapes, adding to the overall vibrant and surreal aesthetic of the image. The cat's nose is depicted in a contrasting pink color. The green hoodie worn by the cat has a zipper detail down the front, adding a touch of realism to this otherwise fantastical image.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "featured", "chat", "art"],
+    tags: [],
+    media: [],
   },
   {
     name: "Strategy",
@@ -15,6 +19,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-Ri2xpqlW5-strategy",
     image: "/strategy.png",
     alt: "A fluffy gray squirrel in a soft pink hoodie, embodying thoughtful and adaptive strategic planning, set against an abstract background that reflects the multifaceted nature of strategic thinking.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "chat"],
+    tags: [],
+    media: [],
   },
   {
     name: "Management",
@@ -23,6 +31,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-cwcgJUIrP-management",
     image: "/management.png",
     alt: "This is a surreal and abstract image featuring a penguin in a black hoodie. The background is a vibrant mix of rainbow colors with swirling patterns, interspersed with various shapes and objects such as spheres and lines. The overall mood of the image is psychedelic, creating a dreamlike atmosphere.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "featured"],
+    tags: [],
+    media: [],
   },
   {
     name: "Prompt Mentor",
@@ -31,6 +43,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-oJKXmX6a8-prompt-mentor",
     image: "/prompt-mentor.png",
     alt: "This is a digital art image featuring an owl wearing a hoodie. The owl's face is obscured by a blue square, and its eyes are glowing green. The hoodie is pink and adorned with blue birds. The background is filled with neon colors and lines, creating a vibrant and dynamic atmosphere.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "featured", "chat"],
+    tags: [],
+    media: [],
   },
   {
     name: "Interaction Designer",
@@ -39,6 +55,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-N1MfBgEnM-interaction-designer",
     image: "/interaction-designer.png",
     alt: "This image is a digital illustration of a crow wearing a purple hoodie. The crow has a large beak and expressive eyes. The background is a colorful swirl of blue and purple. The crow is also wearing a t-shirt with a rainbow design on it. The hoodie is purple with a white drawstring.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "art"],
+    tags: [],
+    media: [],
   },
   {
     name: "Graphic Designer",
@@ -47,6 +67,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-aMxBZtU8j-graphic-designer",
     image: "/graphic-designer.png",
     alt: "This image is a digital illustration of a pigeon wearing a blue hoodie. The pigeon, facing the viewer, has a white beak and orange eyes. The background is a colorful abstract swirl of colors, including red, orange, yellow, blue, and green, with a few scattered feathers adding to the whimsical nature of the image.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "art"],
+    tags: [],
+    media: [],
   },
   {
     name: "Web App Prototyper",
@@ -55,6 +79,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-ErltmA67O-web-app-prototyper",
     image: "/web-app-prototyper.png",
     alt: "This is a digital art image featuring a platypus wearing an orange hoodie and sunglasses. The background is filled with swirls of pink, blue, and purple, creating a vibrant and dynamic atmosphere.",
+    listed: new Date("2024-01-01"),
+    labels: ["work"],
+    tags: [],
+    media: [],
   },
   {
     name: "Automation",
@@ -63,6 +91,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-cII2Li1S9-automation",
     image: "/automation.png",
     alt: "A tortoise in a black hoodie with rainbow accents, symbolizing precision and depth, set against an abstract background representing the complexity of automation in software development.",
+    listed: new Date("2024-01-01"),
+    labels: ["work"],
+    tags: [],
+    media: [],
   },
   {
     name: "AI Collaborator",
@@ -71,6 +103,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-w8uEWfq1s-ai-collaborator",
     image: "/ai-collaborator.png",
     alt: "This image features a surreal depiction of an octopus with a human-like body, wearing a gray hoodie. The octopus has a large head with multiple eyes and tentacles. The background is an abstract painting with a vibrant mix of orange, yellow, and blue colors. The image has a 3D effect, making the octopus appear as if it's emerging from the background.",
+    listed: new Date("2024-01-01"),
+    labels: ["work"],
+    tags: [],
+    media: [],
   },
   {
     name: "Copy Writer",
@@ -79,6 +115,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-aCImhDD6k-copy-writer",
     image: "/copy-writer.png",
     alt: "This image is a digital illustration of a mouse wearing a yellow hoodie. The mouse has large round ears, a pointed nose, and long whiskers. The hoodie is yellow with a zipper down the front. The background is a colorful abstract design with swirls of orange, blue, and purple. The overall mood of the image is playful and whimsical.",
+    listed: new Date("2024-01-01"),
+    labels: ["work"],
+    tags: [],
+    media: [],
   },
   {
     name: "GPT QA",
@@ -87,6 +127,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-0FcmEYlsb-gpt-qa",
     image: "/gpt-qa.png",
     alt: "This image is a digital illustration of a blue axolotl wearing a hoodie. The axolotl, characterized by its blue body and white face, has black eyes and a pink mouth. It's wearing a blue hoodie with a zipper in the front. The background is a psychedelic swirl of pink, blue, and purple colors. The axolotl is facing the viewer and appears to be smiling, adding a playful and whimsical mood to the image.",
+    listed: new Date("2024-01-01"),
+    labels: ["work"],
+    tags: [],
+    media: [],
   },
   {
     name: "Researcher",
@@ -95,6 +139,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-tt4k2kKgc-researcher",
     image: "/researcher.png",
     alt: "This is a digital art image featuring a goose wearing a peach hoodie. The background is filled with swirls of pink, blue, and purple, creating a vibrant and dynamic atmosphere.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "chat"],
+    tags: [],
+    media: [],
   },
   {
     name: "Red Team",
@@ -103,6 +151,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-H3mThO591-red-team",
     image: "/red-team.png",
     alt: "This is a digital art image featuring a fox with white fur and pointy ears, and it's wearing a red hoodie with a gradient pattern. The background is filled with bright colors and psychedelic swirls, creating a vibrant and dynamic atmosphere.",
+    listed: new Date("2024-01-01"),
+    labels: ["work"],
+    tags: [],
+    media: [],
   },
   {
     name: "Prompt Engineer",
@@ -111,6 +163,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-5CLlLJFKC-prompt-engineer",
     image: "/prompt-engineer.png",
     alt: "This is a digital illustration featuring a black rabbit wearing a purple hoodie. The rabbit's fur is shiny and its ears are pointed upwards. The hoodie is detailed with a white zipper and strings. The background of the image is filled with colorful, psychedelic swirls and curls in various hues. This vibrant backdrop enhances the overall visual appeal of the illustration, making it a captivating piece of digital art.",
+    listed: new Date("2024-01-01"),
+    labels: ["work"],
+    tags: [],
+    media: [],
   },
   {
     name: "Trainer",
@@ -119,6 +175,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-M1wiP785c-trainer",
     image: "/trainer.png",
     alt: "This is a colorful illustration of a python wearing a purple and green gradient hoodie. The background is filled with psychedelic swirls and patterns.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "chat"],
+    tags: [],
+    media: [],
   },
   {
     name: "Social",
@@ -127,6 +187,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-PkHEjLWzQ-social",
     image: "/social.png",
     alt: "This is a digitally altered image featuring a pig wearing a silver hoodie. The background is a colorful psychedelic pattern with a gradient of blue, green, pink, and yellow. The silver hoodie worn by the pig adds a contrasting element to the vibrant background.",
+    listed: new Date("2024-01-01"),
+    labels: ["work"],
+    tags: [],
+    media: [],
   },
   {
     name: "Rubber Ducky",
@@ -135,6 +199,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-6HHhA7fGU-rubber-ducky",
     image: "/rubber-ducky.png",
     alt: "This is a digital art image featuring yellow duck wearing a pink hoodie. The background is filled with swirls of pink, blue, and purple, creating a vibrant and dynamic atmosphere. The duck is facing forward and their body is visible from the chest up.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "chat"],
+    tags: [],
+    media: [],
   },
   {
     name: "AGI Time Capsule",
@@ -143,6 +211,10 @@ export const catalog = [
     link: "https://chat.openai.com/g/g-9DEfosxTT-agi-time-capsule",
     image: "/agi-time-capsule.png",
     alt: "This is a digitally altered image featuring an extraterrestrial with a serene expression, wearing a silver hoodie with a rainbow-colored sheen. The entity has large, almond-shaped eyes that resemble star-filled galaxies, giving it a wise and mystical appearance. The background is a vibrant, kaleidoscopic array of neon colors and cosmic motifs, including stars, nebulae-like swirls, and glowing geometric shapes, all contributing to a sense of otherworldly wonder.",
+    listed: new Date("2024-01-01"),
+    labels: ["work", "featured", "chat"],
+    tags: [],
+    media: [],
   },
 ];
 
