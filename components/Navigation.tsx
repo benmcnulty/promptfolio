@@ -5,7 +5,7 @@ import * as React from "react";
 import Link from "next/link";
 import strings from "@/lib/strings";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import {
   StarFilledIcon,
   HomeIcon,
@@ -75,7 +75,7 @@ export function Navigation() {
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b select-none from-muted/50 to-muted p-6 no-underline focus:shadow-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    href="/listing#featured"
+                    href="/listing?filter=featured"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Featured AI Agents
@@ -87,15 +87,15 @@ export function Navigation() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/listing#work" title="Work">
+              <ListItem href="/listing?filter=work" title="Work">
                 Domain experts
                 <BackpackIcon className="h-5 w-5 mx-auto mt-2 mb-1" />
               </ListItem>
-              <ListItem href="/listing#chat" title="Chat">
+              <ListItem href="/listing?filter=chat" title="Chat">
                 Guided conversations
                 <ChatBubbleIcon className="h-5 w-5 mx-auto mt-2 mb-1" />
               </ListItem>
-              <ListItem href="/listing#art" title="Art">
+              <ListItem href="/listing?filter=art" title="Art">
                 Unique styles
                 <Pencil2Icon className="h-5 w-5 mx-auto mt-2 mb-1" />
               </ListItem>
