@@ -152,7 +152,6 @@
   background-image: url('/hero.png');
   background-size: 110% 110%;
   background-position: center;
-  animation: subtleMove 60s linear infinite;
   position: relative;
 }
 
