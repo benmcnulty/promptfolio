@@ -72,20 +72,19 @@ export function Navigation() {
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 w-[100%] sm:w-[22.4rem] grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b select-none from-muted/50 to-muted p-6 no-underline focus:shadow-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    href="/listing?filter=featured"
-                  >
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      Featured AI Agents
-                    </div>
-                    <StarFilledIcon className="mx-auto my-4 h-8 w-8" />
-                    <p className="text-sm leading-tight text-muted-foreground mb-6">
-                      GPTs Engineered for Work, Chat, &amp; Art
-                    </p>
-                  </a>
-                </NavigationMenuLink>
+                <Link href="/listing?filter=featured" legacyBehavior passHref>
+                  <NavigationMenuLink asChild>
+                    <a className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b select-none from-muted/50 to-muted p-6 no-underline focus:shadow-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <div className="mb-2 mt-4 text-lg font-medium">
+                        Featured AI Agents
+                      </div>
+                      <StarFilledIcon className="mx-auto my-4 h-8 w-8" />
+                      <p className="text-sm leading-tight text-muted-foreground mb-6">
+                        GPTs Engineered for Work, Chat, &amp; Art
+                      </p>
+                    </a>
+                  </NavigationMenuLink>
+                </Link>
               </li>
               <ListItem href="/listing?filter=work" title="Work">
                 Domain experts
@@ -146,25 +145,27 @@ export function Navigation() {
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<"a"> & { href: string }
+>(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
+      <Link href={href} passHref>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              className
+            )}
+            {...props}
+          >
+            <div className="text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              {children}
+            </p>
+          </a>
+        </NavigationMenuLink>
+      </Link>
     </li>
   );
 });

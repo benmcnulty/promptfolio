@@ -6,7 +6,7 @@ import { Listing } from "@/components/Listing";
 
 export default function ListingPage() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <Listing />
       <Footer />
