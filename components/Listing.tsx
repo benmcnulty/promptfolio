@@ -68,7 +68,7 @@ export function Listing() {
         {heading}
       </h3>
       <LabelToggle />
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full transition-all">
+      <div className="flex flex-wrap justify-center gap-6 w-full transition-all">
         {filteredCatalog.map((persona, index) => (
           <Persona key={index} personaData={persona} />
         ))}
