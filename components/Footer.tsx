@@ -7,7 +7,7 @@ import { GitHubButton } from "./GitHubButton";
 
 export function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-800 py-8 px-6">
+    <footer className="bg-white dark:bg-gray-800 py-8 px-6 w-full">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start md:items-center text-center md:text-left">
         <div className="md:text-left">
           <h4 className="text-lg md:text-xl font-semibold mb-4">
