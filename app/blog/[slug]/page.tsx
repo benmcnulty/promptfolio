@@ -2,13 +2,11 @@
 import React from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { BlogContents } from "@/components/BlogContents";
 
-export default function BlogPage() {
+export default function SlugPage() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-between">
       <Header />
-      <BlogContents />
       <Footer />
     </main>
   );
