@@ -28,7 +28,8 @@ const strings = {
   },
   footer: {
     heading: "Delighted You Visited! 😍",
-    conclusion: "Request Custom GPTs: Your Ideas, Our Expertise 🌟",
+    conclusion: "Hand Crafting Custom GPTs for Work, Chat, and Art",
+    conclusion2: "Your Vision, Our Expertise 🌟",
     subheading: "Exciting New GPTs on the Horizon! 🤖",
     copyright: "Ben McNulty's Creation ©2023",
     extra: "Crafted with ✨ & ❤️",
