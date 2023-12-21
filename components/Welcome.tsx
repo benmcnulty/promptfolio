@@ -25,7 +25,7 @@ export function Welcome() {
           {strings.welcomeSection.call}
         </p>
         <Button variant="default" asChild className="w-full h-[3rem] my-2">
-          <Link href="/listing">
+          <Link href="/about">
             <Sparkle width="12%" className="flip sparkle shaded mx-4" />
             {strings.welcomeSection.buttonText2}
             <Sparkle width="12%" className="sparkle shaded mx-4" />

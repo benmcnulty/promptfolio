@@ -4,6 +4,10 @@ import { Persona } from "./Persona";
 import catalog from "@/lib/catalog";
 import CatalogItem from "@/lib/types";
 import { StarIcon } from "@radix-ui/react-icons";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import strings from "@/lib/strings";
+import { Sparkle } from "./ui/sparkle";
 
 export function FeaturedListings() {
   // Directly filter featured catalog items
@@ -28,6 +32,15 @@ export function FeaturedListings() {
         {featuredCatalog.map((persona, index) => (
           <Persona key={index} personaData={persona} />
         ))}
+      </div>
+      <div className="mt-4 w-[90%] sm:w-[45%] md:w-[40%] lg:w-[33%] xl:max-w-[25%]">
+        <Button variant="default" asChild className="w-full h-[3rem] my-2">
+          <Link href="/listing">
+            <Sparkle width="12%" className="flip sparkle shaded mx-4" />
+            {strings.welcomeSection.buttonText1}
+            <Sparkle width="12%" className="sparkle shaded mx-4" />
+          </Link>
+        </Button>
       </div>
     </section>
   );
