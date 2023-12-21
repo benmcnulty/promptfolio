@@ -388,3 +388,7 @@ a:hover .sparkle.flip {
     transform: scale(1.05);
   }
 }
+
+img {
+  pointer-events: none;
+}
