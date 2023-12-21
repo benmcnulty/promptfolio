@@ -41,7 +41,7 @@ export function LabelToggle() {
     if (updatedLabels.length > 0) {
       params.set("filter", updatedLabels.join(","));
     }
-    router.replace(pathname + "?" + params.toString());
+    router.replace(pathname + "?" + params.toString(), { scroll: false });
   };
 
   return (
