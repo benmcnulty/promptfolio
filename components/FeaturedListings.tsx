@@ -12,7 +12,7 @@ export function FeaturedListings() {
   );
 
   return (
-    <section className="flex flex-col items-center p-4 text-center max-w-7xl mx-auto">
+    <section className="flex flex-col items-center p-4 text-center mx-auto w-full">
       <h3 className="text-3xl font-semibold tracking-tight transition-all mb-4">
         <StarFilledIcon
           className="inline-block align-middle"

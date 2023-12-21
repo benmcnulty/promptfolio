@@ -7,17 +7,26 @@ export function Home() {
   return (
     <section className="flex flex-col items-center text-center w-full">
       <Welcome />
-      <FeaturedListings />
       <CustomListings
-        gptNames={["Brainstormer", "Strategy"]}
-        headline="Get Creative!"
+        gptNames={["Prompt Mentor", "Prompt Engineer"]}
+        headline="Start Prompting!"
         backgroundClass="bg-muted"
       />
       <CustomListings
-        gptNames={["GPT QA", "Red Team"]}
-        headline="Get Inspired!"
+        gptNames={["Brainstormer", "Strategy"]}
+        headline="Get Creative!"
         backgroundClass="radial-gradient-bg"
       />
+      <CustomListings
+        gptNames={[
+          "Web App Prototyper",
+          "Interaction Designer",
+          "Graphic Designer",
+        ]}
+        headline="Build a Web App!"
+        backgroundClass="bg-muted"
+      />
+      <FeaturedListings />
     </section>
   );
 }
