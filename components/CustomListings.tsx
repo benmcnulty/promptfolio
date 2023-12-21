@@ -1,6 +1,5 @@
 // component/CustomListings.tsx
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Persona } from "./Persona";
 import catalog from "@/lib/catalog";
 import CatalogItem from "@/lib/types";
@@ -16,14 +15,10 @@ export function CustomListings({
   headline,
   backgroundClass,
 }: CustomListingsProps) {
-  const [customCatalog, setCustomCatalog] = useState<CatalogItem[]>([]);
-
-  useEffect(() => {
-    const selectedItems = catalog.filter((item) =>
-      gptNames.includes(item.name)
-    );
-    setCustomCatalog(selectedItems);
-  }, [gptNames]);
+  // Directly filter custom catalog items
+  const customCatalog: CatalogItem[] = catalog.filter((item) =>
+    gptNames.includes(item.name)
+  );
 
   return (
     <section
