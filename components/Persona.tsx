@@ -17,7 +17,7 @@ interface PersonaProps {
 
 export function Persona({ personaData }: PersonaProps) {
   return (
-    <div className="flex flex-col justify-between w-full max-w-md mx-auto my-2 md:my-0 bg-white rounded-lg shadow-md overflow-hidden flex-auto sm:w-[49%] lg:w-1/3 xl:w-1/4">
+    <div className="flex flex-col justify-between w-full max-w-md mx-0 my-0 bg-white rounded-lg shadow-md overflow-hidden flex-auto sm:w-[48%] lg:w-1/3 xl:w-1/4">
       <div className="relative w-full">
         <Image
           alt={personaData.alt}
