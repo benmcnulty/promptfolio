@@ -11,7 +11,7 @@ import { LabelToggle } from "./LabelToggle";
 export function Listing() {
   const [filteredCatalog, setFilteredCatalog] =
     useState<CatalogItem[]>(catalog);
-  const [heading, setHeading] = useState("All Custom GPTs");
+  const [heading, setHeading] = useState("Full List of GPTs");
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -64,9 +64,11 @@ export function Listing() {
 
   return (
     <section className="flex flex-col items-center p-4 text-center max-w-7xl mx-auto">
-      <h3 className="text-3xl font-semibold tracking-tight">{heading}</h3>
+      <h3 className="text-3xl font-semibold tracking-tight transition-all">
+        {heading}
+      </h3>
       <LabelToggle />
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full transition-all">
         {filteredCatalog.map((persona, index) => (
           <Persona key={index} personaData={persona} />
         ))}

@@ -382,3 +382,9 @@ a:hover .sparkle.flip {
     opacity: 0.8;
   }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .toggle-hover-effect:hover {
+    transform: scale(1.05);
+  }
+}

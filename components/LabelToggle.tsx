@@ -50,8 +50,8 @@ export function LabelToggle() {
         <button
           key={label}
           className={`flex w-[calc(50%-0.5rem)] items-center justify-center space-x-2 md:px-4 rounded-md p-2 border border-muted transition-colors ${
-            selectedLabels.includes(label) ? "bg-accent" : "bg-background"
-          } hover:bg-accent hover:text-accent-foreground`}
+            selectedLabels.includes(label) ? "bg-accent" : "bg-muted"
+          } toggle-hover-effect`}
           onClick={() => toggleLabel(label)}
         >
           <Icon className="h-6 w-6" />
