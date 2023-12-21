@@ -13,9 +13,11 @@ const strings = {
     system: "Auto",
   },
   welcomeSection: {
-    heading: "Welcome to Promptfolio!",
-    content:
-      "Explore my practice in AI Prompt Crafting and Engineering at Promptfolio.dev. My experience combines innovation in interaction design and software engineering with the latest in Custom GPTs, offering new insights with each visit. Join me in exploring the evolving world of AI applications.",
+    heading: "Welcome!",
+    content: "Explore my practice in AI Prompt Crafting and Engineering.",
+    call: "Join me in the evolving world of AI applications.",
+    buttonText1: "See Full List of GPTs",
+    buttonText2: "Learn About Promptfolio",
   },
   listing: {
     heading: "Custom GPTs for Your Software Development Needs",
@@ -30,6 +32,12 @@ const strings = {
     subheading: "Exciting New GPTs on the Horizon! 🤖",
     copyright: "Ben McNulty's Creation ©2023",
     extra: "Crafted with ✨ & ❤️",
+  },
+  about: {
+    heading: "About Promptfolio",
+    content:
+      "Promptfolio is a collection of custom GPTs for software development. We offer a range of innovative solutions to help you achieve your goals. Our team of experts is ready to help you with your next project. Contact us today!",
+    bio: "My experience combines innovation in interaction design and software engineering with the latest in Custom GPTs, offering new insights with each visit.",
   },
 };
 

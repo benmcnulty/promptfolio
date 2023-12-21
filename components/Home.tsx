@@ -15,14 +15,9 @@ export function Home() {
         backgroundClass="background"
       />
       <CustomListings
-        gptNames={["Prompt Mentor", "Prompt Engineer"]}
-        headline="Start Prompting!"
-        backgroundClass="bg-muted"
-      />
-      <CustomListings
-        gptNames={["Brainstormer", "Strategy"]}
-        headline="Get Creative!"
-        backgroundClass="radial-gradient-bg"
+        gptNames={["Brainstormer", "Strategy", "Rubber Ducky"]}
+        headline="Need some inspiration?"
+        backgroundClass="green-gradient-bg"
       />
       <CustomListings
         gptNames={[
@@ -30,8 +25,13 @@ export function Home() {
           "Interaction Designer",
           "Graphic Designer",
         ]}
-        headline="Build a Web App!"
+        headline="Building a Web App?"
         backgroundClass="bg-muted"
+      />
+      <CustomListings
+        gptNames={["GPT QA", "Prompt Engineer", "Red Team"]}
+        headline="Create your own GPTs!"
+        backgroundClass="blue-gradient-bg"
       />
       <FeaturedListings />
     </section>
