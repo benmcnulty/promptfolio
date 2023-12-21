@@ -4,76 +4,89 @@
 
 @layer base {
   :root {
-    /* Base Colors */
-    --background: 240 20% 98%;
-    /* Soft lilac shade for light theme background */
-    --foreground: 240 30% 20%;
-    /* Complementary dark text for light theme */
-
-    --card: 240 20% 100%;
-    --card-foreground: 240 30% 20%;
-
-    --popover: 240 20% 100%;
-    --popover-foreground: 240 30% 20%;
-
-    /* Vibrant Lilac Brand Color */
-    --brand-lilac: 270;
+    /* Base hues and saturations */
+    --base-hue: 240;
+    --brand-lilac-hue: 270;
     /* Base hue for lilac */
+    --base-saturation-light: 20%;
+    --base-saturation-dark: 30%;
+    --text-saturation: 30%;
 
-    --primary: var(--brand-lilac) 50% 60%;
+    /* Light theme base lightness */
+    --light-bg-lightness: 98%;
+    --light-card-popover-lightness: 100%;
+    --light-foreground-text-lightness: 20%;
+
+    /* Color Definitions */
+    --background: var(--base-hue) var(--base-saturation-light) var(--light-bg-lightness);
+    --foreground: var(--base-hue) var(--text-saturation) var(--light-foreground-text-lightness);
+
+    --card: var(--base-hue) var(--base-saturation-light) var(--light-card-popover-lightness);
+    --card-foreground: var(--foreground);
+
+    --popover: var(--card);
+    --popover-foreground: var(--foreground);
+
+    --primary: var(--brand-lilac-hue) 50% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--brand-lilac) 45% 70%;
-    --secondary-foreground: 240 30% 20%;
+    --secondary: var(--brand-lilac-hue) 45% 70%;
+    --secondary-foreground: var(--foreground);
 
-    --muted: 240 15% 90%;
-    --muted-foreground: 240 25% 30%;
+    --muted: var(--base-hue) 15% 90%;
+    --muted-foreground: var(--base-hue) 25% 30%;
 
-    --accent: var(--brand-lilac) 45% 80%;
-    /* Bright lilac for accent */
-    --accent-foreground: 240 30% 20%;
+    --accent: var(--brand-lilac-hue) 45% 80%;
+    --accent-foreground: var(--foreground);
 
-    --destructive: var(--brand-lilac) 55% 50%;
+    --destructive: var(--brand-lilac-hue) 55% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 15% 80%;
-    --input: 240 15% 80%;
-    --ring: 240 30% 20%;
+    --border-input-lightness: 80%;
+    --border: var(--base-hue) 15% var(--border-input-lightness);
+    --input: var(--border);
+
+    --ring: var(--foreground);
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 240 30% 12%;
-    /* Darker lilac shade for dark theme background */
-    --foreground: 240 50% 98%;
-    /* Lighter text for dark theme */
+    /* Dark theme base lightness */
+    --dark-bg-lightness: 12%;
+    --dark-card-popover-lightness: 15%;
+    --dark-foreground-text-lightness: 98%;
 
-    --card: 240 30% 15%;
-    --card-foreground: 240 50% 98%;
+    --background: var(--base-hue) var(--base-saturation-dark) var(--dark-bg-lightness);
+    --foreground: var(--base-hue) 50% var(--dark-foreground-text-lightness);
 
-    --popover: 240 30% 15%;
-    --popover-foreground: 240 50% 98%;
+    --card: var(--base-hue) var(--base-saturation-dark) var(--dark-card-popover-lightness);
+    --card-foreground: var(--foreground);
 
-    --primary: var(--brand-lilac) 55% 40%;
+    --popover: var(--card);
+    --popover-foreground: var(--foreground);
+
+    --primary: var(--brand-lilac-hue) 55% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--brand-lilac) 50% 40%;
+    --secondary: var(--brand-lilac-hue) 50% 40%;
     --secondary-foreground: 240 50% 100%;
 
-    --muted: 240 25% 20%;
-    --muted-foreground: 240 40% 70%;
+    --muted: var(--base-hue) 25% 20%;
+    --muted-foreground: var(--base-hue) 40% 70%;
 
-    --accent: var(--brand-lilac) 50% 30%;
-    /* Darker lilac for dark mode accent */
+    --accent: var(--brand-lilac-hue) 50% 30%;
     --accent-foreground: 240 50% 100%;
 
-    --destructive: var(--brand-lilac) 60% 30.6%;
+    --destructive: var(--brand-lilac-hue) 60% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 25% 25%;
-    --input: 240 25% 25%;
-    --ring: 240 50% 75%;
+    --border-dark-lightness: 25%;
+    --border: var(--base-hue) 25% var(--border-dark-lightness);
+    --input: var(--border);
+
+    --ring-lightness: 75%;
+    --ring: var(--base-hue) 50% var(--ring-lightness);
   }
 
   * {
@@ -107,9 +120,9 @@
 
   .radial-gradient-bg {
     background: radial-gradient(circle at center,
-        hsl(var(--brand-lilac) 60% 80%) 0%,
-        hsl(var(--brand-lilac) 50% 60%) 70%,
-        hsl(var(--brand-lilac) 45% 50%) 100%);
+        hsl(var(--brand-lilac-hue) 60% 80%) 0%,
+        hsl(var(--brand-lilac-hue) 50% 60%) 70%,
+        hsl(var(--brand-lilac-hue) 45% 50%) 100%);
     background-size: 200% 200%;
     animation: GradientShift 30s ease infinite;
   }
@@ -185,7 +198,7 @@
 }
 
 .text-container {
-  padding: 0 15px;
+  padding: 0 1rem;
   margin-top: 1rem;
 }
 
@@ -206,10 +219,10 @@
 
 .text-shadow {
   text-shadow:
-    -1px -1px 0 hsl(var(--primary)),
-    1px -1px 0 hsl(var(--primary)),
-    -1px 1px 0 hsl(var(--primary)),
-    1px 1px 0 hsl(var(--primary));
+    -0.0625rem -0.0625rem 0 hsl(var(--primary)),
+    0.0625rem -0.0625rem 0 hsl(var(--primary)),
+    -0.0625rem 0.0625rem 0 hsl(var(--primary)),
+    0.0625rem 0.0625rem 0 hsl(var(--primary));
 }
 
 .header-shadow {
@@ -231,10 +244,10 @@
 
 h3 {
   text-shadow:
-    -1px -1px 0 hsl(var(--primary)),
-    1px -1px 0 hsl(var(--primary)),
-    -1px 1px 0 hsl(var(--primary)),
-    1px 1px 0 hsl(var(--primary));
+    -0.0625rem -0.0625rem 0 hsl(var(--primary)),
+    0.0625rem -0.0625rem 0 hsl(var(--primary)),
+    -0.0625rem 0.0625rem 0 hsl(var(--primary)),
+    0.0625rem 0.0625rem 0 hsl(var(--primary));
 }
 
 .button-icon {
@@ -265,7 +278,7 @@ h3 {
 }
 
 .text-container {
-  padding: 0 15px;
+  padding: 0 1rem;
   margin-top: 1rem;
 }
 
@@ -275,7 +288,7 @@ h3 {
   }
 
   .text-container {
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 1rem auto;
   }
 
@@ -316,14 +329,14 @@ h3 {
 
 .shadow {
   box-shadow: none;
-  -webkit-filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, .7));
-  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, .7));
+  -webkit-filter: drop-shadow(0 0.25rem 0.25rem hsla(0, 0%, 0%, 0.7));
+  filter: drop-shadow(0 0.25rem 0.25rem hsla(0, 0%, 0%, 0.7));
 }
 
 .shaded {
   box-shadow: none;
-  -webkit-filter: drop-shadow(0.15rem 0.15rem 0.15rem rgba(0, 0, 0, .7));
-  filter: drop-shadow(0.15rem 0.15rem 0.15rem rgba(0, 0, 0, .7));
+  -webkit-filter: drop-shadow(0.15rem 0.15rem 0.15rem hsla(0, 0%, 0%, 0.7));
+  filter: drop-shadow(0.15rem 0.15rem 0.15rem hsla(0, 0%, 0%, 0.7));
 }
 
 .custom-nav-item>a,
