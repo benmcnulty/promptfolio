@@ -36,9 +36,11 @@ const strings = {
   },
   about: {
     heading: "About Promptfolio",
+    heading2: "About Ben McNulty",
     content:
-      "Promptfolio is a collection of custom GPTs for software development. We offer a range of innovative solutions to help you achieve your goals. Our team of experts is ready to help you with your next project. Contact us today!",
-    bio: "My experience combines innovation in interaction design and software engineering with the latest in Custom GPTs, offering new insights with each visit.",
+      "At Promptfolio, we specialize in custom GPTs tailored for diverse applications. Our platform is a testament to the power of AI in transforming software development and creative processes.",
+    bio: "As the human intelligence behind Promptfolio, Ben brings a unique blend of interaction design, creative writing, technical writing, and software engineering experiences to their craft. Their expertise in prompt engineering is evident in every project, ensuring each Custom GPT not only meets but exceeds expectations.",
+    bio2: "As a seasoned software engineer with a passion for creative and technical writing, Ben blends these disciplines to engineer Custom GPTs. Their work at Promptfolio showcases this unique blend, offering innovative solutions across various domains in work, chat, and art.",
   },
 };
 
