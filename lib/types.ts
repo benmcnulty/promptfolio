@@ -1,3 +1,4 @@
+// lib/types.ts
 interface CatalogItem {
   name: string;
   description: string;

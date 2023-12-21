@@ -3,7 +3,7 @@ import React from "react";
 import { Persona } from "./Persona";
 import catalog from "@/lib/catalog";
 import CatalogItem from "@/lib/types";
-import { StarFilledIcon } from "@radix-ui/react-icons";
+import { StarIcon } from "@radix-ui/react-icons";
 
 export function FeaturedListings() {
   // Directly filter featured catalog items
@@ -14,13 +14,13 @@ export function FeaturedListings() {
   return (
     <section className="flex flex-col items-center p-4 text-center mx-auto w-full">
       <h3 className="text-3xl font-semibold tracking-tight transition-all mb-4">
-        <StarFilledIcon
-          className="inline-block align-middle"
+        <StarIcon
+          className="mx-2 inline-block align-middle"
           style={{ height: "1.75rem", width: "1.75rem" }}
         />
         Featured GPTs
-        <StarFilledIcon
-          className="inline-block align-middle"
+        <StarIcon
+          className="mx-2 inline-block align-middle"
           style={{ height: "1.75rem", width: "1.75rem" }}
         />
       </h3>

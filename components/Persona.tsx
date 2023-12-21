@@ -4,18 +4,33 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import strings from "@/lib/strings";
 import { Sparkle } from "./ui/sparkle";
+import CatalogItem from "@/lib/types";
+import {
+  StarIcon,
+  BackpackIcon,
+  ChatBubbleIcon,
+  Pencil2Icon,
+} from "@radix-ui/react-icons";
 
 interface PersonaProps {
-  personaData: {
-    name: string;
-    description: string;
-    link: string;
-    image: string;
-    alt: string;
-  };
+  personaData: CatalogItem;
 }
 
+const labelIcons: { [key: string]: React.ElementType } = {
+  featured: StarIcon,
+  work: BackpackIcon,
+  chat: ChatBubbleIcon,
+  art: Pencil2Icon,
+};
+
 export function Persona({ personaData }: PersonaProps) {
+  const icons = personaData.labels.map((label) => {
+    const Icon = labelIcons[label];
+    return Icon ? (
+      <Icon key={label} className={`my-1 w-[2rem] h-[2rem] lift`} />
+    ) : null;
+  });
+
   return (
     <div className="flex flex-col justify-between w-full max-w-md mx-0 my-0 bg-white rounded-lg shadow-md overflow-hidden flex-auto sm:w-[48%] lg:w-1/3 xl:w-1/4">
       <div className="relative w-full">
@@ -26,6 +41,7 @@ export function Persona({ personaData }: PersonaProps) {
           width={1024}
           height={1024}
         />
+        <div className="absolute top-0 right-0 m-2 flex-1 p-1">{icons}</div>
         <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-2 text-center">
           <h2 className="text-xl font-bold">{personaData.name}</h2>
         </div>

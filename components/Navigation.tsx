@@ -7,7 +7,7 @@ import strings from "@/lib/strings";
 
 import { cn } from "@/utils/cn";
 import {
-  StarFilledIcon,
+  StarIcon,
   HomeIcon,
   BackpackIcon,
   ChatBubbleIcon,
@@ -78,7 +78,7 @@ export function Navigation() {
                       <div className="mb-2 mt-4 text-lg font-medium">
                         Featured AI Agents
                       </div>
-                      <StarFilledIcon className="mx-auto my-4 h-8 w-8" />
+                      <StarIcon className="mx-auto my-4 h-8 w-8" />
                       <p className="text-sm leading-tight text-muted-foreground mb-6">
                         GPTs Engineered for Work, Chat, &amp; Art
                       </p>

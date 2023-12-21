@@ -3,14 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import {
-  StarFilledIcon,
+  StarIcon,
   BackpackIcon,
   ChatBubbleIcon,
   Pencil2Icon,
 } from "@radix-ui/react-icons";
 
 const labelIcons = {
-  featured: StarFilledIcon,
+  featured: StarIcon,
   work: BackpackIcon,
   chat: ChatBubbleIcon,
   art: Pencil2Icon,
