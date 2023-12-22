@@ -8,14 +8,14 @@ interface BlogContentsProps {
 
 export function BlogContents({ posts }: BlogContentsProps) {
   return (
-    <section className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Blog Posts</h2>
+    <section className="my-8 p-6 bg-card rounded-lg shadow-md max-w-4xl mx-auto">
+      <h2 className="text-3xl font-semibold text-center mb-6">Blog Posts</h2>
       <ul>
         {posts.map((post) => (
-          <li key={post.slug}>
+          <li key={post.slug} className="mb-2 text-lg">
             <Link
               href={`/blog/${post.slug}`}
-              className="text-blue-600 hover:underline"
+              className="text-primary hover:text-accent underline-offset-2 hover:underline"
             >
               {post.title}
             </Link>
