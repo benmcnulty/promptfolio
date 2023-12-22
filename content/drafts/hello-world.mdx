@@ -1,0 +1,83 @@
+import { Metadata } from "next";
+
+export const metadata = {
+  title: "Hello World",
+  description: "Technical overview from Promptfolio",
+};
+
+# Hello World
+
+Welcome to our Next.js 14 App Router project! This post will give you a brief overview of the project.
+
+## Project Overview
+
+This project is built with Next.js 14, a powerful React framework that enables server-side rendering, static site generation, and much more.
+
+```json
+// Excerpt from package.json
+{
+  "name": "next-app-router",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
+```
+
+## Markdown Features
+
+Here are some examples of Markdown features:
+
+- **Bold text:** `**Bold text**`
+- _Italic text:_ `*Italic text*`
+- ~~Strikethrough:~~ `~~Strikethrough~~`
+- [Link](https://nextjs.org) `[Link](https://nextjs.org)`
+- `Inline code` `` `Inline code` ``
+- > Blockquote `> Blockquote`
+
+### Unordered List
+
+- Item 1
+- Item 2
+- Item 3
+
+### Ordered List
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+### Code Block
+
+```javascript
+console.log("Hello, world!");
+```
+
+## MDX Features
+
+MDX allows you to use JSX in your Markdown documents. Here's an example:
+
+```jsx
+import { useState } from "react";
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+Stay tuned for more updates on our project!

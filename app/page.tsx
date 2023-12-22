@@ -1,13 +1,13 @@
 // app/page.tsx
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Listing } from "@/components/Listing";
+import { Home } from "@/components/Home";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-      <Listing />
+      <Home />
       <Footer />
     </main>
   );

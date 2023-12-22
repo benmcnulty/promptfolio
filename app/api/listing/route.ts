@@ -1,10 +1,26 @@
 // app/api/listing/route.ts
-import Listing from "@/lib/gpts";
+import catalog from "@/lib/catalog";
 
 export const runtime = "edge";
 
 export async function GET() {
-  return new Response(JSON.stringify(Listing), {
+  // Filter catalog to include only 'work' related listings
+  const workRelatedListings = catalog.filter((item) =>
+    item.labels.includes("work")
+  );
+
+  // Remove new fields for API response
+  const formattedListings = workRelatedListings.map(
+    ({ name, description, link, image, alt }) => ({
+      name,
+      description,
+      link,
+      image,
+      alt,
+    })
+  );
+
+  return new Response(JSON.stringify(formattedListings), {
     status: 200,
     headers: {
       "Content-Type": "application/json",
