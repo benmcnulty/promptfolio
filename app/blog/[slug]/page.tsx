@@ -1,13 +1,22 @@
-// app/blog/page.tsx
-import React from "react";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+// app/blog/[slug]/page.tsx
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
 
-export default function SlugPage() {
+import Test from "./hello-world.mdx";
+
+const components = { Test };
+
+export default function TestPage({ source }: { source: any }) {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between">
-      <Header />
-      <Footer />
-    </main>
+    <div className="wrapper">
+      <MDXRemote {...source} components={components} />
+    </div>
   );
+}
+
+export async function getStaticProps() {
+  // MDX text - can be from a local file, database, anywhere
+  const source = "./hello-world.mdx";
+  const mdxSource = await serialize(source);
+  return { props: { source: mdxSource } };
 }
