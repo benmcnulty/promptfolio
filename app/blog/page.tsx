@@ -6,6 +6,7 @@ import { BlogContents } from "@/components/BlogContents";
 import fs from "fs";
 import path from "path";
 import { Metadata } from "next";
+import { FeaturedListings } from "@/components/FeaturedListings";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -26,6 +27,7 @@ export default function BlogPage() {
     <main className="flex flex-col min-h-screen items-center justify-between">
       <Header />
       <BlogContents posts={posts} />
+      <FeaturedListings />
       <Footer />
     </main>
   );

@@ -21,16 +21,6 @@ export function Welcome() {
             <Sparkle width="12%" className="sparkle shaded mx-4" />
           </Link>
         </Button>
-        <p className="leading-7 text-foreground my-4">
-          {strings.welcomeSection.call}
-        </p>
-        <Button variant="default" asChild className="w-full h-[3rem] my-2">
-          <Link href="/about">
-            <Sparkle width="12%" className="flip sparkle shaded mx-4" />
-            {strings.welcomeSection.buttonText2}
-            <Sparkle width="12%" className="sparkle shaded mx-4" />
-          </Link>
-        </Button>
       </div>
     </section>
   );
