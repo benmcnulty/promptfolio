@@ -1,4 +1,4 @@
-// component/About.tsx
+// component/BlogContents.tsx
 import React from "react";
 
 export function BlogContents() {
