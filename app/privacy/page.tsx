@@ -3,6 +3,12 @@ import React from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Policy } from "@/components/Policy";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Outlines how we handle your data",
+};
 
 export default function PrivacyPolicyPage() {
   return (

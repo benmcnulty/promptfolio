@@ -46,7 +46,7 @@ export function FocusListing({
           {greeting} {personaData.name}
         </h3>
         <h4 className="text-2xl font-semibold mb-2">{subheading}</h4>
-        <p className="text-base mb-4 lg:mb-0">{additionalContent}</p>
+        <p className="text-base lg:mb-0">{additionalContent}</p>
       </div>
       <Persona personaData={personaData} />
     </section>

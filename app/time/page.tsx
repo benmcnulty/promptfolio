@@ -3,6 +3,12 @@ import React, { useState } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Time } from "@/components/Time";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Time API",
+  description: "Endpoint that returns the current time",
+};
 
 export default function TimePage() {
   return (

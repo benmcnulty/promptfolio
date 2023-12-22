@@ -466,3 +466,107 @@ a h6 {
   filter: drop-shadow(0 0.1rem 0.05rem hsl(var(--accent)));
   color: hsl(var(--foreground));
 }
+
+.blog-post {
+  max-width: 800px;
+  padding: 1rem;
+  /* Padding around the blog post content */
+}
+
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+  margin-top: 2rem;
+  /* Top margin for headings */
+  margin-bottom: 1rem;
+  /* Bottom margin for headings */
+  line-height: 1.25;
+  /* Line height for headings */
+}
+
+.blog-post h1 {
+  font-size: 2.25rem;
+  /* Font size for h1 */
+}
+
+.blog-post h2 {
+  font-size: 2rem;
+  /* Font size for h2 */
+}
+
+.blog-post h3 {
+  font-size: 1.75rem;
+  /* Font size for h3 */
+}
+
+.blog-post h4 {
+  font-size: 1.5rem;
+  /* Font size for h4 */
+}
+
+.blog-post h5 {
+  font-size: 1.25rem;
+  /* Font size for h5 */
+}
+
+.blog-post h6 {
+  font-size: 1rem;
+  /* Font size for h6 */
+}
+
+.blog-post p {
+  font-size: 1rem;
+  /* Font size for paragraphs */
+  margin-top: 0.5rem;
+  /* Top margin for paragraphs */
+  margin-bottom: 1rem;
+  /* Bottom margin for paragraphs */
+  line-height: 1.6;
+  /* Line height for paragraphs */
+}
+
+.blog-post ul,
+.blog-post ol {
+  margin-top: 1rem;
+  /* Top margin for lists */
+  margin-bottom: 1rem;
+  /* Bottom margin for lists */
+  padding-left: 2rem;
+  /* Left padding for list items */
+}
+
+.blog-post li {
+  margin-bottom: 0.5rem;
+  /* Bottom margin for list items */
+}
+
+.blog-post blockquote {
+  margin-left: 0;
+  /* Left margin for blockquotes */
+  margin-right: 0;
+  /* Right margin for blockquotes */
+  padding-left: 1.5rem;
+  /* Left padding for blockquotes */
+  border-left: 4px solid #ddd;
+  /* Left border for blockquotes */
+  background-color: #f9f9f9;
+  /* Background color for blockquotes */
+  font-style: italic;
+  /* Font style for blockquotes */
+}
+
+.blog-post hr {
+  border: 0;
+  /* Border for horizontal rules */
+  height: 1px;
+  /* Height for horizontal rules */
+  background-color: #ddd;
+  /* Background color for horizontal rules */
+  margin-top: 2rem;
+  /* Top margin for horizontal rules */
+  margin-bottom: 2rem;
+  /* Bottom margin for horizontal rules */
+}
