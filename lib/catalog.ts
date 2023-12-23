@@ -1,6 +1,18 @@
 // lib/catalog.ts
 export const catalog = [
   {
+    name: "Season's Gratings",
+    description:
+      "Holiday-themed artistic content, spanning extravagant, realistic, humorous, and surreal styles, creatively interpreting and visually representing the multifaceted essence of holiday celebrations.",
+    link: "https://chat.openai.com/g/g-2jYC5A24s-season-s-gratings",
+    image: "/seasons-gratings.png",
+    alt: "An anthropomorphic raccoon with realistic fur and a mischievous smile, dressed as Santa's helper in a red and green elf costume, including a pointed hat. The background features a vivid abstract explosion of colors with winter holiday elements like snowflakes and ornaments.",
+    listed: new Date("2023-12-23"),
+    labels: ["featured", "art"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "Brainstormer",
     description:
       "Your go-to partner for blending logic with creativity to generate actionable ideas.",
