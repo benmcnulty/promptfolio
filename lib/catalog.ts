@@ -13,12 +13,24 @@ export const catalog = [
     media: [],
   },
   {
-    name: "Happy New Year 2024",
+    name: "Happy New Year",
     description:
-      "Depictions of New Year 2024 across five distinct styles: Global Celebration Fusion, Futuristic Eco-Festivity, Retro-Futuristic Time Transition, Celestial Fantasy Metropolis, and Neon Noir Historical Journey, each providing a unique thematic and visual experience.",
-    link: "https://chat.openai.com/g/g-2WgdFS8PW-happy-new-year-2024",
-    image: "/happy-new-year-2024.png",
+      "Depictions of New Year Celebration across five distinct styles: Global Celebration Fusion, Futuristic Eco-Festivity, Retro-Futuristic Time Transition, Celestial Fantasy Metropolis, and Neon Noir Historical Journey, each providing a unique thematic and visual experience.",
+    link: "https://chat.openai.com/g/g-2WgdFS8PW-happy-new-year",
+    image: "/happy-new-year.png",
     alt: "An anthropomorphic peacock with vibrant blue feathers and a playful expression, wearing a fancy white suit with a colorful bow tie and a party hat, ready for a New Year's Eve celebration. The background is a kaleidoscope of abstract colors with New Year's fireworks, adding a festive atmosphere to the portrait.",
+    listed: new Date("2023-12-23"),
+    labels: ["featured", "art"],
+    tags: [],
+    media: [],
+  },
+  {
+    name: "Winter Holiday",
+    description:
+      "Winter-themed artwork in five distinct styles: Winter Wonderland Fusion, Whimsical Nature and Wildlife, Nostalgic Winter Narratives, Geometric and Metallic Elegance, and Cultural Winter Tapestry, evoking the winter season's ambiance.",
+    link: "https://chat.openai.com/g/g-clkVgOVKE-winter-holiday",
+    image: "/winter-holiday.png",
+    alt: "An anthropomorphic polar bear with a playful grin, dressed in rustic winter attire with a colorful embroidered coat and a scarf, exuding winter festival charm. The background features a vibrant abstract color explosion with stylized frost and snowflake elements, enhancing the festive winter wonderland theme.",
     listed: new Date("2023-12-23"),
     labels: ["featured", "art"],
     tags: [],
