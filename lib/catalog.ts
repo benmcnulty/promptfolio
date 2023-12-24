@@ -37,6 +37,18 @@ export const catalog = [
     media: [],
   },
   {
+    name: "Fluffy Chaos Friends",
+    description:
+      "Create your own unique Fluffy Chaos Friends and help restore their population in the Cosmic Rainbow Void!",
+    link: "https://chat.openai.com/g/g-ubDFqfYOs-fluffy-chaos-friends",
+    image: "/fluffy-chaos-friends.png",
+    alt: "An anthropomorphic creature with a wildly fluffy and detailed coat of white fur, large, vibrant blue eyes that are wide with delight, and a small, joyful smile. Their fur appears to blend seamlessly into the swirling, abstract explosion of cosmic colors in the background, creating an aura of exuberance and whimsy.",
+    listed: new Date("2023-12-23"),
+    labels: ["featured", "art"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "Brainstormer",
     description:
       "Your go-to partner for blending logic with creativity to generate actionable ideas.",
