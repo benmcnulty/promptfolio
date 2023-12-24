@@ -30,7 +30,7 @@ export const catalog = [
       "Winter-themed artwork in five distinct styles: Winter Wonderland Fusion, Whimsical Nature and Wildlife, Nostalgic Winter Narratives, Geometric and Metallic Elegance, and Cultural Winter Tapestry, evoking the winter season's ambiance.",
     link: "https://chat.openai.com/g/g-clkVgOVKE-winter-holiday",
     image: "/winter-holiday.png",
-    alt: "An anthropomorphic polar bear with a playful grin, dressed in rustic winter attire with a colorful embroidered coat and a scarf, exuding winter festival charm. The background features a vibrant abstract color explosion with stylized frost and snowflake elements, enhancing the festive winter wonderland theme.",
+    alt: "An anthropomorphic snow leopard with detailed fur and playful eyes, wearing vibrant winter festival attire with a brightly patterned coat in vivid colors. The background is a lively, colorful abstract explosion, enhanced with frosty winter wonderland elements and subtle ice crystals, creating a festive and cheerful atmosphere.",
     listed: new Date("2023-12-23"),
     labels: ["featured", "art"],
     tags: [],
