@@ -157,11 +157,11 @@ export const catalog = [
     media: [],
   },
   {
-    name: "GPT QA",
+    name: "Prompt QA",
     description:
       "Designed for excellence in Quality Assurance, fine-tuning custom GPT configurations through continuous refinement.",
-    link: "https://chat.openai.com/g/g-0FcmEYlsb-gpt-qa",
-    image: "/gpt-qa.png",
+    link: "https://chat.openai.com/g/g-0FcmEYlsb-prompt-qa",
+    image: "/prompt-qa.png",
     alt: "This image is a digital illustration of a blue axolotl wearing a hoodie. The axolotl, characterized by its blue body and white face, has black eyes and a pink mouth. It's wearing a blue hoodie with a zipper in the front. The background is a psychedelic swirl of pink, blue, and purple colors. The axolotl is facing the viewer and appears to be smiling, adding a playful and whimsical mood to the image.",
     listed: new Date("2024-01-01"),
     labels: ["work"],

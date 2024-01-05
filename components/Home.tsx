@@ -44,7 +44,7 @@ export function Home() {
         greeting="Consult"
       />
       <CustomListings
-        gptNames={["GPT QA", "Prompt Engineer", "Red Team"]}
+        gptNames={["Prompt QA", "Prompt Engineer", "Red Team"]}
         headline="Create your own GPTs!"
         backgroundClass="radial-gradient-bg"
       />
