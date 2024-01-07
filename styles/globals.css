@@ -251,19 +251,26 @@
 
 .header-shadow {
   text-shadow:
-    -0.05rem -0.05rem 0 hsl(var(--primary)),
-    0.05rem -0.05rem 0 hsl(var(--primary)),
-    -0.05rem 0.05rem 0 hsl(var(--primary)),
-    0.05rem 0.05rem 0 hsl(var(--primary)),
-    0 0 0.5rem hsl(var(--background));
+    -0.01rem -0.01rem 0 hsl(var(--background)),
+    0.01rem -0.01rem 0 hsl(var(--background)),
+    -0.01rem 0.01rem 0 hsl(var(--background)),
+    0.01rem 0.01rem 0 hsl(var(--background)),
+    -0.06rem -0.06rem 0 hsl(var(--primary)),
+    0.06rem -0.06rem 0 hsl(var(--primary)),
+    -0.06rem 0.06rem 0 hsl(var(--primary)),
+    0.06rem 0.06rem 0 hsl(var(--primary));
 }
 
 .dark .header-shadow {
   text-shadow:
-    -0.1rem -0.1rem 0 hsl(var(--secondary)),
-    0.1rem -0.1rem 0 hsl(var(--secondary)),
-    -0.1rem 0.1rem 0 hsl(var(--secondary)),
-    0.1rem 0.1rem 0 hsl(var(--secondary));
+    -0.01rem -0.01rem 0 hsl(var(--background)),
+    0.01rem -0.01rem 0 hsl(var(--background)),
+    -0.01rem 0.01rem 0 hsl(var(--background)),
+    0.01rem 0.01rem 0 hsl(var(--background)),
+    -0.06rem -0.06rem 0 hsl(var(--secondary)),
+    0.06rem -0.06rem 0 hsl(var(--secondary)),
+    -0.06rem 0.06rem 0 hsl(var(--secondary)),
+    0.06rem 0.06rem 0 hsl(var(--secondary));
 }
 
 h3 {
@@ -608,4 +615,5 @@ a h6 {
 .light .white-badge {
   display: none;
   height: 0;
+  position: absolute;
 }
