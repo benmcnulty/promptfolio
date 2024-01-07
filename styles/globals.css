@@ -608,4 +608,5 @@ a h6 {
 .light .white-badge {
   display: none;
   height: 0;
+  position: absolute;
 }
