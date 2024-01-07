@@ -243,42 +243,18 @@
 
 .text-shadow {
   text-shadow:
-    -0.0625rem -0.0625rem 0 hsl(var(--primary)),
-    0.0625rem -0.0625rem 0 hsl(var(--primary)),
-    -0.0625rem 0.0625rem 0 hsl(var(--primary)),
-    0.0625rem 0.0625rem 0 hsl(var(--primary));
+    -0.04rem -0.04rem 0 hsl(var(--primary)),
+    0.04rem -0.04rem 0 hsl(var(--primary)),
+    -0.04rem 0.04rem 0 hsl(var(--primary)),
+    0.04rem 0.04rem 0 hsl(var(--primary));
 }
 
 .header-shadow {
   text-shadow:
-    -0.01rem -0.01rem 0 hsl(var(--background)),
-    0.01rem -0.01rem 0 hsl(var(--background)),
-    -0.01rem 0.01rem 0 hsl(var(--background)),
-    0.01rem 0.01rem 0 hsl(var(--background)),
-    -0.06rem -0.06rem 0 hsl(var(--primary)),
-    0.06rem -0.06rem 0 hsl(var(--primary)),
-    -0.06rem 0.06rem 0 hsl(var(--primary)),
-    0.06rem 0.06rem 0 hsl(var(--primary));
-}
-
-.dark .header-shadow {
-  text-shadow:
-    -0.01rem -0.01rem 0 hsl(var(--background)),
-    0.01rem -0.01rem 0 hsl(var(--background)),
-    -0.01rem 0.01rem 0 hsl(var(--background)),
-    0.01rem 0.01rem 0 hsl(var(--background)),
-    -0.06rem -0.06rem 0 hsl(var(--secondary)),
-    0.06rem -0.06rem 0 hsl(var(--secondary)),
-    -0.06rem 0.06rem 0 hsl(var(--secondary)),
-    0.06rem 0.06rem 0 hsl(var(--secondary));
-}
-
-h3 {
-  text-shadow:
-    -0.0625rem -0.0625rem 0 hsl(var(--primary)),
-    0.0625rem -0.0625rem 0 hsl(var(--primary)),
-    -0.0625rem 0.0625rem 0 hsl(var(--primary)),
-    0.0625rem 0.0625rem 0 hsl(var(--primary));
+    -0.04rem -0.04rem 0 hsl(var(--background)),
+    0.04rem -0.04rem 0 hsl(var(--muted)),
+    -0.04rem 0.04rem 0 hsl(var(--background)),
+    0.04rem 0.04rem 0 hsl(var(--muted));
 }
 
 .button-icon {
