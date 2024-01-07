@@ -3,6 +3,7 @@ import * as React from "react";
 import strings from "@/lib/strings";
 import { Navigation } from "./Navigation";
 import { Sparkle } from "./ui/sparkle";
+import { PoweredByOpenAIBadge } from "./PoweredByOpenAI";
 
 export function Header() {
   return (
@@ -17,15 +18,16 @@ export function Header() {
               <h1 className="text-5xl font-extrabold tracking-tight lg:text-5xl text-white header-shadow">
                 {strings.header.siteTitle}
               </h1>
-              <h2 className="text-2xl font-semibold tracking-tight pb-2 text-white header-shadow">
+              <h2 className="text-2xl font-semibold tracking-tight pb-0 text-white header-shadow">
                 {strings.header.siteAuthor}
               </h2>
+              <PoweredByOpenAIBadge />
             </div>
             <div className="flex-1 heading-sparkle second-sparkle">
               <Sparkle className="shadow" />
             </div>
           </div>
-          <h2 className="text-1xl font-semibold tracking-tight text-white header-shadow inline-block border-b">
+          <h2 className="mt-[1rem] text-1xl font-semibold tracking-tight text-white header-shadow inline-block border-b">
             {strings.header.siteSubtitle}
           </h2>
         </div>
