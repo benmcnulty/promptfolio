@@ -243,18 +243,35 @@
 
 .text-shadow {
   text-shadow:
-    -0.04rem -0.04rem 0 hsl(var(--primary)),
-    0.04rem -0.04rem 0 hsl(var(--primary)),
-    -0.04rem 0.04rem 0 hsl(var(--primary)),
-    0.04rem 0.04rem 0 hsl(var(--primary));
+    -0.0625rem -0.0625rem 0 hsl(var(--primary)),
+    0.0625rem -0.0625rem 0 hsl(var(--primary)),
+    -0.0625rem 0.0625rem 0 hsl(var(--primary)),
+    0.0625rem 0.0625rem 0 hsl(var(--primary));
 }
 
 .header-shadow {
   text-shadow:
-    -0.04rem -0.04rem 0 hsl(var(--background)),
-    0.04rem -0.04rem 0 hsl(var(--muted)),
-    -0.04rem 0.04rem 0 hsl(var(--background)),
-    0.04rem 0.04rem 0 hsl(var(--muted));
+    -0.05rem -0.05rem 0 hsl(var(--primary)),
+    0.05rem -0.05rem 0 hsl(var(--primary)),
+    -0.05rem 0.05rem 0 hsl(var(--primary)),
+    0.05rem 0.05rem 0 hsl(var(--primary)),
+    0 0 0.5rem hsl(var(--background));
+}
+
+.dark .header-shadow {
+  text-shadow:
+    -0.1rem -0.1rem 0 hsl(var(--secondary)),
+    0.1rem -0.1rem 0 hsl(var(--secondary)),
+    -0.1rem 0.1rem 0 hsl(var(--secondary)),
+    0.1rem 0.1rem 0 hsl(var(--secondary));
+}
+
+h3 {
+  text-shadow:
+    -0.0625rem -0.0625rem 0 hsl(var(--primary)),
+    0.0625rem -0.0625rem 0 hsl(var(--primary)),
+    -0.0625rem 0.0625rem 0 hsl(var(--primary)),
+    0.0625rem 0.0625rem 0 hsl(var(--primary));
 }
 
 .button-icon {
