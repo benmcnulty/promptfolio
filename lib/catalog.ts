@@ -1,42 +1,6 @@
 // lib/catalog.ts
 export const catalog = [
   {
-    name: "Time Traveler",
-    description:
-      "Immersive experiences across different eras, blending historical insights with speculative futures, offering a unique perspective on the evolution of ideas, places, and cultures unbound by time.",
-    link: "https://chat.openai.com/g/g-fi1UGpbF6-time-traveler",
-    image: "/time-traveler.png",
-    alt: "An anthropomorphic giraffe with sparkling eyes that convey a sense of joy and wisdom. The giraffe wears a holographic 'timesuit' with glowing light effects, which give the impression of clothing suitable for time travel. The suit emits a soft, radiant light, accentuating the otherworldly nature of the character. The background is a kaleidoscope of bright, abstract art with swirling patterns and radiant light spots, enhancing the character's ethereal and futuristic appearance.",
-    listed: new Date("2024-01-01"),
-    labels: ["featured", "chat", "art"],
-    tags: [],
-    media: [],
-  },
-  {
-    name: "Intergalactic Traveler",
-    description:
-      "Voyage through the cosmos, blending astronomical science with imaginative space exploration, presenting a vivid depiction of the universe from the Laniakea Galaxy Supercluster to the fringes of known space.",
-    link: "https://chat.openai.com/g/g-XAUAaTUHc-intergalactic-traveler",
-    image: "/intergalactic-traveler.png",
-    alt: "A photorealistic anthropomorphic character with features reminiscent of an evolutionary descendant of a dolphin. The character has smooth, pearlescent skin and large, wise, jewel-like eyes that shine with an inner light, suggesting depth and intelligence. It wears a futuristic, holographic spacesuit that glows with intricate light patterns, simulating advanced technology. The suit hugs the figure, with glowing orbs and panels that hint at complex functionality. The background swirls with an array of bright, vibrant, abstract intergalactic art, adding a sense of wonder and vastness to the scene, indicative of the character's otherworldly origin.",
-    listed: new Date("2024-01-01"),
-    labels: ["featured", "chat", "art"],
-    tags: [],
-    media: [],
-  },
-  {
-    name: "Fluffy Chaos Friends",
-    description:
-      "Create your own unique Fluffy Chaos Friends and help restore their population in the Cosmic Rainbow Void!",
-    link: "https://chat.openai.com/g/g-ubDFqfYOs-fluffy-chaos-friends",
-    image: "/fluffy-chaos-friends.png",
-    alt: "A whimsical creature with a fluffy coat bursting with pastel rainbow colors, large, enchanting eyes radiating with an iridescent glow, and a gentle, happy expression. The background is a cosmic blend of starry nebulae, complementing the creature's vibrant fur.",
-    listed: new Date("2023-12-23"),
-    labels: ["featured", "art"],
-    tags: [],
-    media: [],
-  },
-  {
     name: "Brainstormer",
     description:
       "Your go-to partner for blending logic with creativity to generate actionable ideas.",
@@ -249,6 +213,42 @@ export const catalog = [
     alt: "This is a digitally altered image featuring an extraterrestrial with a serene expression, wearing a silver hoodie with a rainbow-colored sheen. The entity has large, almond-shaped eyes that resemble star-filled galaxies, giving it a wise and mystical appearance. The background is a vibrant, kaleidoscopic array of neon colors and cosmic motifs, including stars, nebulae-like swirls, and glowing geometric shapes, all contributing to a sense of otherworldly wonder.",
     listed: new Date("2024-01-01"),
     labels: ["work", "chat"],
+    tags: [],
+    media: [],
+  },
+  {
+    name: "Time Traveler",
+    description:
+      "Immersive experiences across different eras, blending historical insights with speculative futures, offering a unique perspective on the evolution of ideas, places, and cultures unbound by time.",
+    link: "https://chat.openai.com/g/g-fi1UGpbF6-time-traveler",
+    image: "/time-traveler.png",
+    alt: "An anthropomorphic giraffe with sparkling eyes that convey a sense of joy and wisdom. The giraffe wears a holographic 'timesuit' with glowing light effects, which give the impression of clothing suitable for time travel. The suit emits a soft, radiant light, accentuating the otherworldly nature of the character. The background is a kaleidoscope of bright, abstract art with swirling patterns and radiant light spots, enhancing the character's ethereal and futuristic appearance.",
+    listed: new Date("2024-01-01"),
+    labels: ["featured", "chat", "art"],
+    tags: [],
+    media: [],
+  },
+  {
+    name: "Intergalactic Traveler",
+    description:
+      "Voyage through the cosmos, blending astronomical science with imaginative space exploration, presenting a vivid depiction of the universe from the Laniakea Galaxy Supercluster to the fringes of known space.",
+    link: "https://chat.openai.com/g/g-XAUAaTUHc-intergalactic-traveler",
+    image: "/intergalactic-traveler.png",
+    alt: "A photorealistic anthropomorphic character with features reminiscent of an evolutionary descendant of a dolphin. The character has smooth, pearlescent skin and large, wise, jewel-like eyes that shine with an inner light, suggesting depth and intelligence. It wears a futuristic, holographic spacesuit that glows with intricate light patterns, simulating advanced technology. The suit hugs the figure, with glowing orbs and panels that hint at complex functionality. The background swirls with an array of bright, vibrant, abstract intergalactic art, adding a sense of wonder and vastness to the scene, indicative of the character's otherworldly origin.",
+    listed: new Date("2024-01-01"),
+    labels: ["chat", "art"],
+    tags: [],
+    media: [],
+  },
+  {
+    name: "Fluffy Chaos Friends",
+    description:
+      "Create your own unique Fluffy Chaos Friends and help restore their population in the Cosmic Rainbow Void!",
+    link: "https://chat.openai.com/g/g-ubDFqfYOs-fluffy-chaos-friends",
+    image: "/fluffy-chaos-friends.png",
+    alt: "A whimsical creature with a fluffy coat bursting with pastel rainbow colors, large, enchanting eyes radiating with an iridescent glow, and a gentle, happy expression. The background is a cosmic blend of starry nebulae, complementing the creature's vibrant fur.",
+    listed: new Date("2023-12-23"),
+    labels: ["featured", "art"],
     tags: [],
     media: [],
   },
