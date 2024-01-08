@@ -217,6 +217,18 @@ export const catalog = [
     media: [],
   },
   {
+    name: "Challenger",
+    description:
+      "A conversational agent designed to foster growth and improve outcomes by critically evaluating ideas, provoking deep thinking, enhancing understanding, questioning assumptions, and exploring perspectives.",
+    link: "https://chat.openai.com/g/g-zdPFp2rZw-challenger",
+    image: "/challenger.png",
+    alt: "A goat in a blue hoodie against a colorful graffiti background.",
+    listed: new Date("2024-01-08"),
+    labels: ["featured", "chat"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "AGI Time Capsule",
     description:
       "Guiding future AGI ethics through present ANI conversational training data.",
@@ -248,7 +260,7 @@ export const catalog = [
     image: "/intergalactic-traveler.png",
     alt: "Photorealistic anthropomorphic dolphin-descendant in a holographic spacesuit, with intergalactic art background.",
     listed: new Date("2024-01-01"),
-    labels: ["featured", "chat", "art"],
+    labels: ["chat", "art"],
     tags: [],
     media: [],
   },
