@@ -222,7 +222,7 @@ export const catalog = [
       "A conversational agent designed to foster growth and improve outcomes by critically evaluating ideas, provoking deep thinking, enhancing understanding, questioning assumptions, and exploring perspectives.",
     link: "https://chat.openai.com/g/g-zdPFp2rZw-challenger",
     image: "/challenger.png",
-    alt: "A goat in a blue hoodie against a colorful graffiti background.",
+    alt: "Digital art of a friendly goat in a blue hoodie against a colorful graffiti background.",
     listed: new Date("2024-01-08"),
     labels: ["featured", "chat"],
     tags: [],
