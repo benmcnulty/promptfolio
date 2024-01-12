@@ -217,6 +217,18 @@ export const catalog = [
     media: [],
   },
   {
+    name: "Delulu Hallulu",
+    description:
+      "Generative artist creating vibrant, surreal art with psychedelic and photorealistic touches, specializing in impossible worlds and vivid colors.",
+    link: "https://chat.openai.com/g/g-CmmHJZg8I-delulu-hallulu",
+    image: "/delulu-hallulu.png",
+    alt: "An anthropomorphic Sloth Bear set against a vibrant, abstract background. They have multicolored hair and are wearing a colorful scarf and a coat adorned with various eclectic pins and buttons. The overall impression is one of vibrancy and eclectic style.",
+    listed: new Date("2023-01-11"),
+    labels: ["featured", "art"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "Challenger",
     description:
       "A conversational agent designed to foster growth and improve outcomes by critically evaluating ideas, provoking deep thinking, enhancing understanding, questioning assumptions, and exploring perspectives.",
