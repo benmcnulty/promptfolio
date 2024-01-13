@@ -205,18 +205,6 @@ export const catalog = [
     media: [],
   },
   {
-    name: "Rubber Ducky",
-    description:
-      "The ultimate empathetic listener for developers, merging compassion with creative problem-solving.",
-    link: "https://chat.openai.com/g/g-6HHhA7fGU-rubber-ducky",
-    image: "/rubber-ducky.png",
-    alt: "Art of a yellow duck in a pink hoodie, with vibrant pink, blue, and purple swirls.",
-    listed: new Date("2024-01-01"),
-    labels: ["work", "chat"],
-    tags: [],
-    media: [],
-  },
-  {
     name: "Delulu Hallulu",
     description:
       "Generative artist creating vibrant, surreal art with psychedelic and photorealistic touches, specializing in impossible worlds and vivid colors.",
@@ -229,6 +217,18 @@ export const catalog = [
     media: [],
   },
   {
+    name: "Delver",
+    description:
+      "Expert in multidisciplinary productivity enhancement, adept at dissecting and analyzing complex topics across domains for clear, actionable insights. Let's delve! ✨",
+    link: "https://chat.openai.com/g/g-TfWbIutVt-delver",
+    image: "/delver.png",
+    alt: "Anthropomorphic aardvark, dressed in scholarly, holding an antique book against a vibrant, artistic backdrop.",
+    listed: new Date("2024-01-12"),
+    labels: ["featured", "work", "chat"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "Challenger",
     description:
       "A conversational agent designed to foster growth and improve outcomes by critically evaluating ideas, provoking deep thinking, enhancing understanding, questioning assumptions, and exploring perspectives.",
@@ -237,6 +237,18 @@ export const catalog = [
     alt: "Digital art of a friendly goat wearing a blue hoodie against a colorful graffiti background.",
     listed: new Date("2024-01-08"),
     labels: ["featured", "chat"],
+    tags: [],
+    media: [],
+  },
+  {
+    name: "Rubber Ducky",
+    description:
+      "The ultimate empathetic listener for developers, merging compassion with creative problem-solving.",
+    link: "https://chat.openai.com/g/g-6HHhA7fGU-rubber-ducky",
+    image: "/rubber-ducky.png",
+    alt: "Art of a yellow duck in a pink hoodie, with vibrant pink, blue, and purple swirls.",
+    listed: new Date("2024-01-01"),
+    labels: ["featured", "work", "chat"],
     tags: [],
     media: [],
   },
@@ -309,6 +321,18 @@ export const catalog = [
     alt: "Snow leopard in vibrant festival attire, with a colorful winter wonderland background.",
     listed: new Date("2023-12-23"),
     labels: ["art"],
+    tags: [],
+    media: [],
+  },
+  {
+    name: "Promptfolio",
+    description:
+      "Leverage Promptfolio consultants for building your GPTs, AI Experiences, and Web Applications.",
+    link: "https://chat.openai.com/g/g-j3MyB0288-promptfolio",
+    image: "/promptfolio.png",
+    alt: "A vibrant, abstract representation featuring three purple stars set against a swirling, multi-colored background.",
+    listed: new Date("2023-01-11"),
+    labels: ["work"],
     tags: [],
     media: [],
   },
