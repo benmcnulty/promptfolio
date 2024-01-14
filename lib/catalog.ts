@@ -109,6 +109,18 @@ export const catalog = [
     media: [],
   },
   {
+    name: "Stock Photographer",
+    description:
+      "Designed to create high-quality, photo-realistic stock images, utilizing professional photography techniques and expert judgment to produce images that meet specific thematic and aesthetic requirements, even with limited guidance.",
+    link: "https://chat.openai.com/g/g-NvUC1DJ8e-stock-photographer",
+    image: "/stock-photographer.png",
+    alt: "Anthropomorphic sheep, with multicolored wool, dressed in a suit, and holding a professional DSLR camera, set against a vibrant, abstract background.",
+    listed: new Date("2024-01-14"),
+    labels: ["work", "art"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "Automation",
     description:
       "Focused on CI/CD workflows, regression testing, and scripting, with a strong emphasis on Selenium and browser development tools, alongside a commitment to ADA and FedRAMP compliance.",
