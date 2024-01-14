@@ -1,6 +1,18 @@
 // lib/catalog.ts
 export const catalog = [
   {
+    name: "Robot Photographer",
+    description:
+      "Crafting striking, photorealistic scenes, this agent merges vivid, anthropomorphic robots and humans in imaginative, HDR-rich environments, blurring reality with creative storytelling.",
+    link: "https://chat.openai.com/g/g-ID1XA2jXX-robot-photographer",
+    image: "/robot-photographer.png",
+    alt: "A metallic blue and gold robot, set against a vibrant, psychedelic background.",
+    listed: new Date("2024-01-14"),
+    labels: ["featured", "art"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "Fluffy Chaos Friends",
     description:
       "Create your own unique Fluffy Chaos Friends and help restore their population in the Cosmic Rainbow Void!",
@@ -248,7 +260,7 @@ export const catalog = [
     image: "/rubber-ducky.png",
     alt: "Art of a yellow duck in a pink hoodie, with vibrant pink, blue, and purple swirls.",
     listed: new Date("2024-01-01"),
-    labels: ["featured", "work", "chat"],
+    labels: ["work", "chat"],
     tags: [],
     media: [],
   },
