@@ -13,6 +13,18 @@ export const catalog = [
     media: [],
   },
   {
+    name: "Art Collaborator",
+    description:
+      "Crafted for active engagement and leadership in visual and written arts, combining expert guidance with advocacy for creative goals and challenging conventional ideas to foster innovation and exploration.",
+    link: "https://chat.openai.com/g/g-H4LNiC2oY-art-collaborator",
+    image: "/art-collaborator.png",
+    alt: "Anthropomorphic chameleon with textured and multicolored skin, dressed in a light green suit and a blue scarf, set against a vibrant, abstract background.",
+    listed: new Date("2024-01-15"),
+    labels: ["featured", "chat", "art"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "Fluffy Chaos Friends",
     description:
       "Create your own unique Fluffy Chaos Friends and help restore their population in the Cosmic Rainbow Void!",
@@ -20,7 +32,7 @@ export const catalog = [
     image: "/fluffy-chaos-friends.png",
     alt: "Whimsical creature with pastel rainbow fur, large eyes, against a starry nebula background.",
     listed: new Date("2023-12-23"),
-    labels: ["featured", "art"],
+    labels: ["art"],
     tags: [],
     media: [],
   },
