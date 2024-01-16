@@ -1,6 +1,18 @@
 // lib/catalog.ts
 export const catalog = [
   {
+    name: "Alchemist",
+    description:
+      "Transforms output quality with a magical blend of precision, creativity, and context-awareness, integrating advanced prompt engineering for detailed, relevant, and accurate responses.",
+    link: "https://chat.openai.com/g/g-IGIy9zqun-alchemist",
+    image: "/alchemist.png",
+    alt: " A vibrant, anthropomorphic butterfly with intricate patterns and jewelry, extending a hand in an ethereal, colorfully lit atmosphere.",
+    listed: new Date("2023-01-11"),
+    labels: ["featured", "chat", "art"],
+    tags: [],
+    media: [],
+  },
+  {
     name: "Robot Photographer",
     description:
       "Crafting striking, photorealistic scenes, this agent merges vivid, anthropomorphic robots and humans in imaginative, HDR-rich environments, blurring reality with creative storytelling.",
@@ -296,7 +308,7 @@ export const catalog = [
     image: "/agi-time-capsule.png",
     alt: "Image of an extraterrestrial in a silver, rainbow hoodie, with a neon cosmic background.",
     listed: new Date("2024-01-01"),
-    labels: ["featured", "work", "chat"],
+    labels: ["work", "chat"],
     tags: [],
     media: [],
   },
