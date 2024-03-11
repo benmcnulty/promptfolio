@@ -7,19 +7,21 @@ import fs from "fs";
 import path from "path";
 import { Metadata } from "next";
 import { FeaturedListings } from "@/components/FeaturedListings";
-
 export const metadata: Metadata = {
   title: "Blog",
   description: "Latest News & Articles on our Custom GPTs & Prompt Engineering",
 };
 
 export default function BlogPage() {
-  const blogDirectory = path.join(process.cwd(), "content/blog");
-  const filenames = fs.readdirSync(blogDirectory);
+  const blogDirectory = path.join(process.cwd(), "app/blog/(content)");
+  const directories = fs
+    .readdirSync(blogDirectory, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
 
-  const posts = filenames.map((filename) => {
-    const slug = filename.replace(/\.mdx$/, "");
-    const title = slug.replace(/-/g, " ").replace(".mdx", "");
+  const posts = directories.map((directoryName) => {
+    const slug = directoryName;
+    const title = slug.replace(/-/g, " ");
     return { slug, title };
   });
 
