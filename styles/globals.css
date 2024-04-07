@@ -357,6 +357,12 @@ h3 {
   filter: drop-shadow(0 0.25rem 0.25rem hsla(0, 0%, 0%, 0.7));
 }
 
+.shadow:hover {
+  box-shadow: none;
+  -webkit-filter: drop-shadow(0 0.15rem 0.15rem hsla(0, 0%, 0%, 0.7));
+  filter: drop-shadow(0 0.15rem 0.15rem hsla(0, 0%, 0%, 0.7));
+}
+
 .shaded {
   box-shadow: none;
   -webkit-filter: drop-shadow(0.15rem 0.15rem 0.15rem hsla(0, 0%, 0%, 0.7));
@@ -481,6 +487,11 @@ a h6 {
   padding-left: 2rem;
   padding-right: 2rem;
   margin: auto;
+}
+
+.blog-post>section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Direct descendant selector adjustments */

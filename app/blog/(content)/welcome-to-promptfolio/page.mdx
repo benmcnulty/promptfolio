@@ -1,8 +1,33 @@
+import { CustomListings } from "@/components/CustomListings";
 export const metadata = {
-  slug: "welcome-to-promptfolio",
   title: "Welcome to Promptfolio",
-  publishDate: "2024-01-01",
-  categories: [],
+  date: "2024-01-01",
+  description:
+    "An introductory post to our new blog, showcasing the basics of what you can expect.",
+  creator: "Ben McNulty",
+  keywords: ["Prompt Engineering", "Generative AI", "GPTs"],
+  openGraph: {
+    title: "Welcome to Promptfolio",
+    description:
+      "An introductory post to our new blog, showcasing the basics of what you can expect.",
+    url: "https://www.promptfolio.dev/blog/welcome-to-promptfolio",
+    siteName: "Promptfolio by Ben McNulty",
+    images: [
+      {
+        url: "https://www.promptfolio.dev/promptfolio.png",
+        width: 800,
+        height: 800,
+      },
+      {
+        url: "https://www.promptfolio.dev/hero.png",
+        width: 1792,
+        height: 1024,
+        alt: "Welcome to Promptfolio by Ben McNulty",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 # Welcome to Promptfolio
@@ -14,6 +39,12 @@ Welcome to _Promptfolio_, a unique platform where the art of AI Prompt Crafting 
 ### What is Prompt Engineering?
 
 Prompt engineering is the craft of designing and refining prompts to interact effectively with language models. It's not just about asking questions; it's about framing them in a way that elicits the most informative, accurate, and relevant responses.
+
+<CustomListings
+  gptNames={["Prompt Engineer", "Prompt Mentor", "Prompt QA"]}
+  headline="We're here to help with your prompt crafting!"
+  backgroundClass="radial-gradient-bg"
+/>
 
 ### Our Approach
 
@@ -33,6 +64,10 @@ On this blog, we will:
 
 Stay tuned for regular updates, and don't hesitate to reach out if you have any questions or need guidance on your prompt engineering journey.
 
----
+<CustomListings
+  gptNames={["Promptfolio", "Management"]}
+  headline="Consult with Promptfolio GPTs to Start Building Now"
+  backgroundClass="blue-gradient-bg"
+/>
 
-_Thank you for joining us at Promptfolio. Let's explore the endless possibilities of AI together!_
+###### _Thank you for joining us at Promptfolio. Let's explore the endless possibilities of AI together!_

@@ -1,6 +1,6 @@
 // component/CustomListings.tsx
 import React from "react";
-import { Persona } from "./Persona";
+import { Persona } from "@/components/Persona";
 import catalog from "@/lib/catalog";
 import CatalogItem from "@/lib/types";
 
@@ -15,11 +15,10 @@ export function CustomListings({
   headline,
   backgroundClass,
 }: CustomListingsProps) {
-  // Directly filter custom catalog items
-  const customCatalog: CatalogItem[] = catalog.filter((item) =>
-    gptNames.includes(item.name)
-  );
-
+  // Sort and filter custom catalog items based on gptNames order
+  const customCatalog: CatalogItem[] = gptNames
+    .map((name) => catalog.find((item) => item.name === name))
+    .filter((item): item is CatalogItem => item !== undefined) as CatalogItem[];
   return (
     <section
       className={`flex flex-col items-center p-4 text-center w-full mx-0 ${backgroundClass}`}
