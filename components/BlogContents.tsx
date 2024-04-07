@@ -9,7 +9,9 @@ export function BlogContents() {
   const posts = blog.map((post) => {
     const slug = post.slug;
     const title = post.title;
-    return { slug, title };
+    const publishDate = post.publishDate;
+    const categories = post.categories;
+    return { slug, title, publishDate, categories };
   });
 
   return (
@@ -18,6 +20,9 @@ export function BlogContents() {
       <ul>
         {posts.map((post) => (
           <li key={post.slug} className="mb-2 text-lg">
+            <p>
+              {post.publishDate} | {post.categories.join(", ")}
+            </p>
             <Button variant="default" asChild className="w-full h-[3rem]">
               <Link href={`/blog/${post.slug}`}>
                 <Sparkle width="12%" className="flip sparkle shaded mx-4" />
