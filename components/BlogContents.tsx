@@ -3,19 +3,12 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
-import fs from "fs";
-import path from "path";
+import { blog } from "@/lib/blog";
 
 export function BlogContents() {
-  const blogDirectory = path.join(process.cwd(), "app/blog/(content)");
-  const directories = fs
-    .readdirSync(blogDirectory, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => dirent.name);
-
-  const posts = directories.map((directoryName) => {
-    const slug = directoryName;
-    const title = slug.replace(/-/g, " ");
+  const posts = blog.map((post) => {
+    const slug = post.slug;
+    const title = post.title;
     return { slug, title };
   });
 
