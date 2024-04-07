@@ -1,6 +1,6 @@
 // component/Listing.tsx
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Persona } from "@/components/Persona";
 import filterCatalog from "@/utils/filterCatalog";
@@ -8,7 +8,7 @@ import catalog from "@/lib/catalog";
 import CatalogItem from "@/lib/types";
 import { LabelToggle } from "./LabelToggle";
 
-export function Listing() {
+function ListingContent() {
   const [filteredCatalog, setFilteredCatalog] =
     useState<CatalogItem[]>(catalog);
   const [heading, setHeading] = useState("Full List of GPTs");
@@ -74,5 +74,13 @@ export function Listing() {
         ))}
       </div>
     </section>
+  );
+}
+
+export function Listing() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ListingContent />
+    </Suspense>
   );
 }
