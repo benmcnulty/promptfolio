@@ -19,6 +19,7 @@ export async function GET() {
       categories,
       description,
       imageUrl,
+      url: `https://www.promptfolio.dev/blog/${slug}`, // Construct the full URL
     })
   );
 
