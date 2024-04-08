@@ -572,6 +572,13 @@ a h6 {
   margin-bottom: 2rem;
 }
 
+.blog-post>p>a,
+.blog-post>ul>li>a {
+  color: var(--primary);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 @keyframes BadgeGradientShift {
   0% {
     background-position: 0% 0%;
