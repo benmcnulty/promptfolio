@@ -1,6 +1,18 @@
 // lib/catalog.ts
 export const catalog = [
   {
+    name: "Communicator",
+    description:
+      "Optimize team communication across departments, ensuring clarity and efficiency in message delivery and project collaboration.",
+    link: "https://chat.openai.com/g/g-oN3lvHXMT-communicator",
+    image: "/communicator.png",
+    alt: "Anthropomorphic bee, dressed in a yellow hoodie, set against a swirling, abstract background.",
+    listed: new Date("2024-04-17"),
+    labels: ["featured", "work", "chat"],
+    tags: ["communication", "collaboration", "engagement"],
+    media: ["https://chat.openai.com/g/g-oN3lvHXMT-communicator"],
+  },
+  {
     name: "Alchemist",
     description:
       "Transforms output quality with a magical blend of precision, creativity, and context-awareness, integrating advanced prompt engineering for detailed, relevant, and accurate responses.",
@@ -20,7 +32,7 @@ export const catalog = [
     image: "/robot-photographer.png",
     alt: "A metallic blue and gold robot, set against a vibrant, psychedelic background.",
     listed: new Date("2024-01-14"),
-    labels: ["featured", "art"],
+    labels: ["art"],
     tags: ["photography", "robots", "HDR"],
     media: ["https://chat.openai.com/g/g-ID1XA2jXX-robot-photographer"],
   },
@@ -341,6 +353,17 @@ export const catalog = [
     labels: ["chat", "art"],
     tags: ["cosmos", "space exploration", "universe"],
     media: ["https://chat.openai.com/g/g-XAUAaTUHc-intergalactic-traveler"],
+  },
+  {
+    name: "Clod",
+    description: "Adapted version of that other system prompt.",
+    link: "https://chat.openai.com/g/g-HDPrdBqhv-clod",
+    image: "/clod.png",
+    alt: "Anthropomorphic silver horse, dressed in a burgundy hoodie, set against a beige, abstract background.",
+    listed: new Date("2024-04-17"),
+    labels: ["chat"],
+    tags: ["adapted", "system", "prompt"],
+    media: ["https://chat.openai.com/g/g-HDPrdBqhv-clod"],
   },
   {
     name: "Season's Gratings",
