@@ -16,7 +16,16 @@ export const blog = [
     categories: ["empathy", "software development"],
     description:
       "A discussion on the importance of empathy in software development and how it can improve your work.",
-    imageUrl: "/promptfolio.png",
+    imageUrl: "/management.png",
+  },
+  {
+    slug: "introducing-communicator",
+    title: "Introducing Communicator",
+    publishDate: "2024-04-17",
+    categories: ["communication", "collaboration"],
+    description:
+      "Explore the capabilities of Communicator in enhancing communication across diverse teams, promoting better collaboration, and improving project outcomes with AI-driven strategies.",
+    imageUrl: "/communicator.png",
   },
 ];
 
