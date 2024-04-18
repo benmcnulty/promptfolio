@@ -24,7 +24,7 @@ export const blog = [
     publishDate: "2024-04-17",
     categories: ["communication", "collaboration"],
     description:
-      "Explore the capabilities of Communicator in enhancing communication across diverse teams, promoting better collaboration, and improving project outcomes with AI-driven strategies.",
+      "Discover how Communicator transforms interdepartmental communications by fostering clear, empathic, and efficient interactions across diverse teams.",
     imageUrl: "/communicator.png",
   },
 ];
