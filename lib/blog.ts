@@ -27,6 +27,15 @@ export const blog = [
       "Discover how Communicator transforms interdepartmental communications by fostering clear, empathic, and efficient interactions across diverse teams.",
     imageUrl: "/communicator.png",
   },
+  {
+    slug: "ai-at-work",
+    title: "AI at Work",
+    publishDate: "2024-05-01",
+    categories: ["ai", "automation"],
+    description:
+      "Learn how AI is transforming the workplace and how you can leverage it to improve your productivity.",
+    imageUrl: "/ai-collaborator.png",
+  },
 ];
 
 export default blog;
