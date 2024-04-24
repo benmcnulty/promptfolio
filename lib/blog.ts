@@ -28,9 +28,9 @@ export const blog = [
     imageUrl: "/communicator.png",
   },
   {
-    slug: "ai-at-work",
-    title: "AI at Work",
-    publishDate: "2024-05-01",
+    slug: "inviting-ai-to-work",
+    title: "Inviting AI to Work",
+    publishDate: "2024-04-24",
     categories: ["ai", "automation"],
     description:
       "Learn how AI is transforming the workplace and how you can leverage it to improve your productivity.",
