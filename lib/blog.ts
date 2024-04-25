@@ -31,7 +31,7 @@ export const blog = [
     slug: "inviting-ai-to-work",
     title: "Inviting AI to Work",
     publishDate: "2024-04-24",
-    categories: ["ai", "automation"],
+    categories: ["ai", "collaboration"],
     description:
       "Explore the transformative role of AI in the workplace, enhancing productivity, fostering innovation, and emphasizing ethical usage and continuous learning.",
     imageUrl: "/ai-collaborator.png",
