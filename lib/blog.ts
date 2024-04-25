@@ -33,7 +33,7 @@ export const blog = [
     publishDate: "2024-04-24",
     categories: ["ai", "automation"],
     description:
-      "Learn how AI is transforming the workplace and how you can leverage it to improve your productivity.",
+      "Explore the transformative role of AI in the workplace, enhancing productivity, fostering innovation, and emphasizing ethical usage and continuous learning.",
     imageUrl: "/ai-collaborator.png",
   },
 ];
