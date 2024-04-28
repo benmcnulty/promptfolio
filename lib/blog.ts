@@ -36,6 +36,15 @@ export const blog = [
       "Explore the transformative role of AI in the workplace, enhancing productivity, fostering innovation, and emphasizing ethical usage and continuous learning.",
     imageUrl: "/ai-collaborator.png",
   },
+  {
+    slug: "why-ben",
+    title: "Why Ben?",
+    publishDate: "2024-04-27",
+    categories: ["ben", "about"],
+    description:
+      "Meet Ben McNulty, a seasoned software application developer specializing in AI prompt engineering and interaction design, utilizing a profound understanding of language to innovate conversational interfaces that enhance human experiences.",
+    imageUrl: "/prompt-engineer.png",
+  },
 ];
 
 export default blog;

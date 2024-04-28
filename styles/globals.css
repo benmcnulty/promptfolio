@@ -555,6 +555,15 @@ a h6 {
   margin-bottom: 0.5rem;
 }
 
+.blog-post>ul {
+  padding-left: 4rem;
+}
+
+.blog-post>ul>li {
+  list-style-type: disc;
+  padding-left: 0.5rem;
+}
+
 .blog-post>blockquote {
   margin-left: 0;
   margin-right: 0;
