@@ -45,6 +45,15 @@ export const blog = [
       "Meet Ben McNulty, a seasoned software application developer specializing in AI prompt engineering and interaction design, utilizing a profound understanding of language to innovate conversational interfaces that enhance human experiences.",
     imageUrl: "/prompt-engineer.png",
   },
+  {
+    slug: "the-human-element-in-ai-development",
+    title: "The Human Element in AI Development",
+    publishDate: "2024-04-28",
+    categories: ["ai", "human element"],
+    description:
+      "Discover how essential human qualities like empathy, effective communication, and ethical leadership significantly influence AI development. This article discusses the integration of core engineering principles and the impact of thoughtful human interaction on the advancement of AI technology.",
+    imageUrl: "/black-cat.png",
+  },
 ];
 
 export default blog;
