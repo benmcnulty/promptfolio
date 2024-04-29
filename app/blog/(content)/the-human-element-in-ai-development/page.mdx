@@ -1,8 +1,14 @@
+import { CustomListings } from "@/components/CustomListings";
+import { blog } from "@/lib/blog";
+
+export const postMetadata = blog.find(
+  (post) => post.slug === "the-human-element-in-ai-development"
+);
+
 export const metadata = {
-  title: "The Human Element in AI Development",
-  date: "2024-04-28",
-  description:
-    "Discover how essential human qualities like empathy, effective communication, and ethical leadership significantly influence AI development. This article discusses the integration of core engineering principles and the impact of thoughtful human interaction on the advancement of AI technology.",
+  title: postMetadata.title,
+  date: postMetadata.publishDate,
+  description: postMetadata.description,
   creator: "Ben McNulty",
   keywords: [
     "AI development",
@@ -13,14 +19,13 @@ export const metadata = {
     "leadership in AI development",
   ],
   openGraph: {
-    title: "Why Ben?",
-    description:
-      "Discover how essential human qualities like empathy, effective communication, and ethical leadership significantly influence AI development. This article discusses the integration of core engineering principles and the impact of thoughtful human interaction on the advancement of AI technology.",
-    url: "https://www.promptfolio.dev/blog/the-human-element-in-ai-development",
+    title: postMetadata.title,
+    description: postMetadata.description,
+    url: `https://www.promptfolio.dev/blog/${postMetadata.slug}`,
     siteName: "Promptfolio by Ben McNulty",
     images: [
       {
-        url: "https://www.promptfolio.dev/black-cat.png",
+        url: `https://www.promptfolio.dev${postMetadata.imageUrl}`,
         width: 1024,
         height: 1024,
       },
@@ -36,7 +41,7 @@ export const metadata = {
   },
 };
 
-## The Human Element in AI Development
+## {postMetadata.title}
 
 As a professional software engineer with a solid foundation in technical writing, I apply core engineering principles and effective communication strategies to AI application development. These skills fuel my curiosity and guide my creation of sophisticated interactions within large language model frameworks. I am deeply fascinated by how we interface with the vast and varied reservoir of human knowledge, requiring multiple interfaces and perspectives for effective interaction. As this knowledge expands and diversifies, AI applications that integrate with these processes must also evolve, continuously pushing the boundaries of what technology can achieve in synchronizing with our collective intellect.
 
@@ -50,7 +55,7 @@ A well-defined scope and clearly articulated context are crucial for productive 
 
 Language is a fundamental mechanism for expressing and refining ideas, necessitating continual refinement across creative, expository, and technical domains. In AI communications, unambiguous language does not merely facilitate interaction but also accentuates the variability in outcomes from inadequate communication, underscoring the importance of well-defined scopes and contexts to achieve clearly established expectations.
 
-For instance, in a recent project where AI was used to streamline customer service operations, the implementation of precise communication standards significantly reduced response times and improved customer satisfaction rates. By clearly defining the AI’s response protocols and ensuring context-aware responses, the system could manage a wide array of inquiries with high accuracy, demonstrating the practical benefits of well-crafted communication in real-world AI applications.
+For instance, in a recent project where AI was used to streamline customer service operations, the implementation of precise communication standards significantly reduced response times and improved customer satisfaction rates. By clearly defining the AI's response protocols and ensuring context-aware responses, the system could manage a wide array of inquiries with high accuracy, demonstrating the practical benefits of well-crafted communication in real-world AI applications.
 
 ### Human-Computer Interaction and AI
 
@@ -58,7 +63,7 @@ My experience with human-computer interaction has taught me that humans introduc
 
 This ongoing development has led to a significant shift in how we access information: Conversational access through LLM connected chat interfaces marks a reversal in the established course of abstraction. Whereas people have historically had to translate their ideas into languages more easily interpreted by computers, now computers can interpret human ideas directly from our natural language. This direct approach not only streamlines access but also enhances the efficiency of our communications with AI.
 
-Enhanced human-computer interfaces have directly contributed to improved communication efficiencies. By reducing the complexity typically associated with traditional interfaces, AI systems can now offer more intuitive and user-friendly experiences. This simplification allows users from various technical backgrounds to interact more effectively with AI, broadening the technology’s accessibility and increasing its potential impact across different sectors.
+Enhanced human-computer interfaces have directly contributed to improved communication efficiencies. By reducing the complexity typically associated with traditional interfaces, AI systems can now offer more intuitive and user-friendly experiences. This simplification allows users from various technical backgrounds to interact more effectively with AI, broadening the technology's accessibility and increasing its potential impact across different sectors.
 
 To ensure these systems are dependable and yield reproducible results, it is essential to adhere to established standards and best practices, particularly in probabilistic language calculations. Developing and following rigorous guidelines helps mitigate the inherent unpredictability introduced by human factors and probabilistic models, enabling more consistent and dependable AI-driven interactions. This commitment to standards fosters an environment where technological advancements can be both innovative and trustworthy.
 
@@ -88,8 +93,14 @@ Embracing continuous learning and improvement as a lifestyle choice has proven t
 
 The interaction with AI as a collaborative partner offers unique benefits that extend beyond traditional human-to-human exchanges. AI's advanced capacity for patience and its non-judgmental, thoughtful consideration of complex ideas make it an ideal partner in the exploration of new territories. Unlike human counterparts, AI has no competing expectations to fulfill and is available around the clock, providing consistency that is often challenging to achieve in human collaborations.
 
-Articulating ideas through a chat interface with AI compels humans to construct word-based mental models of their concepts. This process, akin to 'rubber duck debugging' in software development, where developers explain their code line-by-line to an inanimate rubber duck, helps in clarifying thoughts and uncovering hidden complexities. Engaging with AI in this manner does not just facilitate the resolution of technical problems but also enhances the individual’s understanding of their own ideas, leading to more nuanced insights.
+Articulating ideas through a chat interface with AI compels humans to construct word-based mental models of their concepts. This process, akin to 'rubber duck debugging' in software development, where developers explain their code line-by-line to an inanimate rubber duck, helps in clarifying thoughts and uncovering hidden complexities. Engaging with AI in this manner does not just facilitate the resolution of technical problems but also enhances the individual's understanding of their own ideas, leading to more nuanced insights.
 
 In AI-driven interactions, there is a profound opportunity to leverage the AI's capabilities to foster empathy and promote effective decision-making. When guided with instructions weighing language calculations toward connotations of kindness and patience, AI influences outputs towards empathy and thoughtfulness. This approach not only improves the quality of interactions but also sets a standard for how we understand and implement AI solutions. Effective communication with AI relies on a shared understanding of expectations and context, highlighting the importance of clearly defined objectives and the acknowledgment of unobserved factors.
 
 Just as we benefit from promoting open and empathetic communication among humans, extending this practice to our interactions with AI can lead to healthier, more productive conversations. The unique capabilities of AI in handling complex deliberations without bias and its constant availability redefine collaborative dynamics and enhance decision-making processes. This refined interaction model not only advances personal and professional development but also pushes the boundaries of what can be achieved through collaborative AI, setting new benchmarks for innovation and efficiency in AI application development.
+
+<CustomListings
+  gptNames={["Communicator", "Challenger", "Rubber Ducky", "AI Collaborator"]}
+  headline="Enhance your decision-making processes with AI!"
+  backgroundClass="radial-gradient-bg"
+/>
