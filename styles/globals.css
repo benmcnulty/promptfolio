@@ -627,3 +627,16 @@ a h6 {
   height: 0;
   position: absolute;
 }
+
+/* Hide horizontal scrollbar for the carousel only */
+.my-carousel::-webkit-scrollbar {
+  display: none;
+  /* For Webkit browsers */
+}
+
+.my-carousel {
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For IE and Edge */
+}
