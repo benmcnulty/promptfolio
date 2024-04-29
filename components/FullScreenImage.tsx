@@ -7,7 +7,7 @@ import Image from "next/image";
 interface FullScreenImageProps {
   src: string;
   alt: string;
-  width: number; // Consider if these need to be here since they're no longer directly used
+  width: number;
   height: number;
 }
 
@@ -19,8 +19,17 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
 }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
 
-  const toggleFullScreen = () => {
-    setIsFullScreen(!isFullScreen);
+  // Toggle FullScreen on by clicking the image itself
+  const handleImageClick = () => {
+    setIsFullScreen(true);
+  };
+
+  // Toggle FullScreen off by clicking the overlay but not the image
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (isFullScreen) {
+      e.stopPropagation(); // Prevent the click from affecting the inner image click
+      setIsFullScreen(false);
+    }
   };
 
   return (
@@ -30,7 +39,7 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
           ? "fixed inset-0 bg-black bg-opacity-90 z-50 flex justify-center items-center overflow-hidden cursor-pointer"
           : "relative flex justify-center items-center"
       }`}
-      onClick={toggleFullScreen}
+      onClick={handleOverlayClick} // Set the overlay click to handle fullscreen off
       style={{
         width: "100%",
         height: "100%",
@@ -39,12 +48,12 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
         overflow: isFullScreen ? "hidden" : "visible",
       }}
     >
-      <div style={{ cursor: "pointer" }}>
+      <div style={{ cursor: "pointer" }} onClick={handleImageClick}>
         {isFullScreen ? (
           <Image
             src={src}
             alt={alt}
-            fill
+            fill // Using fill to ensure the image can cover the container in full-screen
             className="object-contain cursor-pointer"
             style={{
               objectFit: "contain",
