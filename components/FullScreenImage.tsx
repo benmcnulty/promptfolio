@@ -7,7 +7,7 @@ import Image from "next/image";
 interface FullScreenImageProps {
   src: string;
   alt: string;
-  width: number;
+  width: number; // Consider if these need to be here since they're no longer directly used
   height: number;
 }
 
@@ -40,20 +40,28 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
       }}
     >
       <div style={{ cursor: "pointer" }}>
-        <Image
-          src={src}
-          alt={alt}
-          width={isFullScreen ? undefined : width}
-          height={isFullScreen ? undefined : height}
-          layout={isFullScreen ? "fill" : "intrinsic"}
-          className={`${isFullScreen ? "object-contain" : ""}`}
-          style={{
-            objectFit: isFullScreen ? "contain" : "cover",
-            width: isFullScreen ? "100%" : undefined,
-            height: isFullScreen ? "100%" : undefined,
-            cursor: "pointer",
-          }}
-        />
+        {isFullScreen ? (
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-contain cursor-pointer"
+            style={{
+              objectFit: "contain",
+            }}
+          />
+        ) : (
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            className="cursor-pointer"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        )}
       </div>
     </div>
   );
