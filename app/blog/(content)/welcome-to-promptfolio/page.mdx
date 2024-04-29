@@ -1,5 +1,6 @@
 import { CustomListings } from "@/components/CustomListings";
 import { blog } from "@/lib/blog";
+import FullScreenImage from "@/components/FullScreenImage";
 
 export const postMetadata = blog.find(
   (post) => post.slug === "welcome-to-promptfolio"
@@ -35,6 +36,13 @@ export const metadata = {
 };
 
 ## {postMetadata.title}
+
+<FullScreenImage
+  src="/hero.png"
+  alt="Descriptive Alt Text"
+  width={600}
+  height={400}
+/>
 
 ### Discover the Journey of Advanced Prompt Engineering
 
