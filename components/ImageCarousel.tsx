@@ -37,7 +37,6 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 
   useEffect(() => {
     checkScroll();
-    // Set up event listener for scroll events
     const div = carouselRef.current;
     div?.addEventListener("scroll", checkScroll);
 
@@ -51,10 +50,25 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       {canScrollLeft && (
         <button
           onClick={scrollLeft}
-          className="absolute left-0 z-10 p-2 text-lg md:text-xl"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
           aria-label="Scroll left"
+          style={{
+            width: "48px",
+            height: "48px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          ◀
+          <svg
+            viewBox="0 0 12 24"
+            fill="none"
+            stroke="currentColor"
+            className="w-6 h-full"
+            strokeWidth="4"
+          >
+            <path d="M11 23L1 12 11 1" />
+          </svg>
         </button>
       )}
       <div
@@ -79,10 +93,25 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       {canScrollRight && (
         <button
           onClick={scrollRight}
-          className="absolute right-0 z-10 p-2 text-lg md:text-xl"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
           aria-label="Scroll right"
+          style={{
+            width: "48px",
+            height: "48px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          ▶
+          <svg
+            viewBox="0 0 12 24"
+            fill="none"
+            stroke="currentColor"
+            className="w-6 h-full"
+            strokeWidth="4"
+          >
+            <path d="M1 1l10 11L1 23" />
+          </svg>
         </button>
       )}
     </div>
