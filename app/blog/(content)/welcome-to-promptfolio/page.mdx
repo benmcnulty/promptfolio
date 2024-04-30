@@ -4,9 +4,50 @@ import FullScreenImage from "@/components/FullScreenImage";
 import ImageCarousel from "@/components/ImageCarousel";
 
 export const images = [
-  { src: "/hero.png", alt: "Image 1" },
-  { src: "/brainstormer.png", alt: "Image 2" },
-  { src: "/hero.png", alt: "Image 3" },
+  {
+    src: "/hero.png",
+    alt: "Image 1",
+    caption: "Caption 1",
+    credit: "Credit 1",
+  },
+  {
+    src: "/brainstormer.png",
+    alt: "Image 2",
+    caption: "Caption 2",
+    credit: "Credit 2",
+  },
+  {
+    src: "/hero.png",
+    alt: "Image 3",
+  },
+];
+
+export const images2 = [
+  {
+    src: "/prompt-engineer.png",
+    alt: "Image 1",
+  },
+  {
+    src: "/hero.png",
+    alt: "Image 2",
+    caption: "Caption 2",
+    credit: "Credit 2",
+  },
+  {
+    src: "/hero.png",
+    alt: "Image 2",
+    caption: "Caption 2",
+  },
+  {
+    src: "/black-cat.png",
+    alt: "Image 2",
+    caption: "Caption 2",
+    credit: "Credit 2",
+  },
+  {
+    src: "/ai-collaborator.png",
+    alt: "Image 3",
+  },
 ];
 
 export const postMetadata = blog.find(
@@ -49,9 +90,22 @@ export const metadata = {
   alt="Descriptive Alt Text"
   width={600}
   height={400}
+  caption="Caption for the image"
+  credit="By Ben McNulty"
 />
 
 <ImageCarousel images={images} />
+
+<FullScreenImage
+  src="/black-cat.png"
+  alt="Descriptive Alt Text"
+  width={600}
+  height={600}
+  caption="This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. "
+  credit="By Ben McNulty"
+/>
+
+<ImageCarousel images={images2} />
 
 ### Discover the Journey of Advanced Prompt Engineering
 

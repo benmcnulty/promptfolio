@@ -5,6 +5,8 @@ import FullScreenImage from "./FullScreenImage";
 interface ImageData {
   src: string;
   alt: string;
+  caption?: string;
+  credit?: string;
 }
 
 interface ImageCarouselProps {
@@ -50,11 +52,11 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       {canScrollLeft && (
         <button
           onClick={scrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
           aria-label="Scroll left"
           style={{
-            width: "48px",
-            height: "48px",
+            width: "3rem",
+            height: "3rem",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -73,7 +75,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       )}
       <div
         ref={carouselRef}
-        className="flex overflow-x-auto snap-x snap-mandatory p-4 gap-4 my-carousel"
+        className="flex overflow-x-auto snap-x snap-mandatory gap-4 my-carousel"
         onScroll={checkScroll}
       >
         {images.map((image, index) => (
@@ -86,6 +88,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
               alt={image.alt}
               width={500}
               height={300}
+              caption={image.caption}
+              credit={image.credit}
             />
           </div>
         ))}
@@ -93,11 +97,11 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       {canScrollRight && (
         <button
           onClick={scrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
           aria-label="Scroll right"
           style={{
-            width: "48px",
-            height: "48px",
+            width: "3rem",
+            height: "3rem",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
