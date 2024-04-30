@@ -52,7 +52,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       {canScrollLeft && (
         <button
           onClick={scrollLeft}
-          className="controller absolute left-10 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
+          className="controller absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
           aria-label="Scroll left"
           style={{
             width: "48px",
@@ -81,7 +81,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="snap-center shrink-0 flex-none w-80 md:w-96 h-auto"
+            className="snap-center shrink-0 flex-none w-full sm:w-80 h-auto"
           >
             <FullScreenImage
               src={image.src}
@@ -97,7 +97,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       {canScrollRight && (
         <button
           onClick={scrollRight}
-          className="controller absolute right-10 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
+          className="controller absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
           aria-label="Scroll right"
           style={{
             width: "48px",
