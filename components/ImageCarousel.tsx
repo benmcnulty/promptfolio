@@ -48,7 +48,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative w-full pt-2 pb-2">
       {canScrollLeft && (
         <button
           onClick={scrollLeft}
@@ -87,7 +87,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
               src={image.src}
               alt={image.alt}
               width={500}
-              height={300}
+              height={500}
               caption={image.caption}
               credit={image.credit}
             />
