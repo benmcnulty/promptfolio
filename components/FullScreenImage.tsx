@@ -19,7 +19,7 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
   width,
   height,
   caption,
-  credit = "Default Credit",
+  credit = "Created by Ben McNulty with DALL·E",
 }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
 
@@ -38,8 +38,8 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
     <div
       className={`${
         isFullScreen
-          ? "fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col justify-center items-center overflow-hidden cursor-pointer"
-          : "relative flex justify-center items-center flex-col"
+          ? "fullscreen image fixed inset-0 z-50 flex flex-col justify-center items-center overflow-hidden cursor-pointer blurry"
+          : "image relative flex justify-center items-center flex-col"
       }`}
       onClick={handleOverlayClick}
       style={{
@@ -53,7 +53,7 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
       {isFullScreen && (
         <button
           onClick={handleOverlayClick}
-          className="absolute top-4 right-4 z-50 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
+          className="controller absolute top-4 right-4 z-50 p-2 rounded-full"
           aria-label="Close fullscreen"
           style={{
             width: "3rem",
@@ -107,8 +107,8 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
         <div
           className={
             isFullScreen
-              ? "absolute top-4 left-4 bg-white text-black p-1"
-              : "absolute bottom-0 right-0 bg-white text-black p-1"
+              ? "credit absolute top-4 left-4 bg-white text-black p-1"
+              : "credit absolute bottom-1 right-1 bg-white text-black p-1"
           }
         >
           {credit}
@@ -118,8 +118,8 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
         <div
           className={`${
             isFullScreen
-              ? "absolute bottom-4 text-center bg-white text-black p-1"
-              : "text-center bg-white text-black p-1"
+              ? "caption absolute bottom-4 text-center bg-white text-black p-1"
+              : "caption text-center bg-white text-black p-1 mt-2"
           }`}
         >
           {caption}

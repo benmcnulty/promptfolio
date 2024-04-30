@@ -48,11 +48,11 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   }, []);
 
   return (
-    <div className="relative w-full pt-2 pb-2">
+    <div className="relative w-full pt-4 pb-4">
       {canScrollLeft && (
         <button
           onClick={scrollLeft}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
+          className="controller absolute left-10 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
           aria-label="Scroll left"
           style={{
             width: "48px",
@@ -75,7 +75,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       )}
       <div
         ref={carouselRef}
-        className="flex overflow-x-auto snap-x snap-mandatory my-carousel w-full gap-2"
+        className="flex overflow-x-auto snap-x snap-mandatory my-carousel w-full gap-4"
         onScroll={checkScroll}
       >
         {images.map((image, index) => (
@@ -97,7 +97,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       {canScrollRight && (
         <button
           onClick={scrollRight}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
+          className="controller absolute right-10 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
           aria-label="Scroll right"
           style={{
             width: "48px",
