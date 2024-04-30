@@ -517,23 +517,23 @@ a h6 {
 }
 
 .blog-post>h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 .blog-post>h3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 .blog-post>h4 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 .blog-post>h5 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .blog-post>h6 {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .blog-post>p {
@@ -681,8 +681,6 @@ a h6 {
   border-radius: 0.25rem;
 }
 
-.dark .my-carousel .image img {}
-
 button.controller {
   -webkit-backdrop-filter: blur(0.1rem);
   backdrop-filter: blur(0.1rem);
@@ -793,4 +791,38 @@ button.controller:hover {
     0.05rem 0.05rem 0.1rem hsla(0, 0%, 0%, 0.2),
     -0.05rem -0.05rem 0.1rem hsla(0, 0%, 100%, 0.2);
 
+}
+
+.blog-post>p,
+.blog-post>ul>li,
+.blog-post>ol>li {
+  text-shadow:
+    -0.02rem -0.02rem 0.05rem hsla(0, 0%, 0%, 0.4),
+    0.02rem 0.02rem 0.05rem hsla(0, 0%, 100%, 0.2);
+}
+
+.dark .blog-post>p,
+.dark .blog-post>ul>li,
+.dark .blog-post>ol>li {
+  text-shadow:
+    0.02rem 0.02rem 0.05rem hsla(0, 0%, 0%, 0.2),
+    -0.02rem -0.02rem 0.05rem hsla(0, 0%, 100%, 0.4);
+}
+
+.blog-post>h3,
+.blog-post>h4,
+.blog-post>h5,
+.blog-post>h6 {
+  text-shadow:
+    -0.05rem -0.05rem 0.1rem hsla(0, 0%, 0%, 0.2),
+    0.05rem 0.05rem 0.1rem hsla(0, 0%, 100%, 0.2);
+}
+
+.dark .blog-post>h3,
+.dark .blog-post>h4,
+.dark .blog-post>h5,
+.dark .blog-post>h6 {
+  text-shadow:
+    0.05rem 0.05rem 0.1rem hsla(0, 0%, 0%, 0.2),
+    -0.05rem -0.05rem 0.1rem hsla(0, 0%, 100%, 0.4);
 }
