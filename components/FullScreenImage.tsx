@@ -19,7 +19,7 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
   width,
   height,
   caption,
-  credit = "Created by Ben McNulty with DALL·E",
+  credit = "Created with DALL·E by Ben McNulty",
 }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
 

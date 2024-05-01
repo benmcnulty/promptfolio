@@ -716,7 +716,7 @@ button.controller:hover {
 }
 
 .caption {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-align: center;
   -webkit-backdrop-filter: blur(0.2rem);
   backdrop-filter: blur(0.2rem);
@@ -731,7 +731,7 @@ button.controller:hover {
 }
 
 .fullscreen .caption {
-  font-size: 0.75rem;
+  font-size: 1rem;
   padding: 0.5rem 1rem;
   margin: 0 2rem;
   max-width: 60rem;
