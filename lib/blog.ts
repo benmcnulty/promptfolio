@@ -4,7 +4,7 @@ export const blog = [
     slug: "welcome-to-promptfolio",
     title: "Welcome to Promptfolio",
     publishDate: "2024-01-01",
-    categories: ["welcome", "promptfolio"],
+    categories: ["communication", "collaboration"],
     description:
       "An introductory post to our new blog, showcasing the basics of what you can expect.",
     imageUrl: "/promptfolio.png",
@@ -16,7 +16,7 @@ export const blog = [
     categories: ["empathy", "software development"],
     description:
       "A discussion on the importance of empathy in software development and how it can improve your work.",
-    imageUrl: "/management.png",
+    imageUrl: "/why-ben/understanding.png",
   },
   {
     slug: "introducing-communicator",
@@ -40,16 +40,16 @@ export const blog = [
     slug: "why-ben",
     title: "Why Ben?",
     publishDate: "2024-04-27",
-    categories: ["ben", "about"],
+    categories: ["communication", "collaboration"],
     description:
       "Meet Ben McNulty, a seasoned software application developer specializing in AI prompt engineering and interaction design, utilizing a profound understanding of language to innovate conversational interfaces that enhance human experiences.",
-    imageUrl: "/prompt-engineer.png",
+    imageUrl: "/why-ben/experience.png",
   },
   {
     slug: "the-human-element-in-ai-development",
     title: "The Human Element in AI Development",
     publishDate: "2024-04-28",
-    categories: ["ai", "human element"],
+    categories: ["ai", "collaboration"],
     description:
       "Discover how essential human qualities like empathy, effective communication, and ethical leadership significantly influence AI development. This article discusses the integration of core engineering principles and the impact of thoughtful human interaction on the advancement of AI technology.",
     imageUrl: "/black-cat.png",

@@ -1,50 +1,6 @@
 import { CustomListings } from "@/components/CustomListings";
 import { blog } from "@/lib/blog";
 import FullScreenImage from "@/components/FullScreenImage";
-import ImageCarousel from "@/components/ImageCarousel";
-
-export const images = [
-  {
-    src: "/hero.png",
-    alt: "Image 1",
-    caption: "Caption 1",
-  },
-  {
-    src: "/brainstormer.png",
-    alt: "Image 2",
-    caption: "Caption 2",
-  },
-  {
-    src: "/hero.png",
-    alt: "Image 3",
-  },
-];
-
-export const images2 = [
-  {
-    src: "/prompt-engineer.png",
-    alt: "Image 1",
-  },
-  {
-    src: "/hero.png",
-    alt: "Image 2",
-    caption: "Caption 2",
-  },
-  {
-    src: "/hero.png",
-    alt: "Image 2",
-    caption: "Caption 2",
-  },
-  {
-    src: "/black-cat.png",
-    alt: "Image 2",
-    caption: "Caption 2",
-  },
-  {
-    src: "/ai-collaborator.png",
-    alt: "Image 3",
-  },
-];
 
 export const postMetadata = blog.find(
   (post) => post.slug === "welcome-to-promptfolio"
@@ -82,24 +38,12 @@ export const metadata = {
 ## {postMetadata.title}
 
 <FullScreenImage
-  src="/hero.png"
-  alt="Descriptive Alt Text"
-  width={600}
-  height={400}
-  caption="Caption for the image"
+  src="/brainstormer.png"
+  alt="Digital art of a cat with a rainbow mane and green hoodie, set against a psychedelic background."
+  width={512}
+  height={512}
+  caption="Creating the profile image of Brainstormer and our first conversation during testing are two of my most joyous moments inspired by generative AI outputs. I had to share them with the world."
 />
-
-<ImageCarousel images={images} />
-
-<FullScreenImage
-  src="/black-cat.png"
-  alt="Descriptive Alt Text"
-  width={600}
-  height={600}
-  caption="This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. "
-/>
-
-<ImageCarousel images={images2} />
 
 ### Discover the Journey of Advanced Prompt Engineering
 
