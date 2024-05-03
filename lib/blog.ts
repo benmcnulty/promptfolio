@@ -54,6 +54,15 @@ export const blog = [
       "Discover how essential human qualities like empathy, effective communication, and ethical leadership significantly influence AI development. This article discusses the integration of core engineering principles and the impact of thoughtful human interaction on the advancement of AI technology.",
     imageUrl: "/black-cat.png",
   },
+  {
+    slug: "pair-programming-with-ai",
+    title: "Pair Programming with AI",
+    publishDate: "2024-05-03",
+    categories: ["ai", "collaboration"],
+    description:
+      "Explore the transformative impact of AI on software development through a personal journey of pair programming. Discover how AI tools like GitHub Copilot and ChatGPT enhance coding efficiency, creativity, and collaboration, offering insights into the future of human-AI partnerships in tech.",
+    imageUrl: "/web-app-prototyper.png",
+  },
 ];
 
 export default blog;

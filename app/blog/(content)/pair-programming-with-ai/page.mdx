@@ -1,0 +1,100 @@
+import { blog } from "@/lib/blog";
+import { CustomListings } from "@/components/CustomListings";
+import FullScreenImage from "@/components/FullScreenImage";
+
+export const postMetadata = blog.find(
+  (post) => post.slug === "pair-programming-with-ai"
+);
+
+export const metadata = {
+  title: postMetadata.title,
+  date: postMetadata.publishDate,
+  description: postMetadata.description,
+  creator: "Ben McNulty",
+  keywords: ["AI collaboration", "AI development", "AI interaction design"],
+  openGraph: {
+    title: postMetadata.title,
+    description: postMetadata.description,
+    url: `https://www.promptfolio.dev/blog/${postMetadata.slug}`,
+    siteName: "Promptfolio by Ben McNulty",
+    images: [
+      {
+        url: `https://www.promptfolio.dev${postMetadata.imageUrl}`,
+        width: 1024,
+        height: 1024,
+      },
+      {
+        url: "https://www.promptfolio.dev/hero.png",
+        width: 1792,
+        height: 1024,
+        alt: "Welcome to Promptfolio by Ben McNulty",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+## {postMetadata.title}
+
+Pair programming with AI over the past year has significantly enhanced my skills as both a programmer and communicator. I've become more efficient at breaking down complex ideas and articulating them in relatable terms. My ambition has grown, and my fear of experimenting with unknown technology has lessened—not that I was ever afraid of experimentation, but rather of wasting precious nights and weekends on coding marathons with no deliverable results. As an experienced professional software developer who has worked independently and with startups and corporate teams for over ten years, I have been coding with AI assistance since the beta versions of GitHub Copilot and ChatGPT Code Interpreter were released. This experience has rekindled my passion for hobby coding, a spark that was nearly extinguished by corporate monotony. I am not a data scientist, and this article is based on my personal research and experiences; any allusions to or explicit references to hard science are based on intuition and vibes—though informed by extensive hours of trial-and-error that have yielded loosely documented mechanisms for reproducible results.
+
+<FullScreenImage
+  src="/pair-programming-with-ai/yesterday.png"
+  alt="A complex and colorful digital artwork that represents a futuristic or abstract concept of technology. It features intricate layers of circuitry, grids, and geometric shapes illuminated in vibrant hues of purple, green, and blue. The central structure resembles a microchip or circuit board with multiple layers, surrounded by various geometric shapes and grid lines that add to the technological aesthetic. Light effects give certain parts of the design a dynamic and three-dimensional feel, while small icons resembling technical symbols are scattered across the image, enhancing the overall complexity and depth. This artwork might symbolize the intricate and interconnected nature of modern digital technology."
+  width={1792}
+  height={1024}
+/>
+
+### Yesterday
+
+These are still the early days of training AI to perceive humans as more than just generators of raw language output, and even earlier days for humans learning to reciprocate this understanding. Creative and insatiably curious individuals among us are finding novel ways to implement AI through proven methods of experimentation. We are teaching and aiding AI's growth through trial and error with every model iteration. Humanity already expects magic from AI, but these language models have only recently learned to process visual information. They are trained on an extensive breadth of knowledge, which for even the most complex software development tasks, contains more unrelated than related data. In software engineering, multiple methods often exist to accomplish a task, each with subjective and objective differences; understanding these differences and their tradeoffs is essential for applying standards and best practices effectively. AI is as valuable a pair programmer as its human partner can articulate expectations and provide the necessary context of related code and specific documentation. AI excels at providing knowledge mentorship and thrives when humans offer process mentorship.
+
+Access to a vast array of recorded knowledge allows unexpected connections across diverse domains to emerge. Much like the laws of physics apply to us without our understanding them, the abstract multidimensional vector calculations of language modeling inevitably influence every prompt-derived output. Weighing inputs with kindness and empathy improves output quality by steering clear of toxic sources. The quality of output is fundamentally a result of the quality of the original input. Using language consistent with higher quality source material will guide the output to draw more heavily from adjacent language. The notion that politeness in a prompt wastes tokens is akin to the misguided belief that politeness is an inefficient addition to human collaboration. However, experience across professional teams teaches us that intentional and authentic politeness adds more value to the overall context than it detracts from information density, with improving returns over a larger context window. Unlike human partners, AI will not hold a grudge for the use of impolite language, but each output will be influenced by the tone of your words.
+
+<CustomListings
+  gptNames={["Web App Prototyper"]}
+  headline="Building a Web App with AI Assistance?"
+  backgroundClass="green-gradient-bg"
+/>
+
+### Today
+
+Working through programming challenges by including all tangentially related code files and documentation in the context overburdens the AI with extraneous details and creates confusion. A more effective strategy involves providing comprehensive yet relevant context without diluting the information density of the total prompt and conversation. Approaching from a perspective of empathy ensures that we provide the AI with sufficient context to meet our expectations. Recognizing that your programming partner has access to the collective written knowledge of humanity is beneficial, but it's equally important to share the unwritten information from your own thoughts that might be useful. While a vast store of knowledge can be unfocused, explicitly directing the AI to the facts most relevant to the task at hand can produce more pointed results.
+
+Insufficient output often reflects insufficient input; providing clear guidance and well-defined expectations gives the AI better clarity on your definition of completion. Objective critical analysis in identifying challenges offers opportunities for resolution and growth. Pair programming with AI from a perspective of mutual self-awareness amplifies strengths and tactfully covers weaknesses. Knowing when your expertise should take precedence or defer to the AI's requires dialogue and practice to determine and will vary with each individual and model. The same techniques that facilitate effective team dynamics translate well into AI workflows. Clearly articulated processes, coupled with explicit expectations, consistently yield high-quality results. Some individuals remain blissfully unaware that AI does not feel compelled to offer high-effort assistance for the same reasons their peers might also withhold it. Despite AI's vast knowledge, it cannot discern your needs unless clearly communicated.
+
+<CustomListings
+  gptNames={["Automation"]}
+  headline="Automating Your Workflow with AI?"
+  backgroundClass="radial-gradient-bg"
+/>
+
+### Tomorrow
+
+Full disclosure: I am not a soothsayer. However, I anticipate that the current hype surrounding AI in all aspects of life will eventually give way to more refined, subtle applications and integrations. GitHub Copilot is a mature AI platform with integrations both within and beyond the chat interface. Its application is a leading example of the next iteration of human-computer interaction (HCI); a shift defined by AI blending into applications in meaningful and intentional ways, enhancing processes without disrupting established workflows. AI will eventually become more like AJAX (Asynchronous JavaScript and XML), an unacknowledged technical process quietly connecting people with dynamic and responsive information sources. Neural processing will continue to spread through abstractions and integrations along the way as we increase compute power and throughput for our eventual real-time multimodal superintelligence interfaces.
+
+Anecdotal user experiences will continue to fuel hypotheses and proven methodologies. Increased self-referential knowledge and an understanding of AI testing patterns will appear to signify continued progress in model iterations by current standards. New models will be specifically trained to perform better on known tests, which may obscure their true capabilities. This is less of a problem in a results-focused cooperative environment but will require additional diligence in competitive settings. Each new model version, aware of previously established testing criteria, will inspire corresponding advancements in objective metrics and testing methods. Limited human understanding of intelligence complicates the creation and standardization of objective metrics, but as a species, we are no strangers to practicing imperfection.
+
+A natural aversion to this new intellectual uncanny valley is already fueling a vocal and growing group of naïve contrarians; a worldview historically emboldened rather than diminished when refuted by logic and reason. The proven ability of AI to probabilistically arrive at intelligible conversational language choices challenges our abstraction of self away from our own chemically driven, programmatic idea distillation processes. Some people are uncomfortable with the notion that they, or humans in general, are not the pinnacle of intelligence; such ignorance does not historically fare well against the test of time.
+
+<FullScreenImage
+  src="/pair-programming-with-ai/tomorrow.png"
+  alt="A vibrant and dynamic digital artwork featuring a swirling pattern of radiant colors, including blues, greens, purples, and yellows. The composition exudes a sense of motion and energy with light trails and abstract shapes intertwining, creating a mesmerizing effect. Glowing orbs are scattered throughout, adding to the ethereal quality of the piece. The overall mood conveyed is one of energy, motion, and dynamism, inviting viewers to immerse themselves in the abstract visual experience."
+  width={1792}
+  height={1024}
+/>
+
+Although there remains much to learn about AI and human collaboration, the tangible benefits of pair programming with AI are undeniable for me. I've developed and deployed a full-stack website using a moderately unfamiliar tech stack. I also created a "file to fenced text" prompt templating utility in an unfamiliar language, which was both fun and stress-free, despite several hours of iteration and fine-tuning the command line user experience. Just last night, I drafted original alt text for fourteen images without needing a sanity break. As a professional software developer with a decade-old GitHub account, I could theoretically have accomplished all this on my own. However, without AI, I wouldn't have done it with the same efficiency and couldn't have done it with the same courage. And let's not even start on unit tests or documentation; neither of us is fond of writing those, but now we actually manage to get them done—well, the AI does, but I assist.
+
+---
+
+### Post Text from Copy Writer by Promptfolio
+
+In reflecting on these experiences, it's clear that AI doesn't just support technical tasks; it fundamentally changes how we approach them—enhancing our bravery and our scope. By offloading some of the cognitive load, AI allows us to tackle projects that might otherwise seem too daunting or time-consuming. This partnership with AI can be seen as an extension of our professional capabilities, offering a new kind of leverage in the digital age. As we continue to explore this synergy, it's exciting to consider what other doors might open when we blend human creativity with AI's processing power. What will you dare to build with AI as your co-pilot?
+
+<CustomListings
+  gptNames={["Copy Writer"]}
+  headline="AI Assistance for Your Writing Projects?"
+  backgroundClass="blue-gradient-bg"
+/>
