@@ -1,0 +1,110 @@
+import { blog } from "@/lib/blog";
+import { CustomListings } from "@/components/CustomListings";
+import FullScreenImage from "@/components/FullScreenImage";
+
+export const postMetadata = blog.find(
+  (post) => post.slug === "visualizing-the-invisible"
+);
+
+export const metadata = {
+  title: postMetadata.title,
+  date: postMetadata.publishDate,
+  description: postMetadata.description,
+  creator: "Ben McNulty",
+  keywords: ["Aphantasia", "Visualization", "Mental Imagery", "Generative Art"],
+  openGraph: {
+    title: postMetadata.title,
+    description: postMetadata.description,
+    url: `https://www.promptfolio.dev/blog/${postMetadata.slug}`,
+    siteName: "Promptfolio by Ben McNulty",
+    images: [
+      {
+        url: `https://www.promptfolio.dev${postMetadata.imageUrl}`,
+        width: 1024,
+        height: 1024,
+      },
+      {
+        url: "https://www.promptfolio.dev/hero.png",
+        width: 1792,
+        height: 1024,
+        alt: "Welcome to Promptfolio by Ben McNulty",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+## {postMetadata.title}
+
+### My Journey with Aphantasia and AI
+
+Living with aphantasia means I navigate the world without the ability to voluntarily visualize mental images. It's like reading a book without being able to picture the scenes or characters—this is my reality every day. Though I sometimes dream in color, in my waking life, even my most focused efforts cannot summon the simplest mental images. In this context, my encounter with AI, particularly through language models and generative art tools, has opened a new frontier for me. It provides a way to visualize ideas and memories that remain elusive in my mind's eye.
+
+<FullScreenImage
+  src="/visualizing-the-invisible/jimi.png"
+  alt="A vibrant and dynamic surreal artwork featuring Jimi Hendrix playing guitar with a swirling pattern of radiant colors, including blues, greens, purples, and yellows. The composition exudes a sense of motion and energy with light trails and abstract shapes intertwining, creating a mesmerizing effect. The overall mood conveyed is one of energy, motion, and dynamism, inviting viewers to immerse themselves in the abstract visual experience."
+  width={1540}
+  height={1024}
+/>
+
+### Rediscovering Art with AI
+
+Back in the early days of Photoshop and digital art, I found joy in using distortion tools, brushes, and layers to create psychedelic tie-dye backgrounds behind silhouettes from iconic Jimi Hendrix photos. This project was a nod to the hippie counterculture-inspired mass-produced tapestries that adorned the room of a '90s kid like myself. More recently, through conversational access to DALL•E via ChatGPT, I felt inspired to pick up where I left off on that project decades ago. Throughout this post, I'll share selections from those sessions, hoping to inspire your next creative pursuit, but I am grateful just to have my artwork appreciated by others.
+
+<FullScreenImage
+  src="/visualizing-the-invisible/jimi-1.png"
+  alt="A vibrant and dynamic surreal artwork featuring a bust of Jimi Hendrix with a swirling pattern of radiant colors, including blues, greens, purples, and yellows. The composition exudes a sense of motion and energy with light trails and abstract shapes intertwining, creating a mesmerizing effect. The overall mood conveyed is one of energy, motion, and dynamism, inviting viewers to immerse themselves in the abstract visual experience."
+  width={1720}
+  height={1024}
+/>
+
+### Living with Aphantasia
+
+Aphantasia has profoundly shaped how I perceive and interact with the world. My inability to visualize has often limited my enjoyment of traditional visual arts, pushing me instead toward creative writing and coding—domains where language and logic reign. Whether it's crafting narratives or converting complex mockups into CSS, I achieve a state of creative flow through composition rather than visual creation.
+
+<FullScreenImage
+  src="/visualizing-the-invisible/jimi-2.png"
+  alt="A vibrant and dynamic surreal artwork featuring a bust of Jimi Hendrix with a swirling pattern of radiant colors, including blues, greens, purples, and yellows. The composition exudes a sense of motion and energy with light trails and abstract shapes intertwining, creating a mesmerizing effect. The overall mood conveyed is one of energy, motion, and dynamism, inviting viewers to immerse themselves in the abstract visual experience."
+  width={1720}
+  height={1024}
+/>
+
+### AI as a Creative Catalyst
+
+The advent of generative AI art interfaces like DALL•E has been transformative for me. These tools translate textual descriptions into visual artworks, allowing me to bridge the gap between linguistic creativity and visual expression. The iterative feedback and modification process of these AI tools has fostered a dynamic, collaborative space between the technology and me, alleviating frustration and opening new avenues for creative expression.
+
+<FullScreenImage
+  src="/visualizing-the-invisible/jimi-3.png"
+  alt="A vibrant and dynamic surreal artwork featuring Jimi Hendrix with a swirling pattern of radiant colors, including blues, greens, purples, and yellows. The composition exudes a sense of motion and energy with light trails and abstract shapes intertwining, creating a mesmerizing effect. The overall mood conveyed is one of energy, motion, and dynamism, inviting viewers to immerse themselves in the abstract visual experience."
+  width={1720}
+  height={1024}
+/>
+
+### The Broader Impact
+
+For people with aphantasia, AI opens up new experiences with visual creativity previously off-limits. Understanding the world through a natural language filter is no longer just a workaround but a distinct advantage when communicating with AI. This technology can level the playing field, turning what were once perceived limitations into new possibilities for expression and interaction.
+
+<FullScreenImage
+  src="/visualizing-the-invisible/cool-cat.png"
+  alt="A vibrant and dynamic surreal artwork featuring a guitar playing cat with a swirling pattern of radiant colors, including blues, greens, purples, and yellows. The composition exudes a sense of motion and energy with light trails and abstract shapes intertwining, creating a mesmerizing effect. Glowing orbs are scattered throughout, adding to the ethereal quality of the piece. The overall mood conveyed is one of energy, motion, and dynamism, inviting viewers to immerse themselves in the abstract visual experience."
+  width={1720}
+  height={1024}
+/>
+
+### A World of Pure Imagination
+
+This journey with AI hasn't just changed how I engage with art; it has fundamentally reshaped how I view my capabilities, transforming a limitation into a unique tool for personal and artistic expression. This novel technology enables those of us who cannot visualize in the traditional sense to imagine, create, and explore visual artistry in our own unique ways. I am just getting started.
+
+<FullScreenImage
+  src="/visualizing-the-invisible/fluffy-chaos-friends.png"
+  alt="Four colorful, fantastical creatures with exaggerated and whimsical features. They are depicted with large, multicolored eyes and intricate fur patterns, exuding a friendly and approachable demeanor. The largest creature is positioned in the background, while the three smaller ones are in the foreground, creating a sense of depth. The vibrant colors and psychedelic aesthetic of the image convey a playful and imaginative atmosphere. The image is lively and detailed, inviting viewers to explore the whimsical world it portrays."
+  width={1024}
+  height={1024}
+/>
+
+<CustomListings
+  gptNames={["Art Collaborator", "Delulu Hallulu", "Fluffy Chaos Friends"]}
+  headline="Collaborative Partners for AI Art"
+  backgroundClass="radial-gradient-bg"
+/>

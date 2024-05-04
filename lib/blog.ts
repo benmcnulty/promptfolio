@@ -63,6 +63,15 @@ export const blog = [
       "Explore the transformative impact of AI on software development through a personal journey of pair programming. Discover how AI tools like GitHub Copilot and ChatGPT enhance coding efficiency, creativity, and collaboration, offering insights into the future of human-AI partnerships in tech.",
     imageUrl: "/web-app-prototyper.png",
   },
+  {
+    slug: "visualizing-the-invisible",
+    title: "Visualizing the Invisible",
+    publishDate: "2024-05-10",
+    categories: ["ai", "collaboration"],
+    description:
+      "Learn about my personal journey with aphantasia and how AI tools like DALL•E enable those who can't visualize images to explore and express their creativity in new and exciting ways.",
+    imageUrl: "/visualizing-the-invisible/jimi-square.png",
+  },
 ];
 
 export default blog;
