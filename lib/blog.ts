@@ -66,7 +66,7 @@ export const blog = [
   {
     slug: "visualizing-the-invisible",
     title: "Visualizing the Invisible",
-    publishDate: "2024-05-10",
+    publishDate: "2024-05-03",
     categories: ["ai", "collaboration"],
     description:
       "Learn about my personal journey with aphantasia and how AI tools like DALL•E enable those who can't visualize images to explore and express their creativity in new and exciting ways.",
