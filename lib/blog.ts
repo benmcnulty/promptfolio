@@ -57,7 +57,7 @@ export const blog = [
   {
     slug: "pair-programming-with-ai",
     title: "Pair Programming with AI",
-    publishDate: "2024-05-03",
+    publishDate: "2024-05-02",
     categories: ["ai", "collaboration"],
     description:
       "Explore the transformative impact of AI on software development through a personal journey of pair programming. Discover how AI tools like GitHub Copilot and ChatGPT enhance coding efficiency, creativity, and collaboration, offering insights into the future of human-AI partnerships in tech.",
