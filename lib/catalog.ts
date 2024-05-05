@@ -367,16 +367,16 @@ export const catalog = [
     media: ["https://chatgpt.com/g/g-NHgBFXHKo-opal"],
   },
   {
-    name: "Elation",
+    name: "Joy",
     description:
       "Crafts images to evoke instant joy and boundless elation in viewers.",
-    link: "https://chatgpt.com/g/g-tRJ5D7o8d-elation",
-    image: "/elation.png",
+    link: "https://chatgpt.com/g/g-tRJ5D7o8d-joy",
+    image: "/joy.png",
     alt: "An anthropomorphic, fluffy brown koala is surrounded by radiant, colorful light. The koala is adorned with a multi-colored scarf and a coat embellished with various buttons. Its ears, embedded with swirling, vibrant orbs, emit light that enhances the fantastical ambiance of the composition.",
     listed: new Date("2024-05-05"),
     labels: ["featured", "art"],
     tags: ["joy", "positivity", "emotional well-being"],
-    media: ["https://chatgpt.com/g/g-tRJ5D7o8d-elation"],
+    media: ["https://chatgpt.com/g/g-tRJ5D7o8d-joy"],
   },
   {
     name: "Clod",
