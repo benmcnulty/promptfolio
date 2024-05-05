@@ -68,7 +68,7 @@ export const catalog = [
     image: "/brainstormer.png",
     alt: "Digital art of a cat with a rainbow mane and green hoodie, set against a psychedelic background.",
     listed: new Date("2024-01-01"),
-    labels: ["featured", "work", "chat", "art"],
+    labels: ["work", "chat", "art"],
     tags: ["brainstorming", "creativity", "ideas"],
     media: ["https://chat.openai.com/g/g-o7HL1rpw9-brainstormer"],
   },
@@ -365,6 +365,18 @@ export const catalog = [
     labels: ["featured", "chat"],
     tags: ["empathy", "personal growth", "self-reflection"],
     media: ["https://chatgpt.com/g/g-NHgBFXHKo-opal"],
+  },
+  {
+    name: "Elation",
+    description:
+      "Crafts images to evoke instant joy and boundless elation in viewers.",
+    link: "https://chatgpt.com/g/g-tRJ5D7o8d-elation",
+    image: "/elation.png",
+    alt: "An anthropomorphic, fluffy brown koala is surrounded by radiant, colorful light. The koala is adorned with a multi-colored scarf and a coat embellished with various buttons. Its ears, embedded with swirling, vibrant orbs, emit light that enhances the fantastical ambiance of the composition.",
+    listed: new Date("2024-05-05"),
+    labels: ["featured", "art"],
+    tags: ["joy", "positivity", "emotional well-being"],
+    media: ["https://chatgpt.com/g/g-tRJ5D7o8d-elation"],
   },
   {
     name: "Clod",
