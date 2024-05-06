@@ -188,7 +188,7 @@ export const catalog = [
     image: "/copy-writer.png",
     alt: "Digital art of a mouse in a yellow hoodie, with a playful abstract orange, blue, and purple background.",
     listed: new Date("2024-01-01"),
-    labels: ["featured", "work"],
+    labels: ["work"],
     tags: ["copywriting", "SEO", "content creation"],
     media: ["https://chat.openai.com/g/g-aCImhDD6k-copy-writer"],
   },
@@ -353,6 +353,18 @@ export const catalog = [
     labels: ["chat", "art"],
     tags: ["cosmos", "space exploration", "universe"],
     media: ["https://chat.openai.com/g/g-XAUAaTUHc-intergalactic-traveler"],
+  },
+  {
+    name: "Emoji Artist",
+    description:
+      "Generates professional quality three-dimensional emoji renderings.",
+    link: "https://chatgpt.com/g/g-lymy9xRJH-emoji-artist",
+    image: "/emoji-artist.png",
+    alt: "A cheerful 3D rendering of a wooden artist's palette emoji with a smiling face. The palette is adorned with glossy blobs of paint in various colors including red, green, blue, yellow, orange, and brown. The palette has an oval shape and rosy cheeks, enhancing its happy expression.",
+    listed: new Date("2024-05-05"),
+    labels: ["featured", "art"],
+    tags: ["emojis", "digital art"],
+    media: ["https://chatgpt.com/g/g-lymy9xRJH-emoji-artist"],
   },
   {
     name: "Opal",
