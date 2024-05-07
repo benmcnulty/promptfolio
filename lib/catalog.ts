@@ -290,7 +290,7 @@ export const catalog = [
     image: "/delver.png",
     alt: "Anthropomorphic aardvark, dressed in scholarly, holding an antique book against a vibrant, artistic backdrop.",
     listed: new Date("2024-01-12"),
-    labels: ["featured", "work", "chat"],
+    labels: ["work", "chat"],
     tags: ["productivity", "multidisciplinary", "analysis", "insights"],
     media: ["https://chat.openai.com/g/g-TfWbIutVt-delver"],
   },
@@ -365,6 +365,18 @@ export const catalog = [
     labels: ["featured", "art"],
     tags: ["emojis", "digital art"],
     media: ["https://chatgpt.com/g/g-lymy9xRJH-emoji-artist"],
+  },
+  {
+    name: "Delvein",
+    description:
+      "A North American Dedomesticated Refuse Panda that likes to delve in with unearned intellectual superiority, inviting users to innovate transformative outcomes and diffuse art from digitized soul extracts. Embrace the quirky imperfections of AI-generated output through this unique GPT experience.",
+    link: "https://chatgpt.com/g/g-a1XVueV6W-delvein",
+    image: "/delvein.png",
+    alt: "An anthropomorphic raccoon exuding opulence. They are clad in faux luxury and adorned with multiple gold rings set with colorful gems, a vibrant silk scarf, and a gold watch. The background is richly decorated with intricate golden designs and artifacts, enhancing the image's lavish feel.",
+    listed: new Date("2024-05-06"),
+    labels: ["featured", "chat"],
+    tags: ["experimental", "innovative", "quirky"],
+    media: ["https://chatgpt.com/g/g-a1XVueV6W-delvein"],
   },
   {
     name: "Opal",
