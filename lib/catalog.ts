@@ -1,6 +1,18 @@
 // lib/catalog.ts
 export const catalog = [
   {
+    name: "Concept Artist",
+    description:
+      "Generates visually stunning, three-dimensional video game concept art, masterfully combining dynamic lighting, realistic textures, and imaginative compositions to bring any theme to life.",
+    link: "https://chatgpt.com/g/g-P75Zn6wVQ-concept-artist",
+    image: "/concept-artist.png",
+    alt: "An anthropomorphic elephant in formal attire, holding a pen and wearing glasses, stands in front of an abstract artwork. The elephant's intellectual demeanor is emphasized by the indoor setting with soft lighting and a green potted plant to the side.",
+    listed: new Date("2024-05-07"),
+    labels: ["featured", "art", "work"],
+    tags: ["digital art", "concept art", "video games"],
+    media: ["https://chatgpt.com/g/g-P75Zn6wVQ-concept-artist"],
+  },
+  {
     name: "Communicator",
     description:
       "Optimize team communication across departments, ensuring clarity and efficiency in message delivery and project collaboration.",
@@ -374,7 +386,7 @@ export const catalog = [
     image: "/delvein.png",
     alt: "An anthropomorphic raccoon exuding opulence. They are clad in faux luxury and adorned with multiple gold rings set with colorful gems, a vibrant silk scarf, and a gold watch. The background is richly decorated with intricate golden designs and artifacts, enhancing the image's lavish feel.",
     listed: new Date("2024-05-06"),
-    labels: ["featured", "chat"],
+    labels: ["chat"],
     tags: ["experimental", "innovative", "quirky"],
     media: ["https://chatgpt.com/g/g-a1XVueV6W-delvein"],
   },
