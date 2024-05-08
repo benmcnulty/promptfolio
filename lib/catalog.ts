@@ -3,7 +3,7 @@ export const catalog = [
   {
     name: "Concept Artist",
     description:
-      "Generates visually stunning, three-dimensional video game concept art, masterfully combining dynamic lighting, realistic textures, and imaginative compositions to bring any theme to life.",
+      "Generates visually striking, three-dimensional concept art, skillfully combining dynamic lighting, realistic textures, and imaginative compositions to bring any theme to life.",
     link: "https://chatgpt.com/g/g-P75Zn6wVQ-concept-artist",
     image: "/concept-artist.png",
     alt: "An anthropomorphic elephant in formal attire, holding a pen and wearing glasses, stands in front of an abstract artwork. The elephant's intellectual demeanor is emphasized by the indoor setting with soft lighting and a green potted plant to the side.",
