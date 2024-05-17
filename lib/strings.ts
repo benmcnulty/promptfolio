@@ -4,7 +4,7 @@ const strings = {
     siteTitle: "Promptfolio",
     siteAuthor: "Crafted by Ben McNulty",
     siteSubtitle:
-      "Innovative AI Prompt Solutions: Crafting, Engineering & Beyond",
+      "Conversational AI Prompt Solutions: Custom GPTs for Work, Chat, and Art",
   },
   modeToggle: {
     descriptor: "Toggle Theme",
