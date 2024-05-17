@@ -69,7 +69,7 @@ export const blog = [
     publishDate: "2024-05-03",
     categories: ["ai", "collaboration"],
     description:
-      "Learn about my personal journey with aphantasia and how AI tools like DALL•E enable those who can't visualize images to explore and express their creativity in new and exciting ways.",
+      "Learn about my personal journey with aphantasia and how AI tools like DALL·E enable those who can't visualize images to explore and express their creativity in new and exciting ways.",
     imageUrl: "/visualizing-the-invisible/jimi-square.png",
   },
 ];
