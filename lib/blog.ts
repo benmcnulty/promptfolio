@@ -75,11 +75,11 @@ export const blog = [
   {
     slug: "ai-group-chat-with-promptfolio",
     title: "AI Group Chat with Promptfolio",
-    publishDate: "2024-05-24",
+    publishDate: "2024-05-25",
     categories: ["ai", "collaboration"],
     description:
-      "Experience the power of AI group chat with Promptfolio. Invite our domain specific GPT consultants to facilitate conversations focused on efficient and creative collaborative project development.",
-    imageUrl: "/art-collaborator.png",
+      "Learn by example how to implement Promptfolio's custom GPT agents in a collaborative workflow, demonstrating an extensible process from initial ideation to final output refinement.",
+    imageUrl: "/ai-group-chat-with-promptfolio/square.png",
   },
 ];
 

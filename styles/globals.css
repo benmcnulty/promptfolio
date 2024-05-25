@@ -565,18 +565,21 @@ a h6 {
 }
 
 .blog-post>blockquote {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 1.5rem;
-  border-left: 4px solid #ddd;
-  background-color: #f9f9f9;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post>blockquote>p {
+  padding: 1.5rem 2rem;
+  border-left: 4px solid hsl(var(--muted-foreground));
   font-style: italic;
+  background-color: hsl(var(--accent));
 }
 
 .blog-post>hr {
   border: 0;
   height: 1px;
-  background-color: #ddd;
+  background-color: hsl(var(--muted-foreground));
   margin-top: 2rem;
   margin-bottom: 2rem;
 }

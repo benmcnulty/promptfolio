@@ -1,5 +1,6 @@
 import { CustomListings } from "@/components/CustomListings";
 import { blog } from "@/lib/blog";
+import FullScreenImage from "@/components/FullScreenImage";
 
 export const postMetadata = blog.find(
   (post) => post.slug === "ai-group-chat-with-promptfolio"
@@ -42,72 +43,114 @@ In this blog post, we're sharing a simplified collaborative workflow using Promp
 
 To follow along with this workflow, you need OpenAI ChatGPT Custom GPT access and to have had at least one conversation with the following Promptfolio GPTs: [Art Collaborator](https://chat.openai.com/g/g-H4LNiC2oY-art-collaborator), [Brainstormer](https://chat.openai.com/g/g-o7HL1rpw9-brainstormer), [Copy Writer](https://chat.openai.com/g/g-aCImhDD6k-copy-writer), and [Concept Artist](https://chatgpt.com/g/g-P75Zn6wVQ-concept-artist).
 
+<FullScreenImage
+  src="/ai-group-chat-with-promptfolio/wide.png"
+  alt="A modern, high-tech office space with large glass walls offering a view of a cityscape at sunset. Inside, diverse professionals work at various desks equipped with advanced computer systems and holographic displays. Robotic arms and digital screens with futuristic data visuals are prominent, and the atmosphere is dynamic with people walking, collaborating, and engaging with technology. The scene exudes innovation and a blend of human and artificial intelligence."
+  width={1792}
+  height={1024}
+/>
+
 After you have met a GPT by starting at least one conversation with them, they will be available to '@' mention from other conversations to create a group chat. If you mention a custom GPT from a default ChatGPT 4o conversation, the custom GPTs will use GPT-4o to generate responses informed by the context of that conversation, including custom instructions and memory.
 
-This workflow example is a concise implementation of a collaborative visual art process. You can adapt and expand on this model to suit your specific project needs. If you're looking for GPT collaborators, especially on software application, custom GPT, or visual art projects, [Promptfolio](https://www.promptfolio.dev/listing) is here to help bring your ideas to life.
+This workflow example is a concise implementation of a collaborative visual art process. You can adapt and expand on this model to suit your specific project needs. If you're looking for GPT collaborators, especially on software application, custom GPT, or visual art projects, [Promptfolio](../listing) is here to help bring your ideas to life.
 
 ### Collaborative Art Creation Process
 
-#### 1. Establish Context with Art Collaborator
+#### 1 | Establish Context with Art Collaborator
 
 To begin, start a conversation with Art Collaborator to establish the context for our collaborative art project. Discuss the theme, style, and specific requirements for the piece with as much or as little detail as you enjoy. Art Collaborator is directed to help clarify your vision, ensuring a solid foundation for the project.
 
-_Image 1: Screenshot of conversation with Art Collaborator_  
-_Alt text: Initial conversation with Art Collaborator discussing the concept art project theme and style._
+> **@Art Collaborator**: Please assist me in establishing the concept for a new collaborative art project focused on creating a single piece of concept art. I need your help defining the theme, style, and any specific requirements for the image. Let's ensure we have a clear vision and detailed groundwork specifically for this single generated image.
 
-_Image 2: Artistic workspace filled with colorful sketches and inspiration images._  
-_Alt text: Artistic workspace filled with colorful sketches and inspiration images, setting the scene for creative brainstorming._
+<FullScreenImage
+  src="/ai-group-chat-with-promptfolio/Step1.png"
+  alt="A screenshot of ChatGPT 4o interface showing various chat options, including 'Overcome procrastination,' 'Create a workout plan,' 'Fun fact about the Roman Empire,' and 'Morning routine for productivity.' A user query in the @Art Collaborator section reads: 'Please assist me in establishing the concept for a new collaborative art project...'"
+  width={1787}
+  height={983}
+  credit="ChatGPT Screenshot"
+/>
 
-#### 2. Generating Ideas with Brainstormer
+#### 2 | Generating Ideas with Brainstormer
 
 Next, present the summary of our initial discussion to Brainstormer, asking for creative ideas and options. Brainstormer generates a variety of themes, styles, and artistic elements to choose from, providing a broader perspective on alternative possibilities to inspire the project.
 
-_Image 3: Screenshot of Brainstormer providing creative ideas_  
-_Alt text: Brainstormer GPT presenting various themes and styles for the concept art._
+> **@Brainstormer**: Based on the initial context established with Art Collaborator, please provide a variety of creative ideas and options for the concept art project. Include different themes, styles, and artistic elements. Focus on generating uniquely derived ideas from the intersection of diverse and divergent areas of ideation to inspire the project's direction.
 
-_Image 4: Creative web of ideas and sketches representing artistic brainstorming._  
-_Alt text: Creative web of ideas and sketches representing the artistic brainstorming process._
+<FullScreenImage
+  src="/ai-group-chat-with-promptfolio/Step2.png"
+  alt="A screenshot of ChatGPT interface with a user query in the @Brainstormer section. The query asks for creative ideas and options for a concept art project based on initial context provided by Art Collaborator."
+  width={1164}
+  height={273}
+  credit="ChatGPT Screenshot"
+/>
 
-#### 3. Polishing the Concept with Art Collaborator
+#### 3 | Polishing the Concept with Art Collaborator
 
 Let's now review the ideas from Brainstormer with Art Collaborator, evaluating and selecting the best options. This collaborative discussion refines our concept and finalizes the artistic treatment, ensuring alignment with your initial vision and enhancing the creative direction.
 
-_Image 5: Screenshot of discussion with Art Collaborator refining the concept_  
-_Alt text: Art Collaborator and user refining the concept based on Brainstormer's ideas._
+> **@Art Collaborator**: Let's review and refine the ideas provided by Brainstormer. Carefully evaluate and select the best options. Once we've chosen the most promising ideas, draft a comprehensive artistic treatment describing our planned image to our concept artist. Detail the concept, style, and key elements for the project, ensuring we have a well-defined artistic direction.
 
-_Image 6: Designers reviewing sketches and making notes on a large table._  
-_Alt text: Designers reviewing sketches and making notes, symbolizing the refinement process._
+<FullScreenImage
+  src="/ai-group-chat-with-promptfolio/Step3.png"
+  alt="A screenshot of ChatGPT interface with a user query in the @Art Collaborator section. The query suggests reviewing and refining ideas provided by Brainstormer, selecting the best options, and drafting a comprehensive artistic treatment for a concept artist."
+  width={1164}
+  height={273}
+  credit="ChatGPT Screenshot"
+/>
 
-#### 4. Detailed Descriptions with Copy Writer
+#### 4 | Detailed Descriptions with Copy Writer
 
 With our concept refined, consult Copy Writer to clarify and articulate the detailed treatment. Copy Writer ensures the final description is clear and effective, aligning with our envisioned concept and providing a precise blueprint for the next steps.
 
-_Image 7: Screenshot of Copy Writer detailing the concept_  
-_Alt text: Copy Writer GPT providing a detailed description of the final concept._
+> **@Copy Writer**: Based on the artistic treatment provided by Art Collaborator, please enhance the detail, clarity, and compositional aspects of the description. Ensure the final description is thorough and precise, capturing all essential elements needed for the next steps in the project. Your goal is to create a clear, vivid, and compelling narrative that aligns with the envisioned concept.
 
-_Image 8: Writer at work, drafting text on a laptop with coffee and notepads._  
-_Alt text: Writer at work drafting text on a laptop with coffee and notepads, depicting the Copy Writer's role._
+<FullScreenImage
+  src="/ai-group-chat-with-promptfolio/Step4.png"
+  alt="A screenshot of ChatGPT interface with a user query in the @Copy Writer section. The query asks to enhance the detail, clarity, and compositional aspects of the artistic treatment description provided by Art Collaborator."
+  width={1164}
+  height={309}
+  credit="ChatGPT Screenshot"
+/>
 
-#### 5. Creating Visual Magic with Concept Artist
+#### 5 | Creating Visual Magic with Concept Artist
 
 Share the final draft treatment with Concept Artist, who generates the concept art based on the detailed description. The resulting artwork reflects an initial idea enhanced through the collaborative effort of all involved agents, efficiently bringing the envisioned concept to life with refined detail and creativity.
 
-_Image 9: Screenshot of Concept Artist generating the artwork_  
-_Alt text: Concept Artist GPT creating the final piece of concept art based on the treatment._
+> **@Concept Artist**: Using the detailed description provided by Copy Writer, please create the final piece of concept art. Ensure the artwork aligns with the described concept and captures all the envisioned details. Your goal is to visually bring the collaborative vision to life, reflecting the refined artistic direction and detailed narrative provided.
 
-_Image 10: Creative workspace with digital tools and a colorful art piece in progress._  
-_Alt text: Creative workspace with digital tools and a colorful art piece in progress, illustrating the Concept Artist's role._
+<FullScreenImage
+  src="/ai-group-chat-with-promptfolio/Step5.png"
+  alt="A screenshot of ChatGPT interface with a user query in the @Concept Artist section. The query requests the creation of the final piece of concept art based on the detailed description provided by Copy Writer, ensuring the artwork aligns with the described concept and envisioned details."
+  width={1164}
+  height={273}
+  credit="ChatGPT Screenshot"
+/>
+
+---
+
+<FullScreenImage
+  src="/ai-group-chat-with-promptfolio/final-output.png"
+  alt="A futuristic landscape featuring a grand, pyramid-like structure with glowing blue platforms and surrounding spacecraft. The scene includes multiple planets and stars in the background, with a misty, mountainous terrain and a group of people standing on a platform in the foreground."
+  width={1792}
+  height={1024}
+/>
 
 ### Inspire Your Projects with Promptfolio GPT Collaboration
 
-This workflow demonstrates the power and flexibility of using Promptfolio's GPT agents for creative projects. Here at Promptfolio, we implemented a similar collaborative process to draft this very blog post. By engaging different agents, we brainstormed ideas, refined our content, and ensured a thoroughly considered final piece.
+This workflow demonstrates the benefits and flexibility of using Promptfolio's GPT agents for creative projects. Here at Promptfolio, we implemented a similar collaborative process to draft this very blog post. By engaging different agents, we brainstormed ideas, refined our content, and ensured a thoroughly considered final piece.
 
 Whether you're working on application development, prompt engineering, concept art, copywriting, or any other collaborative task, the role-specific capabilities of our GPT agents can enhance your project's creativity and ideation efficiency. The same collaborative approach we used for this blog post can be applied to a wide range of multimedia projects varying from simple to complex. This MDX blog and the entire Promptfolio site are developed through the ongoing implementation and refinement of crude predecessors to this collaborative process with primarily [Web App Prototyper](https://chat.openai.com/g/g-ErltmA67O-web-app-prototyper) and [Interaction Designer](https://chat.openai.com/g/g-N1MfBgEnM-interaction-designer), but pretty much the whole crew contributes at this point.
 
-_Image 11: Illustration of a team collaborating on a project_  
-_Alt text: A diverse team collaborating on a project, representing the collaborative nature of using GPT agents._
-
-_Image 12: Interactive meeting with team members sharing screens and sketches._  
-_Alt text: Interactive meeting with team members sharing screens and sketches, symbolizing collaborative effort._
-
 Have fun exploring other potential uses and combinations of Promptfolio GPT agents, and let your imagination guide your next project. The possibilities are endless, and we are here to help you bring your creative visions to life!
+
+<CustomListings
+  gptNames={[
+    "Copy Writer",
+    "Brainstormer",
+    "Prompt Engineer",
+    "Art Collaborator",
+    "Concept Artist",
+  ]}
+  headline="Meet the GPTs Behind This Post"
+  backgroundClass="green-gradient-bg"
+/>
