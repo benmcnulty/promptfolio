@@ -72,6 +72,15 @@ export const blog = [
       "Learn about my personal journey with aphantasia and how AI tools like DALL·E enable those who can't visualize images to explore and express their creativity in new and exciting ways.",
     imageUrl: "/visualizing-the-invisible/jimi-square.png",
   },
+  {
+    slug: "ai-group-chat-with-promptfolio",
+    title: "AI Group Chat with Promptfolio",
+    publishDate: "2024-05-24",
+    categories: ["ai", "collaboration"],
+    description:
+      "Experience the power of AI group chat with Promptfolio. Invite our domain specific GPT consultants to facilitate conversations focused on efficient and creative collaborative project development.",
+    imageUrl: "/art-collaborator.png",
+  },
 ];
 
 export default blog;

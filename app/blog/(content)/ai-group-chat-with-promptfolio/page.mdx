@@ -1,0 +1,113 @@
+import { CustomListings } from "@/components/CustomListings";
+import { blog } from "@/lib/blog";
+
+export const postMetadata = blog.find(
+  (post) => post.slug === "ai-group-chat-with-promptfolio"
+);
+
+export const metadata = {
+  title: postMetadata.title,
+  date: postMetadata.publishDate,
+  description: postMetadata.description,
+  creator: "Ben McNulty",
+  keywords: ["empathy", "software development"],
+  openGraph: {
+    title: postMetadata.title,
+    description: postMetadata.description,
+    url: `https://www.promptfolio.dev/blog/${postMetadata.slug}`,
+    siteName: "Promptfolio by Ben McNulty",
+    images: [
+      {
+        url: `https://www.promptfolio.dev${postMetadata.imageUrl}`,
+        width: 1024,
+        height: 1024,
+      },
+      {
+        url: "https://www.promptfolio.dev/hero.png",
+        width: 1792,
+        height: 1024,
+        alt: "Welcome to Promptfolio by Ben McNulty",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+## {postMetadata.title}
+
+### Collaborative GPT Workflows
+
+In this blog post, we'll introduce a collaborative workflow using our custom GPT agents to create a unique piece of concept art. This step-by-step guide will show how each agent contributes to the final artwork, highlighting the efficiency and creativity of using GPT group chats for collaborative projects.
+
+To follow along with this workflow, you need OpenAI ChatGPT Custom GPT access and to have had at least one conversation with the following Promptfolio GPTs: [Art Collaborator](https://chat.openai.com/g/g-H4LNiC2oY-art-collaborator), [Brainstormer](https://chat.openai.com/g/g-o7HL1rpw9-brainstormer), [Copy Writer](https://chat.openai.com/g/g-aCImhDD6k-copy-writer), and [Concept Artist](https://chatgpt.com/g/g-P75Zn6wVQ-concept-artist).
+
+After you start one conversation with each GPT, they will be available to '@' mention from your other conversations. If you mention a custom GPT from a default ChatGPT 4o conversation, the custom GPTs will use GPT-4o to generate responses informed by the context of that conversation, including custom instructions and memory.
+
+This workflow example is a concise implementation of a collaborative creative process. You can adapt and expand on this model to suit your specific project needs. If you're looking for GPT collaborators on software development, custom GPTs, or visual art projects, [Promptfolio](https://www.promptfolio.dev/listing) is here to help bring your ideas to life.
+
+### Collaborative Art Creation Process
+
+#### 1. Establish Context with Art Collaborator
+
+To begin, we start a conversation with Art Collaborator to establish the concept art project. We discuss the theme, style, and specific requirements for the piece.
+
+_Image 1: Screenshot of conversation with Art Collaborator_  
+_Alt text: Initial conversation with Art Collaborator discussing the concept art project theme and style._
+
+_Image 2: Artistic workspace filled with colorful sketches and inspiration images._  
+_Alt text: Artistic workspace filled with colorful sketches and inspiration images, setting the scene for creative brainstorming._
+
+#### 2. Generating Ideas with Brainstormer
+
+Next, we present the summary of our initial discussion to Brainstormer GPT, asking for creative ideas and options. This step generates a variety of themes, styles, and artistic elements to choose from.
+
+_Image 3: Screenshot of Brainstormer providing creative ideas_  
+_Alt text: Brainstormer GPT presenting various themes and styles for the concept art._
+
+_Image 4: Creative web of ideas and sketches representing artistic brainstorming._  
+_Alt text: Creative web of ideas and sketches representing the artistic brainstorming process._
+
+#### 3. Polishing the Concept with Art Collaborator
+
+We review the ideas from Brainstormer with Art Collaborator, evaluating and selecting the best options. This collaborative discussion refines our concept and finalizes the artistic treatment.
+
+_Image 5: Screenshot of discussion with Art Collaborator refining the concept_  
+_Alt text: Art Collaborator and user refining the concept based on Brainstormer's ideas._
+
+_Image 6: Designers reviewing sketches and making notes on a large table._  
+_Alt text: Designers reviewing sketches and making notes, symbolizing the refinement process._
+
+#### 4. Detailed Descriptions with Copy Writer
+
+With our concept refined, we consult Copy Writer GPT to articulate the detailed treatment. This ensures the final description is clear and effective, aligning with our envisioned concept.
+
+_Image 7: Screenshot of Copy Writer detailing the concept_  
+_Alt text: Copy Writer GPT providing a detailed description of the final concept._
+
+_Image 8: Writer at work, drafting text on a laptop with coffee and notepads._  
+_Alt text: Writer at work drafting text on a laptop with coffee and notepads, depicting the Copy Writer's role._
+
+#### 5. Creating Visual Magic with Concept Artist
+
+We then share the final draft treatment with Concept Artist GPT, who generates the concept art based on the detailed description. The resulting artwork reflects the collaborative effort of all involved agents.
+
+_Image 9: Screenshot of Concept Artist generating the artwork_  
+_Alt text: Concept Artist GPT creating the final piece of concept art based on the treatment._
+
+_Image 10: Creative workspace with digital tools and a colorful art piece in progress._  
+_Alt text: Creative workspace with digital tools and a colorful art piece in progress, illustrating the Concept Artist's role._
+
+### Inspire Your Projects with Promptfolio GPT Collaboration
+
+This workflow demonstrates the power and flexibility of using Promptfolio's GPT agents for creative projects. Here at Promptfolio, we implemented a similar collaborative process to draft this very blog post. By engaging different agents, we were able to brainstorm ideas, refine our content, and ensure a thoroughly considered final piece.
+
+Whether you're working on application development, prompt engineering, concept art, copy writing, or any other collaborative task, the role specific capabilities of our GPT agents can enhance your project's creativity and efficiency. The same collaborative approach we used for this blog post can be applied to a wide range of projects.
+
+_Image 11: Illustration of a team collaborating on a project_  
+_Alt text: A diverse team collaborating on a project, representing the collaborative nature of using GPT agents._
+
+_Image 12: Interactive meeting with team members sharing screens and sketches._  
+_Alt text: Interactive meeting with team members sharing screens and sketches, symbolizing collaborative effort._
+
+Explore other potential uses of Promptfolio GPT agents, and let your imagination guide your next project. The possibilities are endless, and we are here to help you bring your creative visions to life!
