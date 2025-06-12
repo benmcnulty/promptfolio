@@ -31,7 +31,7 @@ const strings = {
     conclusion: "Hand Crafting Custom GPTs for Work, Chat, and Art",
     conclusion2: "Your Vision, Our Expertise 🌟",
     subheading: "Exciting New GPTs on the Horizon! 🤖",
-    copyright: "Ben McNulty's Creation © 2023 – 2024",
+    copyright: "Ben McNulty's Creation © 2023 – 2025",
     extra: "Crafted with ✨ & ❤️",
   },
   about: {
