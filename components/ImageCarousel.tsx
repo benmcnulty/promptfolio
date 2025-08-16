@@ -88,8 +88,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
               alt={image.alt}
               width={500}
               height={500}
-              caption={image.caption}
-              credit={image.credit}
+              {...(image.caption && { caption: image.caption })}
+              {...(image.credit && { credit: image.credit })}
             />
           </div>
         ))}

@@ -7,7 +7,19 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "About us and our mission",
+  description: "Learn about Ben McNulty's AI prompt engineering expertise and Promptfolio's mission to create specialized GPT agents for work, chat, and creative applications.",
+  keywords: ["Ben McNulty", "AI prompt engineer", "GPT specialist", "artificial intelligence", "custom GPTs"],
+  openGraph: {
+    title: "About Promptfolio - AI Prompt Engineering Expertise",
+    description: "Learn about Ben McNulty's AI prompt engineering expertise and Promptfolio's mission to create specialized GPT agents for work, chat, and creative applications.",
+    type: "website",
+    url: "https://promptfolio.dev/about",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Promptfolio - AI Prompt Engineering Expertise",
+    description: "Learn about Ben McNulty's AI prompt engineering expertise and Promptfolio's mission to create specialized GPT agents.",
+  },
 };
 
 export default function AboutPage() {
