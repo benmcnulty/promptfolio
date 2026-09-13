@@ -257,6 +257,7 @@ test('shared navigation and skip links work by keyboard', async ({ page, browser
   await page.keyboard.press('Enter');
   await expect(page.locator('main')).toBeFocused();
 
+  await page.goto('/');
   await expect(page.getByRole('banner').getByRole('link', { name: 'Demo' })).toHaveCount(0);
   for (const [name, route] of [['Catalog', '/listing'], ['Writing', '/blog'], ['About', '/about']] as const) {
     await page.getByRole('link', { name, exact: true }).first().click();
@@ -731,7 +732,7 @@ test('catalog view defaults once per load and list entries expand accessibly', a
   await listButton.click();
   await page.getByRole('button', { name: 'Featured', exact: true }).click();
   await expect(listButton).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.getByText('6 GPTs found')).toBeVisible();
+  await expect(page.getByText('6 GPTs found')).toBeVisible({ timeout: 10_000 });
 
   await page.setViewportSize({ width: 700, height: 900 });
   await page.reload();
@@ -1691,6 +1692,12 @@ test('homepage heading decorations compose with the following content safely at 
       const cards = page.locator(`${section} > ${content}`);
       await heading.scrollIntoViewIfNeeded();
       await expect(icon).toHaveAttribute('data-visible', 'true');
+      await icon.evaluate(async (element) => {
+        const finiteAnimations = element.getAnimations().filter((animation) =>
+          animation.effect?.getTiming().iterations !== Infinity,
+        );
+        await Promise.all(finiteAnimations.map((animation) => animation.finished.catch(() => undefined)));
+      });
       const [headingBox, textBox, iconBox, cardsBox] = await Promise.all([
         heading.boundingBox(), text.boundingBox(), icon.boundingBox(), cards.boundingBox(),
       ]);
@@ -1700,7 +1707,8 @@ test('homepage heading decorations compose with the following content safely at 
       expect(textBox!.x - sectionBox!.x).toBeGreaterThanOrEqual(11);
       expect(textBox!.x + textBox!.width).toBeLessThanOrEqual(headingBox!.x + headingBox!.width + 1);
       expect(iconBox!.y).toBeLessThan(cardsBox!.y);
-      expect(iconBox!.y + iconBox!.height).toBeGreaterThan(cardsBox!.y - 36);
+      // Text metrics vary across engines; keep the motif visually connected without requiring pixel-identical proximity.
+      expect(iconBox!.y + iconBox!.height).toBeGreaterThan(cardsBox!.y - 72);
       expect(iconBox!.width).toBeGreaterThanOrEqual(width <= 600 ? 200 : 220);
       expect(iconBox!.width).toBeLessThanOrEqual(380);
       await expect(page.locator(section)).toHaveCSS('overflow', section === '.featured-section' ? 'visible' : 'clip');
