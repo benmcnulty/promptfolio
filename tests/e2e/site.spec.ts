@@ -552,13 +552,16 @@ test('every catalog portrait decodes through its production delivery path', asyn
     });
     const response = await page.request.get(deliveryPath);
     expect(response.ok(), `Expected catalog portrait ${await image.getAttribute('alt')} to be served`).toBe(true);
-    expect(response.headers()['content-type']).toMatch(/^image\//);
+    const contentType = response.headers()['content-type'];
+    expect(contentType).toMatch(/^image\//);
+    const body = await response.body();
+    expect(body.byteLength).toBeGreaterThan(0);
     expect(await image.evaluate(async (_element, source) => {
       const probe = new window.Image();
       probe.src = source;
       await probe.decode();
       return probe.naturalWidth;
-    }, deliveryPath)).toBeGreaterThan(0);
+    }, `data:${contentType};base64,${body.toString('base64')}`)).toBeGreaterThan(0);
     const src = await image.getAttribute('src');
     if (src?.endsWith('.webp')) {
       expect(src).toMatch(/\/(art-collaborator|challenger|intergalactic-traveler)\.webp$/);
