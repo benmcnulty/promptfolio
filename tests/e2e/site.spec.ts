@@ -343,6 +343,8 @@ test('catalog view defaults once per load and list entries expand accessibly', a
   const expandButton = firstEntry.locator('.catalog-entry-expand');
   await expect(expandButton).toHaveAccessibleName('Expand Concept Artist');
   expect((await expandButton.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+  await expandButton.scrollIntoViewIfNeeded();
+  const collapsedControlBox = (await expandButton.boundingBox())!;
   const collapsedImageWidth = (await firstEntry.locator('.catalog-entry-image').boundingBox())!.width;
   const revealMotion = await firstEntry.locator('.catalog-entry-reveal').evaluate((element) => {
     const style = getComputedStyle(element);
@@ -353,6 +355,10 @@ test('catalog view defaults once per load and list entries expand accessibly', a
   await expandButton.focus();
   await page.keyboard.press('Enter');
   await expect(expandButton).toHaveAttribute('aria-expanded', 'true');
+  await page.waitForTimeout(80);
+  const movingControlBox = (await expandButton.boundingBox())!;
+  expect(Math.abs(movingControlBox.x - collapsedControlBox.x)).toBeLessThanOrEqual(1);
+  expect(Math.abs(movingControlBox.y - collapsedControlBox.y)).toBeLessThanOrEqual(1);
   await expect(firstEntry.locator('.catalog-entry-details')).toBeVisible();
   await expect(firstEntry.locator('.catalog-entry-details .persona-label')).toHaveCount(0);
   await expect(firstEntry.locator('.catalog-entry-reveal')).toHaveJSProperty('inert', false);
@@ -379,9 +385,14 @@ test('catalog view defaults once per load and list entries expand accessibly', a
   await page.setViewportSize({ width: 1280, height: 900 });
   await expect(listButton).toHaveAttribute('aria-pressed', 'true');
   expect((await firstEntry.boundingBox())!.width).toBeLessThanOrEqual(1024);
+  await expandButton.scrollIntoViewIfNeeded();
+  const wideCollapsedControlBox = (await expandButton.boundingBox())!;
   await expandButton.click();
   await expect(expandButton).toHaveAttribute('aria-expanded', 'true');
   await page.waitForTimeout(600);
+  const wideExpandedControlBox = (await expandButton.boundingBox())!;
+  expect(Math.abs(wideExpandedControlBox.x - wideCollapsedControlBox.x)).toBeLessThanOrEqual(1);
+  expect(Math.abs(wideExpandedControlBox.y - wideCollapsedControlBox.y)).toBeLessThanOrEqual(1);
   const wideEntryBox = (await firstEntry.boundingBox())!;
   const wideImageBox = (await firstEntry.locator('.catalog-entry-image').boundingBox())!;
   const wideLinkBox = (await firstEntry.getByRole('link', { name: 'Chat with Concept Artist' }).boundingBox())!;
