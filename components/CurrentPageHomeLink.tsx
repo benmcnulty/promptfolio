@@ -21,5 +21,5 @@ export function CurrentPageHomeLink({
     });
   };
 
-  return <Link href="/" className={className} onClick={returnHome}>{children}</Link>;
+  return <Link href="/" prefetch={pathname === '/' ? false : undefined} className={className} onClick={returnHome}>{children}</Link>;
 }

@@ -32,9 +32,9 @@ export function Header() {
         </CurrentPageHomeLink>
         <div className="header-actions">
           <nav aria-label="Primary navigation" className="primary-nav">
-            <Link href="/listing" aria-current={catalogCurrent ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, catalogCurrent)}>Catalog</Link>
-            <Link href="/blog" aria-current={writingActive ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, writingCurrent)}>Writing</Link>
-            <Link href="/about" aria-current={aboutCurrent ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, aboutCurrent)}>About</Link>
+            <Link href="/listing" prefetch={catalogCurrent ? false : undefined} aria-current={catalogCurrent ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, catalogCurrent)}>Catalog</Link>
+            <Link href="/blog" prefetch={writingCurrent ? false : undefined} aria-current={writingActive ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, writingCurrent)}>Writing</Link>
+            <Link href="/about" prefetch={aboutCurrent ? false : undefined} aria-current={aboutCurrent ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, aboutCurrent)}>About</Link>
           </nav>
           <ModeToggle />
         </div>
