@@ -170,6 +170,29 @@ test('selected catalog filters retain their category color and depth in both the
     .not.toBe('rgba(0, 0, 0, 0)');
 });
 
+test('dark catalog filters expose a distinct selected surface', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('/listing');
+  const work = page.getByRole('button', { name: 'Work', exact: true });
+  const appearance = () => work.evaluate((element) => {
+    const style = getComputedStyle(element);
+    return {
+      backgroundImage: style.backgroundImage,
+      borderColor: style.borderColor,
+      color: style.color,
+      boxShadow: style.boxShadow,
+    };
+  });
+  const resting = await appearance();
+  await work.click();
+  await expect(work).toHaveAttribute('aria-pressed', 'true');
+  await expect.poll(async () => (await appearance()).borderColor).not.toBe(resting.borderColor);
+  await expect.poll(async () => (await appearance()).color).not.toBe(resting.color);
+  const selected = await appearance();
+  expect(selected.backgroundImage).not.toBe(resting.backgroundImage);
+  expect(selected.boxShadow).not.toBe(resting.boxShadow);
+});
+
 test('catalog categories and grid nameplates share the detailed visual system', async ({ page }) => {
   await page.setViewportSize({ width: 1024, height: 900 });
   await page.goto('/listing');
