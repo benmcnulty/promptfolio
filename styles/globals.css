@@ -67,7 +67,7 @@
   main { min-height: calc(100vh - 16rem); }
   main:has(.error-page) { min-height: 0; }
   .route-content { min-height: inherit; }
-  h1, h2, h3, h4 { text-wrap: balance; }
+  h1, h2, h3, h4 { padding-bottom: .08em; text-wrap: balance; }
   p { text-wrap: pretty; }
   a, button, input { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background; }
   button, a { touch-action: manipulation; }
@@ -101,7 +101,7 @@
 .brand:hover .brand-mark-satellite-dot, .brand:focus-visible .brand-mark-satellite-dot, .footer-lockup:hover .brand-mark-satellite-dot, [data-settling='true'] > .brand-mark-satellite > .brand-mark-satellite-dot { animation: brand-mark-satellite-orbit 16s linear infinite; }
 .brand-motion-finished { animation-play-state: paused !important; }
 .brand strong, .brand small { display: block; line-height: 1.15; }
-.brand strong { width: fit-content; background: linear-gradient(95deg, hsl(var(--heading-ink-start)) 8%, hsl(var(--brand-accent)) 58%, hsl(var(--heading-ink-start)) 96%); background-size: 165% 100%; background-position: 0 50%; background-clip: text; color: transparent; font-size: 1.2rem; font-weight: 780; letter-spacing: -.03em; transition: background-position .7s cubic-bezier(.2, .8, .2, 1), filter .35s ease; }
+.brand strong { width: fit-content; padding-bottom: .08em; background: linear-gradient(95deg, hsl(var(--heading-ink-start)) 8%, hsl(var(--brand-accent)) 58%, hsl(var(--heading-ink-start)) 96%); background-size: 165% 100%; background-position: 0 50%; background-clip: text; color: transparent; font-size: 1.2rem; font-weight: 780; letter-spacing: -.03em; transition: background-position .7s cubic-bezier(.2, .8, .2, 1), filter .35s ease; }
 .dark .brand strong { background-image: linear-gradient(95deg, hsl(var(--foreground)) 12%, hsl(var(--brand-accent))); }
 .brand:hover strong, .brand:focus-visible strong { background-position: 100% 50%; filter: drop-shadow(0 2px 5px hsl(276 64% 50% / .16)); }
 .brand small { color: hsl(var(--muted-foreground)); font-size: .72rem; margin-top: .16rem; letter-spacing: .015em; }
@@ -283,7 +283,7 @@
 .persona-image img { object-fit: cover; transform: scale(1.001); backface-visibility: hidden; transition: transform .55s cubic-bezier(.2, .8, .2, 1); }
 .persona-card:hover .persona-image img { transform: scale(1.04); }
 .persona-title-banner { position: absolute; z-index: 1; inset: auto .75rem .75rem; display: inline-flex; width: fit-content; max-width: calc(100% - 1.5rem); border: 1px solid hsl(0 0% 100% / .2); border-radius: .65rem; background: hsl(248 31% 8% / .76); padding: .55rem .75rem; color: white; box-shadow: 0 7px 22px hsl(248 31% 5% / .25); backdrop-filter: blur(10px); }
-.persona-title { font-size: 1.22rem; font-weight: 780; line-height: 1.18; letter-spacing: -.02em; }
+.persona-title { padding-bottom: .08em; font-size: 1.22rem; font-weight: 780; line-height: 1.18; letter-spacing: -.02em; }
 .persona-body { position: relative; z-index: 2; display: flex; flex: 1; flex-direction: column; margin-top: -1px; padding: calc(1.15rem + 1px) 1.15rem 1.15rem; }
 .persona-card[data-tone='blue'] .persona-body { background: linear-gradient(155deg, hsl(var(--card)) 35%, hsl(211 72% 95%)); }
 .persona-card[data-tone='sage'] .persona-body { background: linear-gradient(155deg, hsl(var(--card)) 35%, hsl(151 52% 94%)); }

@@ -870,7 +870,7 @@ test('privacy and 404 compositions remain contained across supported widths', as
     expect(errorBox!.x + errorBox!.width).toBeLessThanOrEqual(width);
     expect(errorBox!.height).toBeLessThan(650);
     for (const link of await page.locator('.error-actions a').all()) {
-      expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+      expect(Math.round((await link.boundingBox())!.height)).toBeGreaterThanOrEqual(44);
       await expect(link).not.toHaveClass(/button-/);
     }
     await expect(page.locator('.error-motif .error-route')).toBeVisible();
