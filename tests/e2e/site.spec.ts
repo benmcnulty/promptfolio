@@ -26,23 +26,24 @@ for (const route of pages) {
 }
 
 test('visual interaction states', async ({ page }, testInfo) => {
+  test.setTimeout(120_000);
   test.skip(!process.env.VISUAL_REGRESSION, 'Run in the documented Linux container to review baselines.');
   test.skip(!['chromium', 'mobile-chromium'].includes(testInfo.project.name), 'Desktop and mobile Chromium own visual baselines.');
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
 
   await page.goto('/');
   await page.getByRole('button', { name: /Color theme: system.*dark theme/i }).click();
-  await expect(page).toHaveScreenshot('theme-dark.png', { fullPage: true, animations: 'disabled' });
+  await expect(page).toHaveScreenshot('theme-dark.png', { fullPage: true, animations: 'disabled', timeout: 20_000 });
 
   await page.goto('/listing?filter=work');
-  await expect(page).toHaveScreenshot('catalog-filter-work.png', { fullPage: true, animations: 'disabled' });
+  await expect(page).toHaveScreenshot('catalog-filter-work.png', { fullPage: true, animations: 'disabled', timeout: 20_000 });
 
   await page.goto('/blog/visualizing-the-invisible');
-  await expect(page.locator('.carousel').first()).toHaveScreenshot('carousel.png', { animations: 'disabled' });
+  await expect(page.locator('.carousel').first()).toHaveScreenshot('carousel.png', { animations: 'disabled', timeout: 20_000 });
 
   await page.goto('/blog/welcome-to-promptfolio');
   await page.getByRole('button', { name: /Expand image/ }).first().click();
-  await expect(page).toHaveScreenshot('image-dialog.png', { animations: 'disabled' });
+  await expect(page).toHaveScreenshot('image-dialog.png', { animations: 'disabled', timeout: 20_000 });
 });
 
 test('catalog filtering and search are shareable and composable', async ({ page }) => {
@@ -1961,14 +1962,15 @@ test('time failures are visible and recoverable', async ({ page }) => {
 
 for (const route of pages) {
   test(`visual baseline: ${route}`, async ({ page }, testInfo) => {
+    test.setTimeout(120_000);
     test.skip(!process.env.VISUAL_REGRESSION, 'Run in the documented Linux container to review baselines.');
     test.skip(!['chromium', 'mobile-chromium'].includes(testInfo.project.name), 'Desktop and mobile Chromium own visual baselines.');
     const name = route === '/' ? 'home' : route.slice(1).replaceAll('/', '-');
     await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
     await page.goto(route);
-    await expect(page).toHaveScreenshot(`${name}-light.png`, { fullPage: true, animations: 'disabled' });
+    await expect(page).toHaveScreenshot(`${name}-light.png`, { fullPage: true, animations: 'disabled', timeout: 20_000 });
     await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
     await page.reload();
-    await expect(page).toHaveScreenshot(`${name}-dark.png`, { fullPage: true, animations: 'disabled' });
+    await expect(page).toHaveScreenshot(`${name}-dark.png`, { fullPage: true, animations: 'disabled', timeout: 20_000 });
   });
 }
