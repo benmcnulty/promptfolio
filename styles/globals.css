@@ -1118,7 +1118,7 @@
 
 @media (max-width: 650px) {
   .site-footer::after { right: -2rem; bottom: -3rem; width: 11rem; }
-  .footer-meta { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: .5rem; row-gap: 1rem; font-size: clamp(.625rem, 2vw, .8rem); }
+  .footer-meta { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: .75rem; row-gap: 1rem; font-size: clamp(.625rem, 2vw, .8rem); }
   .footer-meta .powered-by-openai { grid-column: 1 / -1; grid-row: 1; justify-self: center; }
   .footer-meta .crafted { grid-column: 1; grid-row: 2; justify-self: start; white-space: nowrap; }
   .footer-meta .copyright { grid-column: 2; grid-row: 2; justify-self: end; text-align: right; }

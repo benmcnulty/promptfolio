@@ -552,7 +552,7 @@ test('every catalog portrait decodes through its production delivery path', asyn
     ).toBeGreaterThan(0);
     const src = await image.getAttribute('src');
     if (src?.endsWith('.webp')) {
-      expect(src).toMatch(/\/(art-collaborator|challenger)\.webp$/);
+      expect(src).toMatch(/\/(art-collaborator|challenger|intergalactic-traveler)\.webp$/);
       await expect(image).not.toHaveAttribute('srcset');
     } else {
       await expect(image).toHaveAttribute('srcset', /_next\/image/);
@@ -680,8 +680,7 @@ test('catalog view defaults once per load and list entries expand accessibly', a
   ).__promptfolioTransitionCount ?? 0);
   await expandButton.click();
   await expect(expandButton).toHaveAttribute('aria-expanded', 'true');
-  await page.waitForTimeout(60);
-  expect(Math.abs((await wideImage.boundingBox())!.width - wideCollapsedImageBox.width)).toBeLessThanOrEqual(2);
+  expect(await wideImage.evaluate((element) => getComputedStyle(element).transitionDelay)).toContain('0.12s');
   expect(await page.evaluate(() => (
     window as Window & { __promptfolioTransitionCount?: number }
   ).__promptfolioTransitionCount ?? 0)).toBe(transitionCountBeforeExpand);

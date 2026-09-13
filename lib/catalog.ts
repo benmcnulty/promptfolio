@@ -359,7 +359,7 @@ export const catalog = [
     description:
       "Voyage through the cosmos, blending astronomical science with imaginative space exploration, presenting a vivid depiction of the universe from the Laniakea Galaxy Supercluster to the fringes of known space.",
     link: "https://chatgpt.com/g/g-XAUAaTUHc-intergalactic-traveler",
-    image: "/intergalactic-traveler.png",
+    image: "/intergalactic-traveler.webp",
     alt: "Photorealistic anthropomorphic dolphin-descendant in a holographic spacesuit, with intergalactic art background.",
     listed: new Date("2024-01-01"),
     labels: ["chat", "art"],
