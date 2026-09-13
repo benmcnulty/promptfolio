@@ -253,6 +253,11 @@ test('catalog search controls use the shared glass and prismatic focus treatment
     const [inputBox, buttonBox] = await Promise.all([input.boundingBox(), button.boundingBox()]);
     expect(inputBox && buttonBox).toBeTruthy();
     expect(Math.abs(inputBox!.height - buttonBox!.height)).toBeLessThanOrEqual(1);
+    await page.getByRole('button', { name: 'Featured', exact: true }).click();
+    await expect(page.getByRole('button', { name: 'Featured', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    await expect(input).toHaveValue('');
+    await expect.poll(() => button.evaluate((element) => getComputedStyle(element, '::before').opacity)).toBe('0');
+    await expect(button).toHaveCSS('color', restingButtonColor);
     await input.fill('concept');
     await expect.poll(() => button.evaluate((element) => getComputedStyle(element, '::before').opacity)).toBe('1');
     await expect.poll(() => button.evaluate((element) => getComputedStyle(element).color)).not.toBe(restingButtonColor);
