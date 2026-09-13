@@ -665,9 +665,14 @@ test('mobile header links retain comfortable touch padding', async ({ page }) =>
     const navBox = await navigation.boundingBox();
     const brandBox = await page.locator('.brand').boundingBox();
     const themeBox = await page.locator('.theme-cycle').boundingBox();
+    const headerBox = await page.locator('.site-header').boundingBox();
+    const heroBox = await page.locator('.home-hero').boundingBox();
     expect(navBox).toBeTruthy();
     expect(brandBox).toBeTruthy();
     expect(themeBox).toBeTruthy();
+    expect(headerBox).toBeTruthy();
+    expect(heroBox).toBeTruthy();
+    expect(Math.abs(heroBox!.y - (headerBox!.y + headerBox!.height))).toBeLessThan(1);
     expect(navBox!.x + navBox!.width).toBeLessThanOrEqual(width);
     expect(navBox!.width).toBeLessThanOrEqual(448);
     expect(Math.abs((navBox!.x + navBox!.width / 2) - width / 2)).toBeLessThan(1);

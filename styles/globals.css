@@ -881,7 +881,7 @@
 
 @media (max-width: 620px) {
   .site-header { position: fixed; inset: 0 0 auto; }
-  .site-header + main { padding-top: 8.875rem; }
+  .site-header + main { padding-top: 8.4125rem; }
   .site-header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; align-items: center; padding: .75rem 0; column-gap: .75rem; row-gap: .85rem; transition: padding var(--motion-standard) var(--ease-emphasized), row-gap var(--motion-standard) var(--ease-emphasized); }
   .brand { grid-column: 1; grid-row: 1; width: fit-content; min-height: 3.25rem; transition: min-height var(--motion-standard) var(--ease-emphasized); }
   .brand-mark { width: 2.9rem; height: 2.9rem; transition: width var(--motion-standard) var(--ease-emphasized), height var(--motion-standard) var(--ease-emphasized); }
