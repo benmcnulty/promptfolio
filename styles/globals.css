@@ -1126,6 +1126,9 @@
 
 @media (max-width: 340px) {
   .site-footer { padding-inline: 1.25rem; }
+  .footer-meta .crafted { gap: .18rem; }
+  .footer-meta .crafted-icon--agent { width: 1.05rem; height: 1.05rem; }
+  .footer-meta .crafted-icon--heart { width: 1rem; height: 1rem; }
 }
 
 @media (max-width: 600px) {

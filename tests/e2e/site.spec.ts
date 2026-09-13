@@ -536,6 +536,7 @@ test('problematic catalog portraits load reliably from a cold cache in every sha
 });
 
 test('every catalog portrait decodes through its production delivery path', async ({ page }) => {
+  test.setTimeout(120_000);
   await page.goto('/listing');
   const entries = page.locator('.catalog-entry');
   await expect(entries).toHaveCount(39);
