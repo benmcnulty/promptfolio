@@ -38,8 +38,10 @@ test('visual interaction states', async ({ page }, testInfo) => {
   await page.goto('/listing?filter=work');
   await expect(page).toHaveScreenshot('catalog-filter-work.png', { fullPage: true, animations: 'disabled', timeout: 20_000 });
 
-  await page.goto('/blog/visualizing-the-invisible');
-  await expect(page.locator('.carousel').first()).toHaveScreenshot('carousel.png', { animations: 'disabled', timeout: 20_000 });
+  await page.goto('/blog/the-human-element-in-ai-development');
+  const carousel = page.locator('.carousel').first();
+  await expect(carousel).toBeVisible();
+  await expect(carousel).toHaveScreenshot('carousel.png', { animations: 'disabled', timeout: 20_000 });
 
   await page.goto('/blog/welcome-to-promptfolio');
   await page.getByRole('button', { name: /Expand image/ }).first().click();
