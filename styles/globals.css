@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 252 33% 98%;
+    --background: 250 22% 96%;
     --foreground: 245 30% 14%;
     --card: 0 0% 100%;
     --card-foreground: 245 30% 14%;
@@ -882,24 +882,24 @@
 @media (max-width: 620px) {
   .site-header { position: fixed; inset: 0 0 auto; }
   .site-header + main { padding-top: 8.875rem; }
-  .site-header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; align-items: center; padding: .78rem 0 .85rem; column-gap: .75rem; row-gap: .52rem; transition: padding var(--motion-standard) var(--ease-emphasized), row-gap var(--motion-standard) var(--ease-emphasized); }
+  .site-header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; align-items: center; padding: .75rem 0; column-gap: .75rem; row-gap: .85rem; transition: padding var(--motion-standard) var(--ease-emphasized), row-gap var(--motion-standard) var(--ease-emphasized); }
   .brand { grid-column: 1; grid-row: 1; width: fit-content; min-height: 3.25rem; transition: min-height var(--motion-standard) var(--ease-emphasized); }
   .brand-mark { width: 2.9rem; height: 2.9rem; transition: width var(--motion-standard) var(--ease-emphasized), height var(--motion-standard) var(--ease-emphasized); }
   .brand strong { font-size: 1.22rem; transition: font-size var(--motion-standard) var(--ease-emphasized); }
   .brand small { margin-top: .2rem; font-size: .8rem; transition: margin-top var(--motion-standard) var(--ease-emphasized), font-size var(--motion-standard) var(--ease-emphasized); }
   .header-actions { display: contents; }
-  .primary-nav { grid-column: 1 / -1; grid-row: 2; justify-self: center; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: min(100%, 28rem); gap: .15rem; padding: .14rem; border: 1px solid hsl(var(--primary) / .16); border-radius: 1rem; background: linear-gradient(115deg, hsl(var(--card) / .46), hsl(var(--muted) / .22)); box-shadow: inset 0 1px 0 hsl(0 0% 100% / .025); transition: padding var(--motion-standard) var(--ease-emphasized), border-radius var(--motion-standard) var(--ease-emphasized), background-color var(--motion-standard) var(--ease-interface); }
-  .primary-nav > a { width: 100%; min-height: 3rem; justify-content: center; padding-inline: .7rem; border-radius: .76rem; font-size: .84rem; transition: min-height var(--motion-standard) var(--ease-emphasized), border-radius var(--motion-standard) var(--ease-emphasized), font-size var(--motion-standard) var(--ease-emphasized), color var(--motion-quick) var(--ease-interface), background-color var(--motion-quick) var(--ease-interface); }
-  .primary-nav > a:hover { background: hsl(var(--accent) / .72); }
-  .theme-cycle { grid-column: 2; grid-row: 1; align-self: center; width: 3.25rem; height: 3.25rem; margin-left: 0; border-radius: .95rem; transition: width var(--motion-standard) var(--ease-emphasized), height var(--motion-standard) var(--ease-emphasized), border-radius var(--motion-standard) var(--ease-emphasized), border-color var(--motion-quick) var(--ease-interface), background-color var(--motion-quick) var(--ease-interface), box-shadow var(--motion-standard) var(--ease-interface), transform var(--motion-standard) var(--ease-emphasized); }
-  .site-header[data-compact='true'] .site-header-inner { padding: .6rem 0 .7rem; row-gap: .35rem; }
+  .primary-nav { grid-column: 1 / -1; grid-row: 2; justify-self: center; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: min(94%, 26rem); gap: clamp(.25rem, 2vw, .65rem); padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .primary-nav > a { position: relative; width: 100%; min-height: 2.75rem; justify-content: center; padding-inline: .6rem; border-radius: .45rem; font-size: .82rem; transition: color var(--motion-quick) var(--ease-interface), background-color var(--motion-quick) var(--ease-interface); }
+  .primary-nav > a::after { content: ''; position: absolute; right: 24%; bottom: .22rem; left: 24%; height: 1px; border-radius: 999px; background: linear-gradient(90deg, transparent, hsl(var(--primary) / .72), transparent); opacity: 0; transform: scaleX(.45); transition: opacity var(--motion-quick) var(--ease-interface), transform var(--motion-standard) var(--ease-emphasized); }
+  .primary-nav > a:hover, .primary-nav > a[aria-current='page'] { color: hsl(var(--foreground)); background: transparent; }
+  .primary-nav > a[aria-current='page']::after { opacity: .82; transform: scaleX(.9); }
+  .primary-nav > a:hover::after { opacity: 1; animation: nav-underline-breathe 2.8s ease-in-out infinite; }
+  .theme-cycle { grid-column: 2; grid-row: 1; align-self: center; width: 2.75rem; height: 2.75rem; margin-left: 0; border-radius: .75rem; }
+  .site-header[data-compact='true'] .site-header-inner { padding: .62rem 0; row-gap: .6rem; }
   .site-header[data-compact='true'] .brand { min-height: 2.75rem; }
   .site-header[data-compact='true'] .brand-mark { width: 2.45rem; height: 2.45rem; }
   .site-header[data-compact='true'] .brand strong { font-size: 1.08rem; }
   .site-header[data-compact='true'] .brand small { margin-top: .16rem; font-size: .72rem; }
-  .site-header[data-compact='true'] .theme-cycle { width: 2.75rem; height: 2.75rem; border-radius: .75rem; }
-  .site-header[data-compact='true'] .primary-nav { padding: .12rem; border-radius: .9rem; }
-  .site-header[data-compact='true'] .primary-nav > a { min-height: 2.75rem; border-radius: .68rem; font-size: .78rem; }
   .home-hero { min-height: 44rem; }
   .home-hero-content { min-height: 40rem; grid-template-columns: minmax(0, 1fr) 7.5rem; grid-template-rows: auto auto; align-content: center; column-gap: .25rem; padding: 3.5rem 0 4rem; }
   .home-hero h1 { position: relative; z-index: 2; font-size: clamp(3rem, 15.5vw, 4.5rem); }
@@ -983,5 +983,11 @@
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .brand:hover .brand-mark img, .brand:focus-visible .brand-mark img, .footer-lockup:hover .footer-mark img { animation: none !important; transform: rotate(6deg) scale(1.06); }
+  .primary-nav > a:hover::after { animation: none !important; opacity: 1; transform: scaleX(1); }
   ::view-transition-old(*), ::view-transition-new(*), ::view-transition-group(*) { animation-duration: 0s !important; animation-delay: 0s !important; }
+}
+
+@keyframes nav-underline-breathe {
+  0%, 100% { opacity: .7; transform: scaleX(.72); }
+  50% { opacity: 1; transform: scaleX(1); }
 }

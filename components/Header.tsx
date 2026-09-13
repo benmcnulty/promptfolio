@@ -39,7 +39,9 @@ export function Header() {
         </Link>
         <div className="header-actions">
           <nav aria-label="Primary navigation" className="primary-nav">
-            <Link href="/listing">Catalog</Link><Link href="/blog">Writing</Link><Link href="/about">About</Link>
+            <Link href="/listing" aria-current={pathname === '/listing' ? 'page' : undefined}>Catalog</Link>
+            <Link href="/blog" aria-current={pathname.startsWith('/blog') ? 'page' : undefined}>Writing</Link>
+            <Link href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>About</Link>
           </nav>
           <ModeToggle />
         </div>

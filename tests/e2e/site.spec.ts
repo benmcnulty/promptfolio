@@ -687,8 +687,8 @@ test('mobile header links retain comfortable touch padding', async ({ page }) =>
       };
     });
     expect(Math.abs(headerBalance.topInset - headerBalance.bottomInset)).toBeLessThan(3);
-    expect(headerBalance.navBorder).toBe(1);
-    expect(headerBalance.navBackground).toContain('linear-gradient');
+    expect(headerBalance.navBorder).toBe(0);
+    expect(headerBalance.navBackground).toBe('none');
     const linkWidths: number[] = [];
     for (const link of await navigation.getByRole('link').all()) {
       const dimensions = await link.evaluate((element) => {
@@ -710,11 +710,21 @@ test('mobile header links retain comfortable touch padding', async ({ page }) =>
   await page.setViewportSize({ width: 390, height: 852 });
   await page.goto('/');
   const header = page.locator('.site-header');
+  const catalogLink = page.getByRole('navigation', { name: 'Primary navigation' }).getByRole('link', { name: 'Catalog' });
+  await catalogLink.hover();
+  await expect.poll(() => catalogLink.evaluate((link) => getComputedStyle(link, '::after').animationName)).toBe('nav-underline-breathe');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect.poll(() => catalogLink.evaluate((link) => getComputedStyle(link, '::after').animationName)).toBe('none');
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
   await expect(header).toHaveAttribute('data-compact', 'false');
   const expandedHeight = (await header.boundingBox())!.height;
+  const expandedThemeBox = (await page.locator('.theme-cycle').boundingBox())!;
   await page.evaluate(() => window.scrollTo(0, 180));
   await expect(header).toHaveAttribute('data-compact', 'true');
   await expect.poll(async () => (await header.boundingBox())!.height).toBeLessThan(expandedHeight - 12);
+  const compactThemeBox = (await page.locator('.theme-cycle').boundingBox())!;
+  expect(Math.abs(compactThemeBox.width - expandedThemeBox.width)).toBeLessThan(.5);
+  expect(Math.abs(compactThemeBox.height - expandedThemeBox.height)).toBeLessThan(.5);
   await page.evaluate(() => {
     document.documentElement.style.scrollBehavior = 'auto';
     window.scrollTo(0, 0);
