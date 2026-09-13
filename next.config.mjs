@@ -5,7 +5,7 @@ const withMDX = createMDX();
 const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR ?? '.next',
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  allowedDevOrigins: ['127.0.0.1', '127.0.0.1'],
+  allowedDevOrigins: ['127.0.0.1'],
   turbopack: { root: import.meta.dirname },
   experimental: { optimizePackageImports: ['@radix-ui/react-icons'] },
   images: {
