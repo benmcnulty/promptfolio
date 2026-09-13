@@ -542,14 +542,22 @@ test('every catalog portrait decodes through its production delivery path', asyn
 
   for (const entry of await entries.all()) {
     const image = entry.locator('.catalog-entry-image img');
-    await image.scrollIntoViewIfNeeded();
-    await expect.poll(
-      () => image.evaluate(async (element: HTMLImageElement) => {
-        if (!element.complete) await element.decode().catch(() => undefined);
-        return element.naturalWidth;
-      }),
-      { timeout: 10_000, message: `Expected catalog portrait ${await image.getAttribute('alt')} to decode` },
-    ).toBeGreaterThan(0);
+    const deliveryPath = await image.evaluate((element: HTMLImageElement) => {
+      const candidate = element.srcset
+        .split(',')
+        .map((value) => value.trim())
+        .find((value) => value.endsWith(' 384w'));
+      return candidate?.split(/\s+/)[0] ?? element.src;
+    });
+    const response = await page.request.get(deliveryPath);
+    expect(response.ok(), `Expected catalog portrait ${await image.getAttribute('alt')} to be served`).toBe(true);
+    expect(response.headers()['content-type']).toMatch(/^image\//);
+    expect(await image.evaluate(async (_element, source) => {
+      const probe = new window.Image();
+      probe.src = source;
+      await probe.decode();
+      return probe.naturalWidth;
+    }, deliveryPath)).toBeGreaterThan(0);
     const src = await image.getAttribute('src');
     if (src?.endsWith('.webp')) {
       expect(src).toMatch(/\/(art-collaborator|challenger|intergalactic-traveler)\.webp$/);

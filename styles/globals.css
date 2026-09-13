@@ -1124,6 +1124,10 @@
   .footer-meta .copyright { grid-column: 2; grid-row: 2; justify-self: end; text-align: right; }
 }
 
+@media (max-width: 340px) {
+  .site-footer { padding-inline: 1.25rem; }
+}
+
 @media (max-width: 600px) {
   .section-heading--with-icon { min-height: 0; padding-right: clamp(.75rem, 1.5vw, 1.25rem); }
   .section-icon,
