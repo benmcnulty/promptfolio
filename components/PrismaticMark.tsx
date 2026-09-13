@@ -2,6 +2,7 @@ export function PrismaticMark() {
   return (
     <div className="prismatic-mark" aria-hidden="true">
       <span className="prismatic-orbit" />
+      <span className="prismatic-satellite"><span className="prismatic-satellite-dot" /></span>
       <svg viewBox="0 0 260 260" role="presentation">
         <defs>
           <linearGradient id="prism-face" x1="0" y1="0" x2="1" y2="1">

@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { GitHubButton } from './GitHubButton';
 import { ThreadsButton } from './ThreadsButton';
 import { PoweredByOpenAIBadge } from './PoweredByOpenAI';
 import { CraftedAgentIcon, CraftedHeartIcon } from './CraftedIcons';
+import { AnimatedBrandMark } from './AnimatedBrandMark';
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-brand">
         <div className="footer-lockup">
-          <span className="footer-mark" aria-hidden="true"><Image src="/promptfolio-mark.svg" alt="" width={58} height={58} /></span>
+          <AnimatedBrandMark className="footer-mark" size={58} />
           <div><strong>Promptfolio</strong><p>Custom GPT experiments for work, conversation, and art.</p></div>
         </div>
       </div>

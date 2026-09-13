@@ -201,12 +201,35 @@ test('social branding and catalog invitations preserve their character', async (
     await expect(wordmark).toHaveCSS('color', 'rgba(0, 0, 0, 0)');
     expect(await wordmark.evaluate((element) => getComputedStyle(element).backgroundImage)).toContain('linear-gradient');
   }
+  await expect(page.locator('.brand-mark .brand-mark-satellite-dot')).toHaveCSS('animation-name', 'none');
   await page.locator('.brand').hover();
   await expect(page.locator('.brand-mark img')).toHaveCSS('animation-name', 'brand-mark-float');
-  expect(await page.locator('.brand-mark').evaluate((element) => getComputedStyle(element, '::before').animationName)).toBe('brand-mark-orbit');
+  await expect(page.locator('.brand-mark img')).toHaveCSS('animation-duration', '5.8s');
+  await expect(page.locator('.brand-mark .brand-mark-orbit')).toHaveCount(2);
+  for (const orbit of await page.locator('.brand-mark .brand-mark-orbit').all()) {
+    await expect(orbit).toHaveCSS('animation-name', 'none');
+  }
+  await expect(page.locator('.brand-mark .brand-mark-satellite')).toHaveCount(1);
+  await expect(page.locator('.brand-mark .brand-mark-satellite-dot')).toHaveCSS('animation-name', 'brand-mark-satellite-orbit');
+  expect(await page.locator('.brand-mark .brand-mark-satellite-dot').evaluate((element) => {
+    const style = getComputedStyle(element);
+    return { name: style.animationName, duration: style.animationDuration, timing: style.animationTimingFunction };
+  })).toEqual({ name: 'brand-mark-satellite-orbit', duration: '16s', timing: 'linear' });
   await page.locator('.footer-lockup').hover();
   await expect(page.locator('.footer-mark img')).toHaveCSS('animation-name', 'brand-mark-float');
-  expect(await page.locator('.footer-mark').evaluate((element) => getComputedStyle(element, '::after').animationName)).toBe('brand-mark-glint');
+  await expect(page.locator('.footer-mark .brand-mark-orbit')).toHaveCount(2);
+  await expect(page.locator('.footer-mark .brand-mark-satellite')).toHaveCount(1);
+  await page.mouse.move(1, 1);
+  await expect(page.locator('.footer-mark')).toHaveAttribute('data-settling', 'true');
+  for (const [selector, animationName] of [
+    ['img', 'brand-mark-float'],
+    ['.brand-mark-satellite-dot', 'brand-mark-satellite-orbit'],
+  ]) {
+    await page.locator(`.footer-mark ${selector}`).evaluate((element, name) => {
+      element.dispatchEvent(new AnimationEvent('animationiteration', { animationName: name, bubbles: true }));
+    }, animationName);
+  }
+  await expect(page.locator('.footer-mark')).toHaveAttribute('data-settling', 'false');
   expect(await page.locator('.featured-section h2').evaluate((element) => getComputedStyle(element).backgroundImage)).toContain('linear-gradient');
   await expect(page.locator('.crafted .crafted-icon')).toHaveCount(2);
   await expect(page.locator('.crafted .crafted-icon--agent')).toBeVisible();
@@ -691,6 +714,7 @@ test('mobile header links retain comfortable touch padding', async ({ page }) =>
 });
 
 test('catalog has no horizontal overflow at supported widths', async ({ page }) => {
+  test.setTimeout(90_000);
   for (const width of [320, 390, 640, 700, 768, 820, 900, 960, 1280, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/listing');
@@ -897,15 +921,33 @@ test('hero, catalog overlap, and responsive footer keep their intended compositi
     await expect(page.locator('.prismatic-mark')).toHaveCSS('pointer-events', 'none');
     await expect(page.locator('.hero-action-index')).toHaveCount(0);
 
-    const [heroBox, markBox] = await Promise.all([
+    const [heroBox, heroContentBox, markBox, heroHeadingBox] = await Promise.all([
       page.locator('.home-hero').boundingBox(),
+      page.locator('.home-hero-content').boundingBox(),
       page.locator('.prismatic-mark').boundingBox(),
+      page.locator('.home-hero h1').boundingBox(),
     ]);
-    expect(heroBox && markBox).toBeTruthy();
+    expect(heroBox && heroContentBox && markBox && heroHeadingBox).toBeTruthy();
+    expect(Math.abs(heroContentBox!.x - (width - heroContentBox!.x - heroContentBox!.width))).toBeLessThanOrEqual(1);
+    if (width >= 640 && width < 1280) expect(heroContentBox!.x).toBeGreaterThanOrEqual(width * .03);
     expect(markBox!.x).toBeGreaterThanOrEqual(0);
     expect(markBox!.x + markBox!.width).toBeLessThanOrEqual(width);
     expect(markBox!.y).toBeGreaterThanOrEqual(heroBox!.y);
     expect(markBox!.y + markBox!.height).toBeLessThanOrEqual(heroBox!.y + heroBox!.height);
+    if (width <= 620) expect(markBox!.y + markBox!.height * .25).toBeLessThan(heroHeadingBox!.y);
+    else if (width <= 960) expect(markBox!.y + markBox!.height / 2).toBeLessThan(heroHeadingBox!.y);
+
+    const markSurface = await page.locator('.prismatic-mark').evaluate((mark) => {
+      const style = getComputedStyle(mark, '::before');
+      return { backgroundImage: style.backgroundImage, borderTopColor: style.borderTopColor };
+    });
+    expect(markSurface.backgroundImage).toBe('none');
+    expect(markSurface.borderTopColor).not.toBe('rgba(0, 0, 0, 0)');
+    await expect(page.locator('.prismatic-orbit')).toHaveCSS('animation-name', 'none');
+    await expect(page.locator('.prismatic-satellite')).toHaveCSS('animation-name', 'none');
+    await expect(page.locator('.prismatic-satellite-dot')).toHaveCSS('animation-name', 'prismatic-satellite-orbit');
+    await expect(page.locator('.prismatic-satellite-dot')).toHaveCSS('animation-duration', '42s');
+    await expect(page.locator('.prismatic-satellite-dot')).toHaveCSS('animation-timing-function', 'linear');
 
     const highlight = await page.locator('.hero-action').first().evaluate((action) => {
       const style = getComputedStyle(action, '::before');

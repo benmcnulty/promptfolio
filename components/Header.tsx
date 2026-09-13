@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { AnimatedBrandMark } from './AnimatedBrandMark';
 import { ModeToggle } from './ui/mode-toggle';
 
 export function Header() {
@@ -34,9 +34,7 @@ export function Header() {
     <header className="site-header" data-compact={compact ? 'true' : 'false'}>
       <div className="site-header-inner">
         <Link href="/" className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            <Image src="/promptfolio-mark.svg" alt="" width={40} height={40} priority />
-          </span>
+          <AnimatedBrandMark className="brand-mark" size={40} priority />
           <span><strong>Promptfolio</strong><small><span>by</span> Ben McNulty</small></span><span className="sr-only"> home</span>
         </Link>
         <div className="header-actions">
