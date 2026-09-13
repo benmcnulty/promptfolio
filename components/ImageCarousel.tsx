@@ -1,125 +1,43 @@
-"use client";
-import React, { useRef, useState, useEffect } from "react";
-import FullScreenImage from "./FullScreenImage";
+'use client';
 
-interface ImageData {
-  src: string;
-  alt: string;
-  caption?: string;
-  credit?: string;
-}
+import { KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
+import FullScreenImage from './FullScreenImage';
 
-interface ImageCarouselProps {
-  images: ImageData[];
-}
+interface ImageData { src: string; alt: string; caption?: string; credit?: string; }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
-
-  const checkScroll = () => {
-    if (!carouselRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-    setCanScrollLeft(scrollLeft > 0);
-    setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
-  };
-
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    checkScroll();
-    const div = carouselRef.current;
-    div?.addEventListener("scroll", checkScroll);
-
-    return () => {
-      div?.removeEventListener("scroll", checkScroll);
-    };
+export default function ImageCarousel({ images }: { images: ImageData[] }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [edges, setEdges] = useState({ left: true, right: false });
+  const updateEdges = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    setEdges({ left: track.scrollLeft <= 1, right: track.scrollLeft + track.clientWidth >= track.scrollWidth - 1 });
   }, []);
-
+  const move = (direction: -1 | 1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    track.scrollBy({ left: direction * track.clientWidth * 0.85, behavior: reducedMotion ? 'auto' : 'smooth' });
+  };
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const observer = new ResizeObserver(updateEdges);
+    observer.observe(track);
+    updateEdges();
+    return () => observer.disconnect();
+  }, [updateEdges]);
+  const onKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); move(1); }
+  };
   return (
-    <div className="relative w-full pt-4 pb-4">
-      {canScrollLeft && (
-        <button
-          onClick={scrollLeft}
-          className="controller absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
-          aria-label="Scroll left"
-          style={{
-            width: "48px",
-            height: "48px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <svg
-            viewBox="0 0 12 24"
-            fill="none"
-            stroke="currentColor"
-            className="w-6 h-full"
-            strokeWidth="4"
-          >
-            <path d="M11 23L1 12 11 1" />
-          </svg>
-        </button>
-      )}
-      <div
-        ref={carouselRef}
-        className="flex overflow-x-auto snap-x snap-mandatory my-carousel w-full gap-4"
-        onScroll={checkScroll}
-      >
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="snap-center shrink-0 flex-none w-full sm:w-80 h-auto"
-          >
-            <FullScreenImage
-              src={image.src}
-              alt={image.alt}
-              width={500}
-              height={500}
-              {...(image.caption && { caption: image.caption })}
-              {...(image.credit && { credit: image.credit })}
-            />
-          </div>
-        ))}
+    <section className="carousel" aria-label={`Image gallery with ${images.length} items`}>
+      <button type="button" onClick={() => move(-1)} disabled={edges.left} aria-label="Previous image">←</button>
+      <div ref={trackRef} className="carousel-track" tabIndex={0} onScroll={updateEdges} onKeyDown={onKeyDown}>
+        {images.map((image) => <div className="carousel-item" key={image.src}><FullScreenImage src={image.src} alt={image.alt} width={500} height={500} caption={image.caption} credit={image.credit} /></div>)}
       </div>
-      {canScrollRight && (
-        <button
-          onClick={scrollRight}
-          className="controller absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 bg-white bg-opacity-30 hover:bg-opacity-50 dark:bg-black dark:bg-opacity-30 dark:hover:bg-opacity-50 rounded-full"
-          aria-label="Scroll right"
-          style={{
-            width: "48px",
-            height: "48px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <svg
-            viewBox="0 0 12 24"
-            fill="none"
-            stroke="currentColor"
-            className="w-6 h-full"
-            strokeWidth="4"
-          >
-            <path d="M1 1l10 11L1 23" />
-          </svg>
-        </button>
-      )}
-    </div>
+      <button type="button" onClick={() => move(1)} disabled={edges.right} aria-label="Next image">→</button>
+    </section>
   );
-};
-
-export default ImageCarousel;
+}

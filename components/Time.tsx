@@ -1,62 +1,45 @@
-// components/Time.tsx
-"use client";
-import { useState } from "react";
+'use client';
 
-export const Time = () => {
-  const [serverTime, setServerTime] = useState("");
-  const [localTime, setLocalTime] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+import { useState } from 'react';
+import { PageMotifIcon } from './PageMotifIcon';
 
+interface TimeResponse { time: string; message: string; }
+
+function isTimeResponse(value: unknown): value is TimeResponse {
+  if (!value || typeof value !== 'object') return false;
+  const candidate = value as Partial<TimeResponse>;
+  return typeof candidate.time === 'string' && !Number.isNaN(Date.parse(candidate.time)) && typeof candidate.message === 'string';
+}
+
+export function Time() {
+  const [serverTime, setServerTime] = useState('');
+  const [localTime, setLocalTime] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
   const updateTime = async () => {
-    setIsLoading(true);
+    setStatus('loading');
     try {
-      const response = await fetch("/api/time");
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
+      const response = await fetch('/api/time');
+      if (!response.ok) throw new Error('Request failed');
+      const data: unknown = await response.json();
+      if (!isTimeResponse(data)) throw new Error('Invalid response');
       setServerTime(new Date(data.time).toLocaleTimeString());
       setLocalTime(new Date().toLocaleTimeString());
-    } catch (error) {
-      console.error("There was an error updating the time:", error);
+      setStatus('idle');
+    } catch {
+      setStatus('error');
     }
-    setIsLoading(false);
   };
-
   return (
-    <div className="flex flex-col items-center justify-center space-y-4">
-      <h2 className="text-3xl font-semibold tracking-tight text-foreground text-shadow">
-        Time API
-      </h2>
-      <div className="space-y-4 w-full max-w-md px-4">
-        <div>
-          <label className="font-semibold text-lg block text-center mb-2 text-foreground text-shadow">
-            Server
-          </label>
-          <div className="text-lg p-4 border border-gray-300 rounded min-w-[300px] text-center bg-gray-100 text-primary">
-            {serverTime || "Awaiting server time..."}
-          </div>
-        </div>
-        <div>
-          <label className="font-semibold text-lg block text-center mb-2 text-foreground text-shadow">
-            Local
-          </label>
-          <div className="text-lg p-4 border border-gray-300 rounded min-w-[300px] text-center bg-gray-100 text-primary">
-            {localTime || "Awaiting local time..."}
-          </div>
-        </div>
+    <section className="demo-page" aria-labelledby="time-title">
+      <div className="page-heading page-heading--time">
+        <div className="page-heading-copy"><p className="eyebrow">Small API demonstration</p><h1 id="time-title">Compare server and local time</h1><p>Request the current timestamp from Promptfolio’s public JSON endpoint.</p></div>
+        <PageMotifIcon kind="time" />
       </div>
-      <button
-        onClick={updateTime}
-        className="px-4 py-2 rounded focus:outline-none text-white
-           bg-primary hover:bg-secondary transition-colors"
-        disabled={isLoading}
-        style={{ minWidth: "150px" }}
-      >
-        {isLoading ? "Loading..." : "Update Time"}
-      </button>
-    </div>
+      <div className="time-grid"><div><span>Server</span><output>{serverTime || 'Awaiting server time'}</output></div><div><span>Local</span><output>{localTime || 'Awaiting local time'}</output></div></div>
+      {status === 'error' && <p role="alert" className="error-message">The time service did not return a valid response. Please try again.</p>}
+      <button type="button" className="button-primary" onClick={updateTime} disabled={status === 'loading'}>{status === 'loading' ? 'Requesting…' : status === 'error' ? 'Try again' : 'Update time'}</button>
+    </section>
   );
-};
+}
 
 export default Time;

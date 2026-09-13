@@ -1,86 +1,35 @@
-// component/Listing.tsx
-"use client";
-import React, { useEffect, useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-import { Persona } from "@/components/Persona";
-import filterCatalog from "@/utils/filterCatalog";
-import catalog from "@/lib/catalog";
-import CatalogItem from "@/lib/types";
-import { LabelToggle } from "./LabelToggle";
+import catalog from '@/lib/catalog';
+import { filterCatalog, parseCatalogFilters } from '@/utils/filterCatalog';
+import { CatalogResults } from './CatalogResults';
+import { LabelToggle } from './LabelToggle';
+import { PageMotifIcon } from './PageMotifIcon';
 
-function ListingContent() {
-  const [filteredCatalog, setFilteredCatalog] =
-    useState<CatalogItem[]>(catalog);
-  const [heading, setHeading] = useState("Full List of GPTs");
-  const searchParams = useSearchParams();
+interface ListingProps { filter?: string | string[]; search?: string | string[]; }
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const initialFilter = searchParams.get("filter");
-      const filters = initialFilter ? initialFilter.split(",") : [];
-      setFilteredCatalog(
-        filters.length > 0 ? filterCatalog(catalog, filters) : catalog
-      );
-
-      // Dynamically set the heading based on filters
-      if (filters.length > 0) {
-        const formattedFilters = filters.map(
-          (filter) => filter.charAt(0).toUpperCase() + filter.slice(1)
-        );
-
-        let headingText = "";
-
-        if (formattedFilters.includes("Featured")) {
-          headingText = "Featured GPTs";
-          const nonFeaturedFilters = formattedFilters.filter(
-            (filter) => filter !== "Featured"
-          );
-
-          if (nonFeaturedFilters.length > 0) {
-            headingText += " and GPTs for ";
-            headingText += nonFeaturedFilters.slice(0, -1).join(", ");
-            if (nonFeaturedFilters.length > 1) {
-              headingText += " & " + nonFeaturedFilters.slice(-1);
-            } else {
-              headingText += nonFeaturedFilters[0];
-            }
-          }
-        } else {
-          headingText = "GPTs for ";
-          headingText += formattedFilters.slice(0, -1).join(", ");
-          if (formattedFilters.length > 1) {
-            headingText += " & " + formattedFilters.slice(-1);
-          } else {
-            headingText += formattedFilters[0];
-          }
-        }
-
-        setHeading(headingText);
-      } else {
-        setHeading("Full List of GPTs");
-      }
-    }
-  }, [searchParams]);
-
+export function Listing({ filter, search }: ListingProps) {
+  const filters = parseCatalogFilters(filter);
+  const query = (Array.isArray(search) ? search.at(0) ?? '' : search ?? '').trim();
+  const items = filterCatalog(catalog, filters, query);
   return (
-    <section className="flex flex-col items-center p-4 text-center mx-auto">
-      <h3 className="text-3xl font-semibold tracking-tight transition-all">
-        {heading}
-      </h3>
-      <LabelToggle />
-      <div className="flex flex-wrap justify-center gap-4 md:gap-4 lg:gap-6 w-full transition-all">
-        {filteredCatalog.map((persona, index) => (
-          <Persona key={index} personaData={persona} />
-        ))}
+    <section className="page-section catalog-page" aria-labelledby="catalog-title">
+      <div className="page-heading page-heading--catalog">
+        <div className="page-heading-copy">
+          <p className="eyebrow">39 purpose-built assistants</p>
+          <h1 id="catalog-title">Custom GPT catalog</h1>
+          <p>Browse experiments for focused work, thoughtful conversation, and visual creativity.</p>
+        </div>
+        <PageMotifIcon kind="catalog" />
       </div>
+      <LabelToggle selectedLabels={filters} search={query} />
+      {items.length > 0 ? (
+        <CatalogResults items={items} />
+      ) : (
+        <div className="empty-state">
+          <h2>No GPTs match those choices</h2>
+          <p>Try another phrase or clear the filters to see the complete catalog.</p>
+          <a className="text-link" href="/listing">Clear search and filters</a>
+        </div>
+      )}
     </section>
-  );
-}
-
-export function Listing() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ListingContent />
-    </Suspense>
   );
 }

@@ -1,6 +1,7 @@
 import { CustomListings } from "@/components/CustomListings";
 import { blog } from "@/lib/blog";
 import FullScreenImage from "@/components/FullScreenImage";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 export const postMetadata = blog.find(
   (post) => post.slug === "welcome-to-promptfolio"
@@ -10,6 +11,7 @@ export const metadata = {
   title: postMetadata.title,
   date: postMetadata.publishDate,
   description: postMetadata.description,
+  alternates: { canonical: `/blog/${postMetadata.slug}` },
   creator: "Ben McNulty",
   keywords: ["Prompt Engineering", "Generative AI", "GPTs"],
   openGraph: {
@@ -24,18 +26,22 @@ export const metadata = {
         height: 1024,
       },
       {
-        url: "https://www.promptfolio.dev/hero.png",
+        url: "https://www.promptfolio.dev/twitter-image",
         width: 1792,
         height: 1024,
         alt: "Welcome to Promptfolio by Ben McNulty",
       },
     ],
     locale: "en_US",
-    type: "website",
+    type: "article",
+    publishedTime: postMetadata.publishDate,
+    authors: ["Ben McNulty"],
   },
 };
 
-## {postMetadata.title}
+<ArticleStructuredData post={postMetadata} />
+
+# {postMetadata.title}
 
 <FullScreenImage
   src="/brainstormer.png"
@@ -45,11 +51,11 @@ export const metadata = {
   caption="Creating the profile image of Brainstormer and our first conversation during testing are two of my most joyous moments inspired by generative AI outputs. I had to share them with the world."
 />
 
-### Discover the Journey of Advanced Prompt Engineering
+## Discover the Journey of Advanced Prompt Engineering
 
 Welcome to _Promptfolio_, a unique platform where the art of AI Prompt Crafting and Engineering comes to life. This is our inaugural post, and we're excited to share the essence of our work, combining creativity with technology.
 
-#### What is Prompt Engineering?
+### What is Prompt Engineering?
 
 Prompt engineering is the craft of designing and refining prompts to interact effectively with language models. It's not just about asking questions; it's about framing them in a way that elicits the most informative, accurate, and relevant responses.
 
@@ -59,7 +65,7 @@ Prompt engineering is the craft of designing and refining prompts to interact ef
   backgroundClass="radial-gradient-bg"
 />
 
-#### Our Approach
+### Our Approach
 
 At Promptfolio, we blend creative writing, technical writing, and software engineering to create bespoke GPT prompts. Our expertise lies in:
 
@@ -67,7 +73,7 @@ At Promptfolio, we blend creative writing, technical writing, and software engin
 - **Creative AI Applications:** Harnessing the power of GPT models for artistic and expressive outputs.
 - **Technical Prompt Crafting:** Ensuring precision and effectiveness in prompts for technical domains.
 
-#### What to Expect
+### What to Expect
 
 On this blog, we will:
 
@@ -83,4 +89,4 @@ Stay tuned for regular updates, and don't hesitate to reach out if you have any 
   backgroundClass="blue-gradient-bg"
 />
 
-###### _Thank you for joining us at Promptfolio. Let's explore the endless possibilities of AI together!_
+##### _Thank you for joining us at Promptfolio. Let's explore the endless possibilities of AI together!_

@@ -1,41 +1,34 @@
-// components/footer.tsx
-import * as React from "react";
-import strings from "@/lib/strings";
-import { ModeToggle } from "./ui/mode-toggle";
-import { ThreadsButton } from "./ThreadsButton";
-import { GitHubButton } from "./GitHubButton";
+import Link from 'next/link';
+import Image from 'next/image';
+import { GitHubButton } from './GitHubButton';
+import { ThreadsButton } from './ThreadsButton';
+import { PoweredByOpenAIBadge } from './PoweredByOpenAI';
+import { CraftedAgentIcon, CraftedHeartIcon } from './CraftedIcons';
 
 export function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-800 py-4 px-6 w-full">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start md:items-center text-center md:text-left mb-4">
-        <div className="md:text-left">
-          <h4 className="text-lg md:text-xl font-semibold mt-2 mb-0">
-            {strings.footer.heading}
-          </h4>
-        </div>
-
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0">
-          <div className="mb-4 md:mb-0 md:mr-8">
-            <ModeToggle />
-          </div>
-          <div className="flex justify-center items-center space-x-4 md:space-x-6 md:ml-8">
-            <ThreadsButton />
-            <GitHubButton />
-          </div>
-        </div>
-
-        <div className="md:text-right">
-          <h5 className="text-lg md:text-xl font-semibold mt-2">
-            {strings.footer.subheading}
-          </h5>
+    <footer className="site-footer">
+      <div className="footer-brand">
+        <div className="footer-lockup">
+          <span className="footer-mark" aria-hidden="true"><Image src="/promptfolio-mark.svg" alt="" width={58} height={58} /></span>
+          <div><strong>Promptfolio</strong><p>Custom GPT experiments for work, conversation, and art.</p></div>
         </div>
       </div>
-      <p className="leading-7 text-center mt-1">{strings.footer.conclusion}</p>
-      <p className="leading-7 text-center mt-0">{strings.footer.conclusion2}</p>
-      <p className="leading-7 text-center mt-2">{strings.footer.extra}</p>
-      <p className="leading-7 text-center mt-0">{strings.footer.copyright}</p>
+      <div className="footer-directory">
+        <div className="footer-connect">
+          <p className="footer-label">Connect</p>
+          <div className="social-links"><GitHubButton /><ThreadsButton /></div>
+        </div>
+        <div className="footer-explore">
+          <p className="footer-label">Explore</p>
+          <nav aria-label="Footer navigation"><Link href="/listing">Catalog</Link><Link href="/blog">Writing</Link><Link href="/about">About</Link><Link href="/privacy">Privacy</Link></nav>
+        </div>
+      </div>
+      <div className="footer-meta">
+        <p className="crafted"><span>Crafted with</span> <CraftedAgentIcon /> <span aria-hidden="true">&amp;</span> <CraftedHeartIcon /><span className="sr-only">agentic AI and love</span></p>
+        <PoweredByOpenAIBadge />
+        <p className="copyright">© 2023–2026 <a href="https://benlive.tv" target="_blank" rel="noopener noreferrer">Ben McNulty</a></p>
+      </div>
     </footer>
   );
 }
-//

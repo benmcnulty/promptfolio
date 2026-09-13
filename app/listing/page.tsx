@@ -1,33 +1,49 @@
 // app/listing/page.tsx
-import React from "react";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
 import { Listing } from "@/components/Listing";
 import { Metadata } from "next";
+import catalog from '@/lib/catalog';
+import { StructuredData } from '@/components/StructuredData';
+import { personSchema, siteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: "Custom GPTs",
-  description: "GPTs Engineered for Work, Chat, & Art",
+  description: "Explore 39 Custom GPT experiments for focused work, thoughtful conversation, and visual creativity by Ben McNulty.",
+  alternates: { canonical: '/listing' },
   keywords: ["custom GPTs", "AI agents", "specialized AI", "work automation", "creative AI", "chat AI"],
   openGraph: {
-    title: "Custom GPTs - Specialized AI Agents for Every Need",
-    description: "GPTs Engineered for Work, Chat, & Art",
+    title: "Custom GPT Catalog | Promptfolio by Ben McNulty",
+    description: "Explore 39 Custom GPT experiments for work, conversation, and art.",
     type: "website",
-    url: "https://promptfolio.dev/listing",
+    url: "https://www.promptfolio.dev/listing",
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Promptfolio by Ben McNulty' }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom GPTs - Specialized AI Agents for Every Need",
-    description: "GPTs Engineered for Work, Chat, & Art",
+    title: "Custom GPT Catalog | Promptfolio by Ben McNulty",
+    description: "Explore 39 Custom GPT experiments for work, conversation, and art.",
+    images: ['/twitter-image'],
   },
 };
 
-export default function ListingPage() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <Header />
-      <Listing />
-      <Footer />
-    </main>
-  );
+export default async function ListingPage({ searchParams }: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const { filter, search } = await searchParams;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${siteUrl}/listing#collection`,
+    url: `${siteUrl}/listing`,
+    name: 'Custom GPT catalog',
+    description: metadata.description,
+    author: { '@id': personSchema['@id'] },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: catalog.length,
+      itemListElement: catalog.map((item, index) => ({
+        '@type': 'ListItem', position: index + 1, name: item.name, url: item.link,
+      })),
+    },
+  };
+  return <><StructuredData data={jsonLd} /><Listing filter={filter} search={search} /></>;
 }

@@ -15,20 +15,29 @@ export function CustomListings({
   headline,
   backgroundClass,
 }: CustomListingsProps) {
-  // Sort and filter custom catalog items based on gptNames order
   const customCatalog: CatalogItem[] = gptNames
     .map((name) => catalog.find((item) => item.name === name))
-    .filter((item): item is CatalogItem => item !== undefined) as CatalogItem[];
+    .filter((item): item is CatalogItem => item !== undefined);
+  const title = headline || 'Continue exploring Promptfolio';
+  const titleId = `gpt-feature-${gptNames.join('-').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+  const tone = backgroundClass.includes('green')
+    ? 'sage'
+    : backgroundClass.includes('blue')
+      ? 'blue'
+      : 'lilac';
+
   return (
     <section
-      className={`flex flex-col items-center p-4 text-center w-full mx-0 ${backgroundClass}`}
+      className={`article-gpt-feature article-gpt-feature--${tone}`}
+      aria-labelledby={titleId}
     >
-      <h3 className="text-3xl font-semibold tracking-tight transition-all mb-4">
-        {headline}
-      </h3>
-      <div className="flex flex-wrap justify-center gap-4 md:gap-4 lg:gap-6 w-full transition-all">
-        {customCatalog.map((persona, index) => (
-          <Persona key={index} personaData={persona} />
+      <div className="article-gpt-heading">
+        <p className="eyebrow">From the catalog</p>
+        <h2 id={titleId}>{title}</h2>
+      </div>
+      <div className="article-gpt-grid" data-count={customCatalog.length}>
+        {customCatalog.map((persona) => (
+          <Persona key={persona.name} personaData={persona} headingLevel={3} />
         ))}
       </div>
     </section>

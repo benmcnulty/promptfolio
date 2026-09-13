@@ -1,38 +1,50 @@
-// components/header.tsx
-import * as React from "react";
-import strings from "@/lib/strings";
-import { Navigation } from "./Navigation";
-import { Sparkle } from "./ui/sparkle";
-import { PoweredByOpenAIBadge } from "./PoweredByOpenAI";
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { ModeToggle } from './ui/mode-toggle';
 
 export function Header() {
-  return (
-    <header className="text-center relative block w-full my-0 hero-image animated-bg">
-      <div className="relative z-10 p-4 text-container">
-        <div className="mb-1 inline-block">
-          <div className="flex justify-center items-center">
-            <div className="flex-1 heading-sparkle">
-              <Sparkle className="flip shadow" />
-            </div>
-            <div className="flex flex-col items-center px-1 md:px-4">
-              <h1 className="text-5xl font-extrabold tracking-tight lg:text-5xl text-white header-shadow">
-                {strings.header.siteTitle}
-              </h1>
-              <h2 className="text-2xl font-semibold tracking-tight pb-0 text-white header-shadow">
-                {strings.header.siteAuthor}
-              </h2>
-              <PoweredByOpenAIBadge />
-            </div>
-            <div className="flex-1 heading-sparkle second-sparkle">
-              <Sparkle className="shadow" />
-            </div>
-          </div>
-          <h2 className="mt-[1rem] text-1xl font-semibold tracking-tight text-white header-shadow inline-block border-b">
-            {strings.header.siteSubtitle}
-          </h2>
-        </div>
+  const pathname = usePathname();
+  const [compact, setCompact] = useState(false);
 
-        <Navigation />
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      setCompact(window.scrollY > 20);
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('pageshow', scheduleUpdate);
+    return () => {
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('pageshow', scheduleUpdate);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [pathname]);
+
+  return (
+    <header className="site-header" data-compact={compact ? 'true' : 'false'}>
+      <div className="site-header-inner">
+        <Link href="/" className="brand">
+          <span className="brand-mark" aria-hidden="true">
+            <Image src="/promptfolio-mark.svg" alt="" width={40} height={40} priority />
+          </span>
+          <span><strong>Promptfolio</strong><small><span>by</span> Ben McNulty</small></span><span className="sr-only"> home</span>
+        </Link>
+        <div className="header-actions">
+          <nav aria-label="Primary navigation" className="primary-nav">
+            <Link href="/listing">Catalog</Link><Link href="/blog">Writing</Link><Link href="/about">About</Link>
+          </nav>
+          <ModeToggle />
+        </div>
       </div>
     </header>
   );

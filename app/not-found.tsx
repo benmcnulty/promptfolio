@@ -1,28 +1,36 @@
 import Link from 'next/link';
-import { Button } from "@/components/ui/button";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Page not found',
+};
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <Header />
-      <div className="flex flex-col items-center justify-center space-y-4 text-center py-16">
-        <h1 className="text-4xl font-bold">404</h1>
-        <h2 className="text-xl font-semibold">Page Not Found</h2>
-        <p className="text-muted-foreground max-w-md">
-          The page you&apos;re looking for doesn&apos;t exist. It might have been moved, deleted, or you entered the wrong URL.
-        </p>
-        <div className="flex gap-4 mt-6">
-          <Button asChild variant="default">
-            <Link href="/">Go Home</Link>
-          </Button>
-          <Button asChild variant="outline">
-            <Link href="/listing">Browse GPTs</Link>
-          </Button>
+      <section className="error-page" aria-labelledby="not-found-title">
+        <div className="error-copy">
+          <p className="eyebrow">404 · Lost in the archive</p>
+          <h1 id="not-found-title">Page not found</h1>
+          <p>
+            This route may have moved, or the address may be incomplete. The collection and writing archive are still close by.
+          </p>
+          <div className="error-actions">
+            <Link className="text-link error-home-link" href="/">Return home</Link>
+            <Link className="text-link" href="/listing">Browse the catalog <span aria-hidden="true">→</span></Link>
+          </div>
         </div>
-      </div>
-      <Footer />
-    </main>
+        <div className="error-motif" aria-hidden="true">
+          <span>404</span>
+          <svg viewBox="0 0 180 180">
+            <path d="M39 43c16-8 31-8 47 1v92c-16-9-31-9-47-1Z" />
+            <path d="M141 43c-16-8-31-8-47 1v92c16-9 31-9 47-1Z" />
+            <path d="M86 44c3 2 5 2 8 0v92c-3 2-5 2-8 0Z" opacity=".45" />
+            <path className="error-route" d="M55 111c6-24 24-18 30-35s22-22 40-9" />
+            <circle className="error-route-point" cx="55" cy="111" r="4" />
+            <path className="error-spark" d="M128 52c1.5 8 5.5 12 13.5 13.5-8 1.5-12 5.5-13.5 13.5-1.5-8-5.5-12-13.5-13.5 8-1.5 12-5.5 13.5-13.5Z" />
+            <path className="error-spark" d="M48 38c.7 3.8 2.7 5.8 6.5 6.5-3.8.7-5.8 2.7-6.5 6.5-.7-3.8-2.7-5.8-6.5-6.5 3.8-.7 5.8-2.7 6.5-6.5Z" />
+          </svg>
+        </div>
+      </section>
   );
 }

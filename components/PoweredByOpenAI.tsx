@@ -1,24 +1,28 @@
-// components/PoweredByOpenAI.tsx
-import React from "react";
-import Image from "next/image";
+import Image from 'next/image';
 
-export const PoweredByOpenAIBadge: React.FC = () => {
+export function PoweredByOpenAIBadge() {
   return (
-    <div className="badge mt-[1rem]">
+    <a
+      className="powered-by-openai"
+      href="https://openai.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="OpenAI homepage (opens in a new tab)"
+    >
       <Image
         src="/powered-by-openai-badges/powered-by-openai-badge-outlined-on-light.svg"
-        alt="Powered by OpenAI"
+        alt=""
         width={280}
         height={54}
-        className="m-auto w-full max-w-[16rem] min-h-[3rem] black-badge"
+        className="openai-badge-light"
       />
       <Image
         src="/powered-by-openai-badges/powered-by-openai-badge-outlined-on-dark.svg"
-        alt="Powered by OpenAI"
+        alt=""
         width={280}
         height={54}
-        className="m-auto w-full max-w-[16rem] min-h-[3rem] white-badge"
+        className="openai-badge-dark"
       />
-    </div>
+    </a>
   );
-};
+}

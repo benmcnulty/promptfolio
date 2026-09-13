@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title description">
+  <title id="title">Promptfolio three-star mark</title>
+  <desc id="description">Three translucent prismatic four-point stars.</desc>
+  <defs>
+    <linearGradient id="face" x1=".08" y1=".04" x2=".92" y2=".96">
+      <stop offset="0" stop-color="#fff" stop-opacity=".96"/>
+      <stop offset=".2" stop-color="#bff8ff" stop-opacity=".72"/>
+      <stop offset=".48" stop-color="#e8b7ff" stop-opacity=".58"/>
+      <stop offset=".74" stop-color="#ffe89d" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#ff9ed9" stop-opacity=".86"/>
+    </linearGradient>
+    <linearGradient id="edge" x1=".06" y1=".08" x2=".94" y2=".9">
+      <stop offset="0" stop-color="#8ff6ff"/><stop offset=".28" stop-color="#fff"/><stop offset=".56" stop-color="#c67cff"/><stop offset=".8" stop-color="#ffe575"/><stop offset="1" stop-color="#ff88c9"/>
+    </linearGradient>
+    <radialGradient id="core"><stop offset="0" stop-color="#fff" stop-opacity=".72"/><stop offset=".48" stop-color="#d8b8ff" stop-opacity=".2"/><stop offset="1" stop-color="#8ae8ff" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%"><feGaussianBlur stdDeviation="3.4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <circle cx="132" cy="126" r="104" fill="url(#core)"/>
+  <path d="M135 16C141 75 166 101 226 108C166 116 141 142 135 204C129 142 104 116 43 108C104 101 129 75 135 16Z" fill="#120b25" opacity=".34" transform="translate(7 9)"/>
+  <g filter="url(#glow)">
+    <path d="M135 16C141 75 166 101 226 108C166 116 141 142 135 204C129 142 104 116 43 108C104 101 129 75 135 16Z" fill="url(#face)" stroke="url(#edge)" stroke-width="2.2"/>
+    <path d="M135 16C138 79 151 100 226 108C158 110 143 116 135 204Z" fill="#d287ff" opacity=".22"/>
+    <path d="M135 28C132 79 112 101 56 108" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" opacity=".8"/>
+  </g>
+  <path d="M55 153C58 174 68 184 90 187C68 190 58 200 55 223C52 200 42 190 20 187C42 184 52 174 55 153Z" fill="url(#face)" stroke="url(#edge)" stroke-width="1.7"/>
+  <path d="M205 39C207 53 214 60 229 62C214 64 207 71 205 87C203 71 196 64 181 62C196 60 203 53 205 39Z" fill="url(#face)" stroke="url(#edge)" stroke-width="1.5"/>
+</svg>

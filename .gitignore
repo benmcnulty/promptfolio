@@ -8,9 +8,13 @@
 
 # testing
 /coverage
+/output
+/playwright-report
+/test-results
 
 # next.js
 /.next/
+/.next-e2e/
 /out/
 
 # production
@@ -36,4 +40,26 @@ yarn-error.log*
 next-env.d.ts
 CLAUDE.md
 pnpm-lock.yaml
-AGENTS.md
+
+# Omitted from the public source-audit repository
+.env
+.env.*
+.vercel/
+.firebase/
+.claude/
+coverage/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico
+*.mp4
+*.mov
+*.webm
+*.mp3
+*.wav
+*.pdf
+*.pem
+*.key
+*.p12

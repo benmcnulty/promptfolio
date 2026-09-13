@@ -81,6 +81,15 @@ export const blog = [
       "Learn by example how to implement Promptfolio's custom GPT agents in a collaborative workflow, demonstrating an extensible process from initial ideation to final output refinement.",
     imageUrl: "/ai-group-chat-with-promptfolio/square.png",
   },
+  {
+    slug: "rebuilding-promptfolio-without-losing-its-spark",
+    title: "Rebuilding Promptfolio Without Losing Its Spark",
+    publishDate: "2026-09-12",
+    categories: ["design", "engineering"],
+    description:
+      "A regression-first case study in modernizing Promptfolio’s code, accessibility, and visual system while preserving the personality that made it distinct.",
+    imageUrl: "/promptfolio-redesign-2026/after-home-redesign.webp",
+  },
 ];
 
 export default blog;

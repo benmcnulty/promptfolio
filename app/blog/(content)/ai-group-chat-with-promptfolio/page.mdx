@@ -1,6 +1,7 @@
 import { CustomListings } from "@/components/CustomListings";
 import { blog } from "@/lib/blog";
 import FullScreenImage from "@/components/FullScreenImage";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 export const postMetadata = blog.find(
   (post) => post.slug === "ai-group-chat-with-promptfolio"
@@ -10,6 +11,7 @@ export const metadata = {
   title: postMetadata.title,
   date: postMetadata.publishDate,
   description: postMetadata.description,
+  alternates: { canonical: `/blog/${postMetadata.slug}` },
   creator: "Ben McNulty",
   keywords: ["empathy", "software development"],
   openGraph: {
@@ -24,20 +26,24 @@ export const metadata = {
         height: 1024,
       },
       {
-        url: "https://www.promptfolio.dev/hero.png",
+        url: "https://www.promptfolio.dev/twitter-image",
         width: 1792,
         height: 1024,
         alt: "Welcome to Promptfolio by Ben McNulty",
       },
     ],
     locale: "en_US",
-    type: "website",
+    type: "article",
+    publishedTime: postMetadata.publishDate,
+    authors: ["Ben McNulty"],
   },
 };
 
-## {postMetadata.title}
+<ArticleStructuredData post={postMetadata} />
 
-### Collaborative GPT Workflows
+# {postMetadata.title}
+
+## Collaborative GPT Workflows
 
 In this blog post, we're sharing a simplified collaborative workflow using Promptfolio custom GPTs to create a unique piece of concept art. This step-by-step guide illustrates how each agent contributes to the final artwork, demonstrating the efficiency and ease of indulging your creativity when using Promptfolio GPT group chats for collaborative projects.
 
@@ -54,9 +60,9 @@ After you have met a GPT by starting your first conversation with them, they wil
 
 This workflow example is a concise implementation of a collaborative visual art process. You can adapt and expand on this model to suit your specific project needs. If you're looking for GPT collaborators, especially on software application, custom GPT, or visual art projects, [Promptfolio](../listing) is here to help bring your ideas to life.
 
-### Collaborative Art Creation Process
+## Collaborative Art Creation Process
 
-#### 1 | Establish Context with Art Collaborator
+### 1 | Establish Context with Art Collaborator
 
 To begin, start a conversation with Art Collaborator to establish the context for our collaborative art project. Discuss the theme, style, and specific requirements for the piece with as much or as little detail as you enjoy. Art Collaborator is directed to help clarify your vision, ensuring a solid foundation for the project.
 
@@ -70,7 +76,7 @@ To begin, start a conversation with Art Collaborator to establish the context fo
   credit="ChatGPT Screenshot"
 />
 
-#### 2 | Generating Ideas with Brainstormer
+### 2 | Generating Ideas with Brainstormer
 
 Next, present the summary of our initial discussion to Brainstormer, asking for creative ideas and options. Brainstormer generates a variety of themes, styles, and artistic elements to choose from, providing a broader perspective on alternative possibilities to inspire the project.
 
@@ -84,7 +90,7 @@ Next, present the summary of our initial discussion to Brainstormer, asking for 
   credit="ChatGPT Screenshot"
 />
 
-#### 3 | Polishing the Concept with Art Collaborator
+### 3 | Polishing the Concept with Art Collaborator
 
 Let's now review the ideas from Brainstormer with Art Collaborator, evaluating and selecting the best options. This collaborative discussion refines our concept and finalizes the artistic treatment, ensuring alignment with your initial vision and enhancing the creative direction.
 
@@ -98,7 +104,7 @@ Let's now review the ideas from Brainstormer with Art Collaborator, evaluating a
   credit="ChatGPT Screenshot"
 />
 
-#### 4 | Detailed Descriptions with Copy Writer
+### 4 | Detailed Descriptions with Copy Writer
 
 With our concept refined, consult Copy Writer to clarify and articulate the detailed treatment. Copy Writer ensures the final description is clear and effective, aligning with our envisioned concept and providing a precise blueprint for the next steps.
 
@@ -112,7 +118,7 @@ With our concept refined, consult Copy Writer to clarify and articulate the deta
   credit="ChatGPT Screenshot"
 />
 
-#### 5 | Creating Visual Magic with Concept Artist
+### 5 | Creating Visual Magic with Concept Artist
 
 Share the final draft treatment with Concept Artist, who generates the concept art based on the detailed description. The resulting artwork reflects an initial idea enhanced through the collaborative effort of all involved agents, efficiently bringing the envisioned concept to life with refined detail and creativity.
 
@@ -137,7 +143,7 @@ Share the final draft treatment with Concept Artist, who generates the concept a
 
 > **Image Prompt**: A vast alien landscape with undulating hills and valleys, partially covered in alien flora, under a twilight sky dominated by multiple moons and distant stars. The scene is centered around a grand, partially ruined alien temple with intricate carvings and hieroglyphs. The temple is overgrown with bioluminescent plants, and in front of it is a large, floating hologram projecting complex data and alien language, casting a soft glow. Futuristic explorers in high-tech suits are studying the hologram and ruins, accompanied by sleek hovering drones scanning the area. Ethereal, ghostly silhouettes of ancient inhabitants subtly integrated into the scene. The lighting creates dramatic and surreal shadows and reflections, enhancing the ethereal quality. Detailed textures of alien flora and ruins in the foreground, with additional ruins and celestial elements in the background.
 
-### Inspire Your Projects with Promptfolio GPT Collaboration
+## Inspire Your Projects with Promptfolio GPT Collaboration
 
 This workflow demonstrates the benefits and flexibility of using Promptfolio's GPT agents for creative projects. Here at Promptfolio, we implemented a similar collaborative process to draft this very blog post. By engaging different agents, we brainstormed ideas, refined our content, and ensured a thoroughly considered final piece.
 

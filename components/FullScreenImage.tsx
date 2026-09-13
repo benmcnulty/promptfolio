@@ -1,132 +1,44 @@
-// FullScreenImage.tsx
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Image from "next/image";
+import Image from 'next/image';
+import { useEffect, useRef, type CSSProperties } from 'react';
 
-interface FullScreenImageProps {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  caption?: string;
-  credit?: string;
-}
+interface FullScreenImageProps { src: string; alt: string; width: number; height: number; caption?: string; credit?: string; }
 
-const FullScreenImage: React.FC<FullScreenImageProps> = ({
-  src,
-  alt,
-  width,
-  height,
-  caption,
-  credit = "Created with DALL·E by Ben McNulty",
-}) => {
-  const [isFullScreen, setIsFullScreen] = useState(false);
+export default function FullScreenImage({ src, alt, width, height, caption, credit = 'Created with DALL·E by Ben McNulty' }: FullScreenImageProps) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const close = () => dialogRef.current?.close();
+  const open = () => dialogRef.current?.showModal();
 
-  const handleImageClick = () => {
-    setIsFullScreen(true);
-  };
-
-  const handleOverlayClick = (e: React.MouseEvent) => {
-    if (isFullScreen) {
-      e.stopPropagation();
-      setIsFullScreen(false);
-    }
-  };
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    const onClose = () => { document.body.classList.remove('dialog-open'); triggerRef.current?.focus(); };
+    const onOpen = () => document.body.classList.add('dialog-open');
+    dialog.addEventListener('close', onClose);
+    dialog.addEventListener('cancel', onClose);
+    const observer = new MutationObserver(() => { if (dialog.open) onOpen(); });
+    observer.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+    return () => { observer.disconnect(); dialog.removeEventListener('close', onClose); dialog.removeEventListener('cancel', onClose); document.body.classList.remove('dialog-open'); };
+  }, []);
 
   return (
-    <div
-      className={`${
-        isFullScreen
-          ? "fullscreen image fixed inset-0 z-50 flex flex-col justify-center items-center overflow-hidden cursor-pointer blurry"
-          : "image relative flex justify-center items-center flex-col"
-      }`}
-      onClick={handleOverlayClick}
-      style={{
-        width: "100%",
-        height: "100%",
-        margin: 0,
-        maxWidth: "inherit",
-        overflow: isFullScreen ? "hidden" : "visible",
-      }}
-    >
-      {isFullScreen && (
-        <button
-          onClick={handleOverlayClick}
-          className="controller absolute top-4 right-4 z-50 p-2 rounded-full"
-          aria-label="Close fullscreen"
-          style={{
-            width: "3rem",
-            height: "3rem",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            className="w-6 h-6"
-            strokeWidth="2"
-          >
-            <g transform="rotate(45 12 12)">
-              <path d="M2 12h20" />
-              <path d="M12 2v20" />
-            </g>
-          </svg>
+    <figure className="article-figure">
+      <button ref={triggerRef} type="button" className="image-trigger" onClick={open} aria-label={`Expand image: ${alt}`}>
+        <Image src={src} alt={alt} width={width} height={height} quality={88} sizes="(max-width: 768px) calc(100vw - 2rem), 768px" />
+        <span aria-hidden="true">Expand</span>
+      </button>
+      {(caption || credit) && <figcaption>{caption && <span>{caption}</span>}<small>{credit}</small></figcaption>}
+      <dialog ref={dialogRef} className="image-dialog" aria-label={`Enlarged image: ${alt}`} onClick={(event) => { if (event.target === event.currentTarget) close(); }}>
+        <button type="button" className="dialog-close" onClick={close} aria-label="Close enlarged image">
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5 5 15" /></svg>
         </button>
-      )}
-      <div
-        className={isFullScreen ? "" : "relative"}
-        style={{ cursor: "pointer" }}
-        onClick={handleImageClick}
-      >
-        {isFullScreen ? (
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            className="object-contain cursor-pointer"
-            style={{
-              objectFit: "contain",
-            }}
-          />
-        ) : (
-          <Image
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            className="cursor-pointer"
-            style={{
-              objectFit: "cover",
-            }}
-          />
-        )}
-        <div
-          className={
-            isFullScreen
-              ? "credit absolute top-4 left-4 bg-white text-black p-1"
-              : "credit absolute bottom-1 right-1 bg-white text-black p-1"
-          }
-        >
-          {credit}
+        <div className="dialog-image-frame" style={{ '--image-ratio': width / height } as CSSProperties}>
+          <Image className="dialog-image" src={src} alt={alt} fill quality={88} sizes="94vw" />
         </div>
-      </div>
-      {caption && (
-        <div
-          className={`${
-            isFullScreen
-              ? "caption absolute bottom-4 text-center bg-white text-black p-1"
-              : "caption text-center bg-white text-black p-1 mt-2"
-          }`}
-        >
-          {caption}
-        </div>
-      )}
-    </div>
+        {(caption || credit) && <div className="dialog-caption">{caption && <span>{caption}</span>}<small>{credit}</small></div>}
+      </dialog>
+    </figure>
   );
-};
-
-export default FullScreenImage;
+}

@@ -1,42 +1,45 @@
-// components/ui/ModeToggle.tsx
 "use client";
 
 import * as React from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import strings from "@/lib/strings";
+type ThemeChoice = 'system' | 'dark' | 'light';
+
+const nextTheme: Record<ThemeChoice, ThemeChoice> = {
+  system: 'dark',
+  dark: 'light',
+  light: 'system',
+};
+const themeLabel: Record<ThemeChoice, string> = {
+  system: 'System',
+  dark: 'Dark',
+  light: 'Light',
+};
+const subscribeToHydration = () => () => undefined;
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+  const mounted = React.useSyncExternalStore(subscribeToHydration, () => true, () => false);
+
+  const activeTheme: ThemeChoice = mounted && (theme === 'dark' || theme === 'light')
+    ? theme
+    : 'system';
+  const upcomingTheme = nextTheme[activeTheme];
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">{strings.modeToggle.descriptor}</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="center">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          {strings.modeToggle.light}
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          {strings.modeToggle.dark}
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          {strings.modeToggle.system}
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <button
+      type="button"
+      className="theme-cycle"
+      data-theme-choice={activeTheme}
+      onClick={() => setTheme(upcomingTheme)}
+      aria-label={`Color theme: ${activeTheme}. Activate ${upcomingTheme} theme.`}
+      title={`${themeLabel[activeTheme]} theme · switch to ${upcomingTheme}`}
+      suppressHydrationWarning
+    >
+      <span className="theme-cycle-icon theme-cycle-icon--light" aria-hidden="true"><SunIcon /></span>
+      <span className="theme-cycle-icon theme-cycle-icon--dark" aria-hidden="true"><MoonIcon /></span>
+      <span className="theme-cycle-icon theme-cycle-icon--system" aria-hidden="true"><SunIcon /><MoonIcon /></span>
+    </button>
   );
 }

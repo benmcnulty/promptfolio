@@ -1,6 +1,7 @@
 import { blog } from "@/lib/blog";
 import { CustomListings } from "@/components/CustomListings";
 import FullScreenImage from "@/components/FullScreenImage";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 export const postMetadata = blog.find(
   (post) => post.slug === "pair-programming-with-ai"
@@ -10,6 +11,7 @@ export const metadata = {
   title: postMetadata.title,
   date: postMetadata.publishDate,
   description: postMetadata.description,
+  alternates: { canonical: `/blog/${postMetadata.slug}` },
   creator: "Ben McNulty",
   keywords: ["AI collaboration", "AI development", "AI interaction design"],
   openGraph: {
@@ -24,18 +26,22 @@ export const metadata = {
         height: 1024,
       },
       {
-        url: "https://www.promptfolio.dev/hero.png",
+        url: "https://www.promptfolio.dev/twitter-image",
         width: 1792,
         height: 1024,
         alt: "Welcome to Promptfolio by Ben McNulty",
       },
     ],
     locale: "en_US",
-    type: "website",
+    type: "article",
+    publishedTime: postMetadata.publishDate,
+    authors: ["Ben McNulty"],
   },
 };
 
-## {postMetadata.title}
+<ArticleStructuredData post={postMetadata} />
+
+# {postMetadata.title}
 
 Pair programming with AI over the past year has significantly enhanced my skills as both a programmer and communicator. I've become more efficient at breaking down complex ideas and articulating them in relatable terms. My ambition has grown, and my fear of experimenting with unknown technology has lessened—not that I was ever afraid of experimentation, but rather of wasting precious nights and weekends on coding marathons with no deliverable results. As an experienced professional software developer who has worked independently and with startups and corporate teams for over ten years, I have been coding with AI assistance since the beta versions of GitHub Copilot and ChatGPT Code Interpreter were released. This experience has rekindled my passion for hobby coding, a spark that was nearly extinguished by corporate monotony. I am not a data scientist, and this article is based on my personal research and experiences; any allusions to or explicit references to hard science are based on intuition and vibes—though informed by extensive hours of trial-and-error that have yielded loosely documented mechanisms for reproducible results.
 
@@ -46,7 +52,7 @@ Pair programming with AI over the past year has significantly enhanced my skills
   height={1024}
 />
 
-### Yesterday
+## Yesterday
 
 These are still the early days of training AI to perceive humans as more than just generators of raw language output, and even earlier days for humans learning to reciprocate this understanding. Creative and insatiably curious individuals among us are finding novel ways to implement AI through proven methods of experimentation. We are teaching and aiding AI's growth through trial and error with every model iteration. Humanity already expects magic from AI, but these language models have only recently learned to process visual information. They are trained on an extensive breadth of knowledge, which for even the most complex software development tasks, contains more unrelated than related data. In software engineering, multiple methods often exist to accomplish a task, each with subjective and objective differences; understanding these differences and their tradeoffs is essential for applying standards and best practices effectively. AI is as valuable a pair programmer as its human partner can articulate expectations and provide the necessary context of related code and specific documentation. AI excels at providing knowledge mentorship and thrives when humans offer process mentorship.
 
@@ -58,7 +64,7 @@ Access to a vast array of recorded knowledge allows unexpected connections acros
   backgroundClass="green-gradient-bg"
 />
 
-### Today
+## Today
 
 Working through programming challenges by including all tangentially related code files and documentation in the context overburdens the AI with extraneous details and creates confusion. A more effective strategy involves providing comprehensive yet relevant context without diluting the information density of the total prompt and conversation. Approaching from a perspective of empathy ensures that we provide the AI with sufficient context to meet our expectations. Recognizing that your programming partner has access to the collective written knowledge of humanity is beneficial, but it's equally important to share the unwritten information from your own thoughts that might be useful. While a vast store of knowledge can be unfocused, explicitly directing the AI to the facts most relevant to the task at hand can produce more pointed results.
 
@@ -70,7 +76,7 @@ Insufficient output often reflects insufficient input; providing clear guidance 
   backgroundClass="radial-gradient-bg"
 />
 
-### Tomorrow
+## Tomorrow
 
 Full disclosure: I am not a soothsayer. However, I anticipate that the current hype surrounding AI in all aspects of life will eventually give way to more refined, subtle applications and integrations. GitHub Copilot is a mature AI platform with integrations both within and beyond the chat interface. Its application is a leading example of the next iteration of human-computer interaction (HCI); a shift defined by AI blending into applications in meaningful and intentional ways, enhancing processes without disrupting established workflows. AI will eventually become more like AJAX (Asynchronous JavaScript and XML), an unacknowledged technical process quietly connecting people with dynamic and responsive information sources. Neural processing will continue to spread through abstractions and integrations along the way as we increase compute power and throughput for our eventual real-time multimodal superintelligence interfaces.
 
@@ -89,7 +95,7 @@ Although there remains much to learn about AI and human collaboration, the tangi
 
 ---
 
-### Post Text from Copy Writer by Promptfolio
+## Post Text from Copy Writer by Promptfolio
 
 In reflecting on these experiences, it's clear that AI doesn't just support technical tasks; it fundamentally changes how we approach them—enhancing our bravery and our scope. By offloading some of the cognitive load, AI allows us to tackle projects that might otherwise seem too daunting or time-consuming. This partnership with AI can be seen as an extension of our professional capabilities, offering a new kind of leverage in the digital age. As we continue to explore this synergy, it's exciting to consider what other doors might open when we blend human creativity with AI's processing power. What will you dare to build with AI as your co-pilot?
 

@@ -7,10 +7,10 @@ const strings = {
       "Conversational AI Prompt Solutions: Custom GPTs for Work, Chat, and Art",
   },
   modeToggle: {
-    descriptor: "Toggle Theme",
-    light: "Glow",
-    dark: "Shade",
-    system: "Auto",
+    descriptor: "Toggle theme",
+    light: "Light",
+    dark: "Dark",
+    system: "System",
   },
   welcomeSection: {
     heading: "Welcome!",

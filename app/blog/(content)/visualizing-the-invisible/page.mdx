@@ -1,6 +1,7 @@
 import { blog } from "@/lib/blog";
 import { CustomListings } from "@/components/CustomListings";
 import FullScreenImage from "@/components/FullScreenImage";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 export const postMetadata = blog.find(
   (post) => post.slug === "visualizing-the-invisible"
@@ -10,6 +11,7 @@ export const metadata = {
   title: postMetadata.title,
   date: postMetadata.publishDate,
   description: postMetadata.description,
+  alternates: { canonical: `/blog/${postMetadata.slug}` },
   creator: "Ben McNulty",
   keywords: ["Aphantasia", "Visualization", "Mental Imagery", "Generative Art"],
   openGraph: {
@@ -24,20 +26,24 @@ export const metadata = {
         height: 1024,
       },
       {
-        url: "https://www.promptfolio.dev/hero.png",
+        url: "https://www.promptfolio.dev/twitter-image",
         width: 1792,
         height: 1024,
         alt: "Welcome to Promptfolio by Ben McNulty",
       },
     ],
     locale: "en_US",
-    type: "website",
+    type: "article",
+    publishedTime: postMetadata.publishDate,
+    authors: ["Ben McNulty"],
   },
 };
 
-## {postMetadata.title}
+<ArticleStructuredData post={postMetadata} />
 
-### My Journey with Aphantasia and AI
+# {postMetadata.title}
+
+## My Journey with Aphantasia and AI
 
 Living with aphantasia means I navigate the world without the ability to voluntarily visualize mental images. Imagine reading a book without being able to picture the scenes or characters—this is my reality every day. Though I sometimes dream in color, in my waking life, even my most focused efforts cannot summon the simplest mental images. In this context, my experiences with AI through language models and generative art tools have opened a new frontier for me. Generative AI provides me a way to visualize ideas and memories that otherwise remain elusive from my mind's perspective.
 
@@ -48,7 +54,7 @@ Living with aphantasia means I navigate the world without the ability to volunta
   height={1024}
 />
 
-### Rediscovering Art with AI
+## Rediscovering Art with AI
 
 Back in the early days of Photoshop and digital art, I found joy in using distortion tools, brushes, and layers to create psychedelic tie-dye backgrounds behind silhouettes from iconic Jimi Hendrix photos. This project was a nod to the hippie counterculture-inspired mass-produced tapestries that adorned the room of a '90s kid like me. More recently, through conversational access to DALL·E via ChatGPT, I felt inspired to pick up where I left off on that project decades ago. Throughout this post, I'll share selections from those sessions, hoping to inspire your next creative pursuit, but I am grateful just to have my artwork appreciated by others.
 
@@ -59,7 +65,7 @@ Back in the early days of Photoshop and digital art, I found joy in using distor
   height={1024}
 />
 
-### Living with Aphantasia
+## Living with Aphantasia
 
 Aphantasia has profoundly shaped how I perceive and interact with the world. My inability to visualize has often limited my enjoyment of traditional visual arts, pushing me instead toward creative writing and coding—domains where language and logic reign. Whether it's crafting narratives or converting complex mockups into CSS, I achieve a state of creative flow through composition rather than visual creation.
 
@@ -70,7 +76,7 @@ Aphantasia has profoundly shaped how I perceive and interact with the world. My 
   height={1024}
 />
 
-### AI as a Creative Catalyst
+## AI as a Creative Catalyst
 
 The advent of generative AI art interfaces like DALL·E has been transformative for me. These tools translate textual descriptions into visual artworks, allowing me to bridge the gap between linguistic creativity and visual expression. The iterative feedback and modification process of these AI tools has fostered a dynamic, collaborative space between the technology and me, alleviating a lifetime of frustration and opening new avenues for creative expression.
 
@@ -81,7 +87,7 @@ The advent of generative AI art interfaces like DALL·E has been transformative 
   height={1024}
 />
 
-### The Broader Impact
+## The Broader Impact
 
 For people with aphantasia, AI opens new experiences with visual creativity previously off-limits. Understanding the world through a natural language filter is no longer just a workaround but a distinct advantage when communicating with AI. This technology can level the playing field, turning what were once perceived limitations into new possibilities for expression and interaction.
 
@@ -92,7 +98,7 @@ For people with aphantasia, AI opens new experiences with visual creativity prev
   height={1024}
 />
 
-### A World of Pure Imagination
+## A World of Pure Imagination
 
 This journey with AI hasn't just changed how I engage with art; it has fundamentally reshaped how I view my capabilities, transforming a limitation into a unique tool for personal and artistic expression. This novel technology enables those of us who cannot visualize in the traditional sense to imagine, create, and explore visual artistry in our own unique ways. I am still just getting started.
 

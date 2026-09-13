@@ -1,11 +1,9 @@
 // app/api/blogdata/route.ts
 import blog from "@/lib/blog";
 
-export const runtime = "edge";
-
 export async function GET() {
   // Sort blog posts in chronological order based on their publish date
-  const sortedBlogPosts = blog.sort(
+  const sortedBlogPosts = [...blog].sort(
     (a, b) =>
       new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
   );

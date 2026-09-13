@@ -1,5 +1,6 @@
 import { blog } from "@/lib/blog";
 import FullScreenImage from "@/components/FullScreenImage";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 export const postMetadata = blog.find((post) => post.slug === "why-ben");
 
@@ -7,6 +8,7 @@ export const metadata = {
   title: postMetadata.title,
   date: postMetadata.publishDate,
   description: postMetadata.description,
+  alternates: { canonical: `/blog/${postMetadata.slug}` },
   creator: "Ben McNulty",
   keywords: ["AI collaboration", "AI development", "AI interaction design"],
   openGraph: {
@@ -21,22 +23,26 @@ export const metadata = {
         height: 1024,
       },
       {
-        url: "https://www.promptfolio.dev/hero.png",
+        url: "https://www.promptfolio.dev/twitter-image",
         width: 1792,
         height: 1024,
         alt: "Welcome to Promptfolio by Ben McNulty",
       },
     ],
     locale: "en_US",
-    type: "website",
+    type: "article",
+    publishedTime: postMetadata.publishDate,
+    authors: ["Ben McNulty"],
   },
 };
 
-## {postMetadata.title}
+<ArticleStructuredData post={postMetadata} />
+
+# {postMetadata.title}
 
 Meet Ben McNulty, a seasoned software application developer specializing in AI prompt engineering and interaction design. Committed to innovating conversational interfaces that enrich human experiences, Ben utilizes a profound understanding of language as an essential tool to enhance AI collaboration. With a robust background in full-stack web development and a passion for creating spatial interfaces, Ben is well-equipped to lead projects that design intuitive, human-centric technology interactions.
 
-### Knowledge
+## Knowledge
 
 <FullScreenImage
   src="/why-ben/knowledge-wide.png"
@@ -45,7 +51,7 @@ Meet Ben McNulty, a seasoned software application developer specializing in AI p
   height={1024}
 />
 
-#### Effective Communication
+### Effective Communication
 
 Ben's communication expertise is deeply rooted in an understanding of language's nuances and its pivotal role in AI development. These skills are demonstrated by:
 
@@ -54,7 +60,7 @@ Ben's communication expertise is deeply rooted in an understanding of language's
 - Drawing on rigorous academic and practical writing experiences to enhance the effectiveness of AI interactions.
 - Recognizing the impact of communication detail on AI outcomes, underscoring the need for clear and comprehensive dialogue.
 
-#### Interaction Design
+### Interaction Design
 
 Ben is devoted to refining the interaction between humans and technology, ensuring seamless and intuitive communication across various platforms. Ben's hands-on experience includes:
 
@@ -62,7 +68,7 @@ Ben is devoted to refining the interaction between humans and technology, ensuri
 - Using advanced tools like A-Frame for VR to craft engaging, immersive user experiences.
 - Addressing the inefficiencies of translating human ideas into machine processes to improve system responsiveness and accuracy.
 
-### Experience
+## Experience
 
 <FullScreenImage
   src="/why-ben/experience-wide.png"
@@ -71,7 +77,7 @@ Ben is devoted to refining the interaction between humans and technology, ensuri
   height={1024}
 />
 
-#### Technical Leadership
+### Technical Leadership
 
 Ben's leadership in technology is deeply informed by a nuanced understanding of AI development challenges. Leadership exemplified by:
 
@@ -79,7 +85,7 @@ Ben's leadership in technology is deeply informed by a nuanced understanding of 
 - Applying agile methodologies to boost team productivity and optimize project results.
 - Fostering a culture of experimentation and open communication, essential for managing the complexities of innovative AI workflows.
 
-#### Independent Learning
+### Independent Learning
 
 Ben thrives as a self-taught professional across various programming languages and digital tools in ever-evolving tech landscapes. This proactive learning is characterized by:
 
@@ -87,7 +93,7 @@ Ben thrives as a self-taught professional across various programming languages a
 - Undertaking self-directed projects that not only sharpen problem-solving skills but also expand technical knowledge.
 - Leveraging AI as a transformative ally in an ongoing journey of professional development and innovation.
 
-### Understanding
+## Understanding
 
 <FullScreenImage
   src="/why-ben/understanding-wide.png"
@@ -96,7 +102,7 @@ Ben thrives as a self-taught professional across various programming languages a
   height={1024}
 />
 
-#### Empathy in AI
+### Empathy in AI
 
 Ben embeds empathy within technology development, recognizing that effective AI systems necessitate a human-focused approach. These empathetic practices include:
 
@@ -104,7 +110,7 @@ Ben embeds empathy within technology development, recognizing that effective AI 
 - Promoting an inclusive environment that acknowledges and addresses varied user needs and perspectives.
 - Developing AI systems with a deep appreciation for the human elements of technology interactions.
 
-#### Objective Decision Making
+### Objective Decision Making
 
 Ben employs a pragmatic, methodical approach to software development, guided by extensive experience and research. This decision-making process involves:
 
@@ -114,4 +120,4 @@ Ben employs a pragmatic, methodical approach to software development, guided by 
 
 Ben McNulty applies a robust skill set to enhance AI application development, ensuring technological innovations are practical and accessible. With comprehensive technical expertise and an in-depth understanding of language dynamics and user interaction, Ben plays a crucial role in the technology sector. This approach involves integrating advanced AI solutions with user-centered design principles, consistently delivering projects that meet essential business needs and improve the user experience.
 
-Ben's prompt engineering skills have already facilitated thousands of productive conversations with Promptfolio custom GPTs, showcasing adeptness in software application development workflows and effective communication. Looking to leverage Ben's expertise for your AI-enhanced development needs? Connect on [Threads](https://www.threads.net/@benlivenow) or [LinkedIn](https://www.linkedin.com/in/benmcnulty/) to discuss how Ben's skills can elevate your team to the next level.
+Ben's prompt engineering skills have already facilitated thousands of productive conversations with Promptfolio custom GPTs, showcasing adeptness in software application development workflows and effective communication. Looking to leverage Ben's expertise for your AI-enhanced development needs? Connect on [Threads](https://www.threads.com/@benlivenow) or [LinkedIn](https://www.linkedin.com/in/benmcnulty/) to discuss how Ben's skills can elevate your team to the next level.

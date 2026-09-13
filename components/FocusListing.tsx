@@ -28,27 +28,36 @@ export function FocusListing({
     return (
       <div className="text-center my-10">
         <h3 className="text-3xl font-semibold mb-4">Enjoy our Custom GPTs!</h3>
-        <Link href="/listing">
-          <a className="text-lg text-primary hover:underline">
-            See full listing
-          </a>
+        <Link href="/listing" className="text-link text-lg">
+          See full listing
         </Link>
       </div>
     );
   }
 
+  const tone = backgroundClass.includes('green')
+    ? 'sage'
+    : backgroundClass.includes('blue')
+      ? 'blue'
+      : 'lilac';
+  const titleId = `gpt-focus-${personaData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
   return (
     <section
-      className={`flex flex-col justify-center lg:flex-row items-center p-4 text-center w-full gap-4 md:gap-4 lg:gap-6 ${backgroundClass}`}
+      className={`article-gpt-feature article-gpt-feature--${tone} article-gpt-focus`}
+      aria-labelledby={titleId}
     >
-      <div className="w-full max-w-md mx-0 my-2 sm:my-4 md:my-4 flex-auto sm:w-[48%] lg:w-1/3 xl:w-1/4">
-        <h3 className="text-3xl font-semibold tracking-tight mb-2">
+      <div className="article-gpt-heading">
+        <p className="eyebrow">From the catalog</p>
+        <h2 id={titleId}>
           {greeting} {personaData.name}
-        </h3>
-        <h4 className="text-2xl font-semibold mb-2">{subheading}</h4>
-        <p className="text-base lg:mb-0">{additionalContent}</p>
+        </h2>
+        <p className="article-gpt-subheading">{subheading}</p>
+        <p>{additionalContent}</p>
       </div>
-      <Persona personaData={personaData} />
+      <div className="article-gpt-grid" data-count="1">
+        <Persona personaData={personaData} headingLevel={3} />
+      </div>
     </section>
   );
 }

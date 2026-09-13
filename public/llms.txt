@@ -1,0 +1,32 @@
+# Promptfolio by Ben McNulty
+
+> A curated portfolio of 39 Custom GPT experiments for work, conversation, and art, plus a preserved 2024 writing archive about AI interaction design.
+
+Promptfolio is authored by Ben McNulty. Catalog entries link to Custom GPTs hosted by ChatGPT. The articles retain their original publication dates and historical context; older product capability statements should not be treated as freshly validated claims.
+
+## Primary pages
+
+- [Home](https://www.promptfolio.dev/): Project introduction and featured work.
+- [Custom GPT catalog](https://www.promptfolio.dev/listing): The complete, searchable collection of 39 GPT experiments.
+- [Writing](https://www.promptfolio.dev/blog): A 2026 modernization case study and nine historical essays originally published in 2024.
+- [About](https://www.promptfolio.dev/about): Project purpose, implementation, and author context.
+- [Privacy](https://www.promptfolio.dev/privacy): Hosting, storage, and external-link privacy details.
+
+## Writing
+
+- [Rebuilding Promptfolio Without Losing Its Spark](https://www.promptfolio.dev/blog/rebuilding-promptfolio-without-losing-its-spark)
+- [AI Group Chat with Promptfolio](https://www.promptfolio.dev/blog/ai-group-chat-with-promptfolio)
+- [Visualizing the Invisible](https://www.promptfolio.dev/blog/visualizing-the-invisible)
+- [Pair Programming with AI](https://www.promptfolio.dev/blog/pair-programming-with-ai)
+- [The Human Element in AI Development](https://www.promptfolio.dev/blog/the-human-element-in-ai-development)
+- [Why Ben?](https://www.promptfolio.dev/blog/why-ben)
+- [Inviting AI to Work](https://www.promptfolio.dev/blog/inviting-ai-to-work)
+- [Introducing Communicator](https://www.promptfolio.dev/blog/introducing-communicator)
+- [Empathy-Driven Software Development](https://www.promptfolio.dev/blog/empathy-driven-software-development)
+- [Welcome to Promptfolio](https://www.promptfolio.dev/blog/welcome-to-promptfolio)
+
+## Author
+
+- [BenLive](https://benlive.tv)
+- [GitHub](https://github.com/benmcnulty)
+- [Threads](https://www.threads.com/@promptfolio.dev)

@@ -1,8 +1,13 @@
 // app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ThemeChrome } from "@/components/ThemeChrome";
 import { SkipNavigation } from "@/components/SkipNavigation";
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { StructuredData } from '@/components/StructuredData';
+import { personSchema, siteDescription, siteName, siteUrl } from '@/lib/site';
 import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,11 +17,22 @@ export const metadata: Metadata = {
     template: "%s | Promptfolio by Ben McNulty",
     default: "Promptfolio by Ben McNulty",
   },
-  description: "AI Prompt Crafting, Engineering & Applications.",
-  metadataBase: new URL("https://promptfolio.dev/"),
+  description: siteDescription,
+  metadataBase: new URL(`${siteUrl}/`),
+  applicationName: 'Promptfolio',
+  category: 'technology',
   creator: "Ben McNulty",
+  publisher: 'Ben McNulty',
+  referrer: 'origin-when-cross-origin',
   keywords: ["prompt", "ai", "gpt", "promptfolio", "ben mcnulty", "artificial intelligence", "prompt engineering", "custom GPTs"],
-  authors: [{ name: "Ben McNulty", url: "https://promptfolio.dev" }],
+  authors: [{ name: "Ben McNulty", url: "https://benlive.tv" }],
+  alternates: {
+    canonical: '/',
+    languages: { 'en-US': '/' },
+    types: { 'text/plain': '/llms.txt' },
+  },
+  manifest: '/manifest.webmanifest',
+  formatDetection: { email: false, address: false, telephone: false },
   robots: {
     index: true,
     follow: true,
@@ -29,18 +45,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    siteName: "Promptfolio by Ben McNulty",
+    title: siteName,
+    description: siteDescription,
+    url: siteUrl,
+    siteName,
     images: [
       {
-        url: `/brainstormer.png`,
-        width: 1024,
-        height: 1024,
-      },
-      {
-        url: "/hero.png",
-        width: 1792,
-        height: 1024,
-        alt: "Welcome to Promptfolio by Ben McNulty",
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Promptfolio by Ben McNulty — purpose-built AI assistants, designed with intent.",
       },
     ],
     locale: "en_US",
@@ -49,17 +63,20 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Promptfolio by Ben McNulty",
-    description: "AI Prompt Crafting, Engineering & Applications.",
-    images: [
-      {
-        url: "/hero.png",
-        alt: "Welcome to Promptfolio by Ben McNulty",
-      },
-    ],
+    description: siteDescription,
+    images: [{ url: "/twitter-image", alt: "Promptfolio by Ben McNulty — purpose-built AI assistants, designed with intent." }],
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: 'light dark',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#faf9fc' },
+    { media: '(prefers-color-scheme: dark)', color: '#12101d' },
+  ],
 };
 
 export default function RootLayout({
@@ -69,36 +86,23 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Promptfolio by Ben McNulty",
-    "description": "AI Prompt Crafting, Engineering & Applications",
-    "url": "https://promptfolio.dev",
-    "author": {
-      "@type": "Person",
-      "name": "Ben McNulty",
-      "jobTitle": "AI Prompt Engineer",
-      "url": "https://promptfolio.dev/about"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Promptfolio",
-      "url": "https://promptfolio.dev"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://promptfolio.dev/listing?search={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": siteName,
+        "description": siteDescription,
+        "url": siteUrl,
+        "inLanguage": "en-US",
+        "author": { "@id": `${siteUrl}/about#ben-mcnulty` },
+      },
+      personSchema,
+    ],
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
+      <head><StructuredData data={jsonLd} /></head>
       <body className={inter.className}>
         <SkipNavigation />
         <ThemeProvider
@@ -107,7 +111,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <ThemeChrome />
+          <Header />
+          <main id="main-content" tabIndex={-1}>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
