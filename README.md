@@ -3,7 +3,7 @@
 [Promptfolio](https://www.promptfolio.dev/) is Ben McNulty’s catalog of purpose-built Custom GPT experiments and a case study in careful AI-assisted product engineering.
 
 > [!NOTE]
-> This repository is a source-available audit of Promptfolio’s implementation and commit history. Large media assets, generated captures, deployment configuration, and private operational files are intentionally omitted. The code is published for inspection and evaluation; this repository is not distributed as a turnkey or independently runnable build.
+> This repository is a source-available audit of Promptfolio’s implementation and commit history. Large media assets, generated captures, hosted automation, deployment configuration, and private operational files are intentionally omitted. The code is published for inspection and evaluation; this repository is not distributed as a turnkey or independently runnable build.
 
 The essay below is also published as [Rebuilding Promptfolio Without Losing Its Spark](https://www.promptfolio.dev/blog/rebuilding-promptfolio-without-losing-its-spark). Image comparisons load from the public website rather than duplicating their media in this repository.
 
