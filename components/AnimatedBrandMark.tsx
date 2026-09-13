@@ -16,7 +16,7 @@ export function AnimatedBrandMark({ className, size, priority = false }: Animate
 
   useEffect(() => {
     const mark = markRef.current;
-    const lockup = mark?.closest('.brand, .footer-lockup');
+    const lockup = mark?.closest('.brand, .footer-home-link');
     if (!mark || !lockup) return;
 
     const reset = () => {

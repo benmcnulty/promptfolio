@@ -31,6 +31,20 @@ export function LabelToggle({ selectedLabels, search }: LabelToggleProps) {
     const top = preservedScrollRef.current;
     preservedScrollRef.current = null;
     window.scrollTo({ top, behavior: 'instant' });
+    let secondFrame = 0;
+    const firstFrame = window.requestAnimationFrame(() => {
+      window.scrollTo({ top, behavior: 'instant' });
+      secondFrame = window.requestAnimationFrame(() => window.scrollTo({ top, behavior: 'instant' }));
+    });
+    const settlingTimers = [60, 180, 360].map((delay) => window.setTimeout(
+      () => window.scrollTo({ top, behavior: 'instant' }),
+      delay,
+    ));
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+      settlingTimers.forEach((timer) => window.clearTimeout(timer));
+    };
   }, [selectedLabels, search]);
   const toggleLabel = (label: CatalogLabel) => {
     const next = activeLabels.includes(label)
@@ -71,13 +85,13 @@ export function LabelToggle({ selectedLabels, search }: LabelToggleProps) {
         {unrelatedParams.map(([name, value], index) => (
           <input key={`${name}-${value}-${index}`} type="hidden" name={name} value={value} />
         ))}
-        <button type="submit" className="button-primary">Search</button>
+        <button type="submit" className="button-primary"><span>Search</span></button>
       </form>
       <div className="filter-toolbar">
         <div className="filter-heading"><span>Browse by category</span><span className="filter-clear-slot"><a className="filter-clear" data-visible={canClear} aria-hidden={!canClear} tabIndex={canClear ? undefined : -1} href={clearHref} onClick={clearAll}>Clear all</a></span></div>
         <div className="filter-row" aria-label="Filter catalog">
           {catalogLabels.map((label) => (
-            <button key={label} type="button" aria-pressed={activeLabels.includes(label)} className="filter-button" onClick={() => toggleLabel(label)}>
+            <button key={label} type="button" aria-pressed={activeLabels.includes(label)} className={`filter-button filter-button--${label}`} onClick={() => toggleLabel(label)}>
               <CatalogLabelIcon label={label} />
               {label.charAt(0).toUpperCase() + label.slice(1)}
             </button>

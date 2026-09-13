@@ -70,41 +70,63 @@ export function ArticleWorkWithBen() {
               <stop offset="1" stopColor="#ffe685" stopOpacity=".15" />
             </linearGradient>
           </defs>
+          <g className="collaboration-system-ambient">
+            <path d="M20 31C10 65 11 143 27 181" />
+            <path d="M155 30c35-13 70-3 92 24" />
+            <path d="M148 181c25 13 51 14 75 2" />
+            <circle cx="15" cy="93" r="2.5" />
+            <circle cx="174" cy="27" r="2.5" />
+            <circle cx="229" cy="176" r="2.5" />
+          </g>
           <g className="collaboration-system-connections">
-            <path d="M116 60C153 53 183 57 209 76" />
-            <path d="M116 108C158 108 181 104 211 91" />
-            <path d="M116 154C157 163 184 147 214 111" />
-            <circle cx="151" cy="57" r="3" />
-            <circle cx="166" cy="108" r="3" />
-            <circle cx="171" cy="155" r="3" />
+            <path className="collaboration-system-route collaboration-system-route--interface" d="M116 60C153 53 183 57 204.5 73.5" />
+            <path className="collaboration-system-route collaboration-system-route--logic" d="M116 108C158 108 181 104 204.5 94.5" />
+            <path className="collaboration-system-route collaboration-system-route--data" d="M116 161C157 170 184 150 204.5 115.5" />
+            <circle className="collaboration-system-route-node collaboration-system-route-node--interface" cx="165.7" cy="57.9" r="3" />
+            <circle className="collaboration-system-route-node collaboration-system-route-node--logic" cx="167.1" cy="104.8" r="3" />
+            <circle className="collaboration-system-route-node collaboration-system-route-node--data" cx="167.9" cy="154.6" r="3" />
+          </g>
+          <g className="collaboration-system-packets">
+            <circle className="collaboration-system-packet collaboration-system-packet--interface" cx="116" cy="60" r="3.5" />
+            <circle className="collaboration-system-packet collaboration-system-packet--logic" cx="116" cy="108" r="3.5" />
+            <circle className="collaboration-system-packet collaboration-system-packet--data" cx="116" cy="161" r="3.5" />
           </g>
           <g className="collaboration-system-stack">
             <g className="collaboration-system-layer collaboration-system-layer--interface">
               <path d="M23 42h96v43H23z" fill="url(#collaboration-system-layer)" />
               <path d="M23 53h96M32 48h1M39 48h1M46 48h1" />
               <path d="M39 67h25M39 74h52" />
+              <circle className="collaboration-system-layer-status" cx="108" cy="48" r="2.5" />
             </g>
             <g className="collaboration-system-layer collaboration-system-layer--logic">
               <path d="M29 94h90v42H29z" fill="url(#collaboration-system-layer)" />
               <path d="m55 107-10 8 10 8M88 107l10 8-10 8M78 104l-13 22" />
             </g>
             <g className="collaboration-system-layer collaboration-system-layer--data">
-              <path d="M39 150c0-7 17-12 39-12s39 5 39 12v25c0 7-17 12-39 12s-39-5-39-12Z" fill="url(#collaboration-system-layer)" />
-              <path d="M39 150c0 7 17 12 39 12s39-5 39-12M39 163c0 7 17 12 39 12s39-5 39-12" />
+              <path d="M39 157c0-7 17-12 39-12s39 5 39 12v25c0 7-17 12-39 12s-39-5-39-12Z" fill="url(#collaboration-system-layer)" />
+              <path d="M39 157c0 7 17 12 39 12s39-5 39-12M39 170c0 7 17 12 39 12s39-5 39-12" />
             </g>
           </g>
           <g className="collaboration-system-plan">
-            <path className="collaboration-system-board" d="M190 54h48v77h-48z" />
-            <path className="collaboration-system-tab" d="M204 54v-8h20v8" />
-            <path className="collaboration-system-check" d="m199 73 4 4 7-9M199 94l4 4 7-9M199 115l4 4 7-9" />
+            <path className="collaboration-system-board" d="M187 48h36l18 18v68h-54Z" />
+            <path className="collaboration-system-fold" d="M223 48v18h18" />
+            <circle className="collaboration-system-runner collaboration-system-runner--one" cx="204.5" cy="73.5" r="6.5" />
+            <circle className="collaboration-system-runner collaboration-system-runner--two" cx="204.5" cy="94.5" r="6.5" />
+            <circle className="collaboration-system-runner collaboration-system-runner--three" cx="204.5" cy="115.5" r="6.5" />
+            <path className="collaboration-system-check collaboration-system-check--one" d="m199 73 4 4 7-9" />
+            <path className="collaboration-system-check collaboration-system-check--two" d="m199 94 4 4 7-9" />
+            <path className="collaboration-system-check collaboration-system-check--three" d="m199 115 4 4 7-9" />
             <path d="M215 73h14M215 94h14M215 115h14" />
           </g>
           <g className="collaboration-system-infrastructure">
-            <path d="M177 164c0-10 8-18 18-18 7 0 13 4 16 10a15 15 0 0 1 20 14h-54a12 12 0 0 1 0-6Z" />
-            <path d="M192 177h28M198 185h16" />
+            <path className="collaboration-system-cloud-halo" d="M177 164c0-10 8-18 18-18 7 0 13 4 16 10a15 15 0 0 1 20 14h-54a12 12 0 0 1 0-6Z" />
+            <path className="collaboration-system-cloud" d="M177 164c0-10 8-18 18-18 7 0 13 4 16 10a15 15 0 0 1 20 14h-54a12 12 0 0 1 0-6Z" />
+            <path className="collaboration-system-ground" d="M192 177h28M198 185h16" />
             <circle className="collaboration-system-status" cx="226" cy="185" r="4" />
           </g>
-          <path className="collaboration-system-packet" d="M143 104h8v8h-8z" />
+          <path className="collaboration-system-delivery-route" d="M215 132c2 12-3 21-15 29" />
+          <circle className="collaboration-system-delivery-packet" cx="215" cy="132" r="3.5" />
+          <path className="collaboration-system-spark" d="M239 145c.8 4.2 3 6.4 7.2 7.2-4.2.8-6.4 3-7.2 7.2-.8-4.2-3-6.4-7.2-7.2 4.2-.8 6.4-3 7.2-7.2Z" />
         </svg>
       </div>
       <div ref={agentRef} className="article-collaboration-agent" data-motif="agent-quality-loop" aria-hidden="true">
@@ -138,7 +160,6 @@ export function ArticleWorkWithBen() {
               <rect className="collaboration-agent-shell" x="43" y="53" width="134" height="112" rx="35" fill="url(#collaboration-agent-shell)" />
               <path className="collaboration-agent-ear" d="M43 88H31a8 8 0 0 0-8 8v25a8 8 0 0 0 8 8h12M177 88h12a8 8 0 0 1 8 8v25a8 8 0 0 1-8 8h-12" />
               <rect className="collaboration-agent-screen" x="57" y="69" width="106" height="77" rx="27" fill="url(#collaboration-agent-screen)" />
-              <path className="collaboration-agent-scan" d="M66 105h88" />
               <g className="collaboration-agent-eye collaboration-agent-eye--left">
                 <ellipse cx="86" cy="103" rx="16" ry="18" />
                 <g className="collaboration-agent-gaze">

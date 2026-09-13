@@ -58,7 +58,7 @@ The first step was not a redesign. It was an inventory.
 
 The existing site contained 39 GPTs, nine historical articles, six main pages, and three API endpoints. Before making broad changes, I added deterministic tests for catalog data and filtering logic, component and API tests with Jest and React Testing Library, and production-build browser journeys with Playwright and axe-core.
 
-The browser suite covers Chromium, Firefox, WebKit, mobile Chromium, and mobile WebKit. It checks every public route, URL-driven filtering and search, keyboard navigation, theme persistence, image dialogs, API contracts, missing routes, accessibility, and reflow from 320 through 1440 pixels.
+The browser suite covers Chromium, Firefox, WebKit, mobile Chromium, and mobile WebKit. It checks every public route, URL-driven filtering and search, keyboard navigation, theme persistence, image dialogs, API contracts, missing routes, accessibility, and reflow from 320 through 1920 pixels.
 
 That regression layer changed the character of the work. Large visual and architectural changes could be reviewed as intentional differences instead of guesses about what might have broken.
 
@@ -87,9 +87,9 @@ The process reinforced a useful lesson: the first competent design answer is oft
 
 The original catalog exposed its four categories, but it behaved more like a gallery than a tool. Filtering state was split between the interface and the URL, selected state was not available to assistive technology, and there was no search or empty-state guidance.
 
-The redesigned catalog derives its state from shareable URL parameters. Search uses a native GET form and matches names, descriptions, and tags. Categories retain their original OR behavior, announce their pressed state, preserve unrelated query parameters, and combine cleanly with search. Client-enhanced controls preserve the reader’s scroll position and keep the header and control panel fixed while the server-rendered results update, so filtering feels like a focused content change rather than a page reload.
+The redesigned catalog derives its state from shareable URL parameters. Search uses a native GET form and matches names, descriptions, and tags. Categories retain their original OR behavior, announce their pressed state, preserve unrelated query parameters, and combine cleanly with search. Client-enhanced controls preserve the reader’s scroll position and keep the control layout stable while the server-rendered results update, so filtering feels like a focused content change rather than a page reload.
 
-A final usability review identified a different problem: even well-designed cards become tiring when 39 of them form one long mobile column. The catalog now opens in a compact list on narrow screens and retains the artwork-led grid on larger ones. A reader can choose either presentation without the site changing it again during a resize. List rows keep the portrait, name, and labeled category chips visible, then smoothly expand the same surface to reveal the description and GPT link through a keyboard-accessible control. The artwork, copy, and action rebalance as space becomes available instead of splitting the result into a summary and a second card. A fixed-width color field gives every row a quiet cue from its primary type, while filtering eases rows into and out of the collection instead of abruptly replacing the grid.
+A final usability review identified a different problem: even well-designed cards become tiring when 39 of them form one long mobile column. The catalog now opens in a compact list on narrow screens and retains the artwork-led grid on larger ones. A reader can choose either presentation without the site changing it again during a resize. List rows keep the portrait, name, and labeled category chips visible, then smoothly expand the same surface to reveal the description and GPT link through a keyboard-accessible control. The artwork, copy, and action rebalance as space becomes available instead of splitting the result into a summary and a second card. A category-tinted field gives every row a quiet cue from its primary type, while filtering eases rows into and out of the collection instead of abruptly replacing the grid.
 
 <BeforeAfterComparison
   before="/promptfolio-redesign-2026/before-catalog-focused-dark.webp"
@@ -115,11 +115,11 @@ The writing page previously used a repeated utility layout and presented older e
   height={800}
 />
 
-The articles themselves now use a more comfortable reading measure, stronger heading rhythm, consistent figures and captions, accessible enlargement dialogs, and structured callouts for related GPTs. Their bodies and original URLs remain intact.
+The articles themselves now use a more comfortable reading measure, stronger heading rhythm, consistent figures and captions, accessible enlargement dialogs, and structured callouts for related GPTs. On the writing index, only the explicit “Read article” action opens a story, which lets touch users scroll across the tall editorial cards without an accidental navigation. Article bodies and original URLs remain intact.
 
 ## Building a coherent system without repeating it
 
-The site now shares spacing, type, surfaces, focus treatment, and motion timing, but each major page has its own visual motif. The catalog uses a search constellation. Writing uses an open folio and pen. About uses an orbit around a human figure. On the homepage, a robot marks the selected agents, a prismatic signpost introduces the paths through the collection, and an illuminated open folio with a pen introduces the archive.
+The site now shares spacing, type, glass surfaces, focus treatment, and motion timing, but each major page has its own visual motif. The catalog uses a search constellation. Writing uses an open folio and pen. About uses an orbit around a human figure. On the homepage, a robot marks the selected agents, a prismatic signpost introduces the paths through the collection, and an illuminated open folio with a pen introduces the archive. Custom category symbols, dimensional nameplates, and theme-aware controls carry that material language into the smaller reusable parts of the interface.
 
 <BeforeAfterComparison
   before="/promptfolio-redesign-2026/before-about-mobile-focused-dark.webp"
@@ -135,7 +135,7 @@ The same principle shaped the footer. The original sparkle in “Crafted with �
 
 ## Correctness, access, and discovery
 
-The shared shell now provides one main landmark and a working skip target on every route. Image enlargement uses a real dialog with keyboard dismissal, focus containment and restoration, captions, and scroll locking. Carousels respond to resizing, keyboard input, and reduced-motion preferences. The time demonstration reports malformed responses and request failures in the interface instead of only logging them.
+The shared shell now provides one main landmark and a working skip target on every route. Current-page navigation scrolls back to the top without requesting the same document again, while internal route changes share a restrained transition that keeps the glass header visually stable. Image enlargement uses a real dialog with keyboard dismissal, focus containment and restoration, captions, and scroll locking. Carousels respond to resizing, keyboard input, and reduced-motion preferences. The time demonstration reports malformed responses and request failures in the interface instead of only logging them.
 
 The dependency and tooling pass moved the site to the current Next.js 16 line, explicit ESLint configuration, standalone type checking, clean-install documentation, and pull-request automation. Metadata now uses one canonical `www.promptfolio.dev` origin, descriptive per-page titles, accurate article publication data, structured data for the site, author, catalog, archive, and articles, plus sitemap, manifest, robots, and `llms.txt` discovery files.
 

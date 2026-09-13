@@ -5,14 +5,15 @@ interface PageMotifIconProps {
 export function PageMotifIcon({ kind }: PageMotifIconProps) {
   if (kind === 'catalog') {
     return (
-      <span className="page-motif page-motif--catalog" aria-hidden="true">
+      <span className="page-motif page-motif--catalog" data-motif="catalog-lens" aria-hidden="true">
         <svg viewBox="0 0 120 120">
-          <circle cx="50" cy="50" r="25" />
-          <path d="m68 68 20 20" />
-          <path d="M27 34 18 24m56 7 12-9M25 70l-13 7m78-25 15 3" />
-          <circle cx="18" cy="24" r="3" /><circle cx="86" cy="22" r="3" />
-          <circle cx="12" cy="77" r="3" /><circle cx="105" cy="55" r="3" />
-          <path className="motif-accent" d="m48 38 3.5 7.5L59 49l-7.5 3.5L48 60l-3.5-7.5L37 49l7.5-3.5Z" />
+          <path className="motif-glass" d="M19 30h56a9 9 0 0 1 9 9v42a9 9 0 0 1-9 9H19a9 9 0 0 1-9-9V39a9 9 0 0 1 9-9Z" />
+          <path d="M18 43h47M18 54h31M18 65h23" opacity=".48" />
+          <circle cx="72" cy="65" r="21" />
+          <path className="motif-highlight" d="M58 57a16 16 0 0 1 22-7" />
+          <path d="m87 80 17 17" strokeWidth="4" />
+          <path className="motif-accent" d="M93 22c1.2 6 4.3 9.1 10.3 10.3-6 1.2-9.1 4.3-10.3 10.3-1.2-6-4.3-9.1-10.3-10.3 6-1.2 9.1-4.3 10.3-10.3Z" />
+          <circle className="motif-node" cx="18" cy="82" r="3.5" />
         </svg>
       </span>
     );
@@ -20,12 +21,14 @@ export function PageMotifIcon({ kind }: PageMotifIconProps) {
 
   if (kind === 'writing') {
     return (
-      <span className="page-motif page-motif--writing" aria-hidden="true">
+      <span className="page-motif page-motif--writing" data-motif="illuminated-folio" aria-hidden="true">
         <svg viewBox="0 0 120 120">
-          <path d="M25 29c14-5 25-2 35 6v58c-10-8-21-11-35-6Z" />
-          <path d="M95 29c-14-5-25-2-35 6v58c10-8 21-11 35-6Z" />
-          <path d="M36 46c7-1 12 1 16 4M36 58c7-1 12 1 16 4M68 48c5-3 10-4 16-3" />
-          <path className="motif-accent" d="M72 70 91 51l7 7-19 19-10 3Z" />
+          <path className="motif-glass" d="M18 29c15-5 28-2 42 8v58c-13-9-27-12-42-7V29Z" />
+          <path className="motif-glass" d="M102 29c-15-5-28-2-42 8v58c13-9 27-12 42-7V29Z" />
+          <path d="M60 37v58M29 48c8-1 14 .5 20 4M29 60c8-1 14 .5 20 4M70 48c6-3 12-4 20-2M70 59c5-2 10-3 15-2" opacity=".58" />
+          <path className="motif-accent" d="m81 69 19-19 8 8-19 19-12 4Z" />
+          <path className="motif-highlight" d="m101 53-19 19" />
+          <path className="motif-spark" d="M24 17c1 5 3.6 7.6 8.6 8.6-5 .9-7.6 3.5-8.6 8.5-1-5-3.6-7.6-8.6-8.5 5-.9 7.6-3.6 8.6-8.6Z" />
         </svg>
       </span>
     );
@@ -33,13 +36,15 @@ export function PageMotifIcon({ kind }: PageMotifIconProps) {
 
   if (kind === 'privacy') {
     return (
-      <span className="page-motif page-motif--privacy" aria-hidden="true">
+      <span className="page-motif page-motif--privacy" data-motif="privacy-seal" aria-hidden="true">
         <svg viewBox="0 0 120 120">
-          <path d="M60 16 94 29v25c0 23-13 40-34 50-21-10-34-27-34-50V29Z" />
-          <rect x="43" y="50" width="34" height="27" rx="7" />
-          <path d="M49 50v-7c0-7 5-12 11-12s11 5 11 12v7" />
-          <circle className="motif-accent" cx="60" cy="62" r="4" />
-          <path d="M60 66v5" />
+          <path className="motif-glass" d="M60 12 101 28v30c0 26-16 45-41 56-25-11-41-30-41-56V28Z" />
+          <path className="motif-highlight" d="M60 22 91 34v23c0 19-10 34-31 45" />
+          <rect x="39" y="50" width="42" height="33" rx="9" />
+          <path d="M47 50v-8c0-9 6-15 13-15s13 6 13 15v8" />
+          <path className="motif-accent" d="M60 59a6 6 0 0 1 3.5 10.9V76h-7v-6.1A6 6 0 0 1 60 59Z" />
+          <circle className="motif-node" cx="26" cy="36" r="3" />
+          <circle className="motif-node" cx="94" cy="36" r="3" />
         </svg>
       </span>
     );
@@ -47,11 +52,13 @@ export function PageMotifIcon({ kind }: PageMotifIconProps) {
 
   if (kind === 'time') {
     return (
-      <span className="page-motif page-motif--time" aria-hidden="true">
+      <span className="page-motif page-motif--time" data-motif="time-crystal" aria-hidden="true">
         <svg viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r="39" />
-          <path d="M60 34v28l19 12" />
-          <path d="M60 14v8M60 98v8M14 60h8M98 60h8" />
+          <path className="motif-glass" d="m60 10 36 14 14 36-14 36-36 14-36-14-14-36 14-36Z" />
+          <circle cx="60" cy="60" r="34" />
+          <path className="motif-highlight" d="M38 38a31 31 0 0 1 36-7" />
+          <path d="M60 35v27l19 12" strokeWidth="4" />
+          <path d="M60 18v7M60 95v7M18 60h7M95 60h7" opacity=".62" />
           <path className="motif-accent" d="M91 20c1.1 6 4.2 9.1 10.2 10.2-6 1.1-9.1 4.2-10.2 10.2-1.1-6-4.2-9.1-10.2-10.2 6-1.1 9.1-4.2 10.2-10.2Z" />
         </svg>
       </span>
@@ -59,13 +66,16 @@ export function PageMotifIcon({ kind }: PageMotifIconProps) {
   }
 
   return (
-    <span className="page-motif page-motif--about" aria-hidden="true">
+    <span className="page-motif page-motif--about" data-motif="project-intersection" aria-hidden="true">
       <svg viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r="42" />
-        <ellipse cx="60" cy="60" rx="48" ry="19" transform="rotate(-24 60 60)" />
-        <circle cx="60" cy="48" r="12" />
-        <path d="M38 84c4-14 12-21 22-21s18 7 22 21" />
-        <circle className="motif-accent" cx="101" cy="41" r="5" />
+        <path className="motif-glass" d="M15 19h34a7 7 0 0 1 7 7v22a7 7 0 0 1-7 7H31l-10 8v-8h-6a7 7 0 0 1-7-7V26a7 7 0 0 1 7-7Z" />
+        <path d="M19 31h25M19 40h18" opacity=".58" />
+        <path className="motif-glass" d="M76 14h29a7 7 0 0 1 7 7v28a7 7 0 0 1-7 7H76a7 7 0 0 1-7-7V21a7 7 0 0 1 7-7Z" />
+        <path d="m81 24 18 12-9 2-4 9Z" />
+        <rect className="motif-glass" x="30" y="76" width="60" height="36" rx="10" />
+        <path d="m49 86-7 8 7 8M71 86l7 8-7 8M64 83l-8 22" />
+        <path className="motif-connector" d="m45 49 10 9M76 51l-11 8M60 70v7" />
+        <path className="motif-accent" d="M60 48c1.3 6.2 4.6 9.5 10.8 10.8-6.2 1.3-9.5 4.6-10.8 10.8-1.3-6.2-4.6-9.5-10.8-10.8 6.2-1.3 9.5-4.6 10.8-10.8Z" />
       </svg>
     </span>
   );

@@ -27,7 +27,9 @@ export default function FullScreenImage({ src, alt, width, height, caption, cred
     <figure className="article-figure">
       <button ref={triggerRef} type="button" className="image-trigger" onClick={open} aria-label={`Expand image: ${alt}`}>
         <Image src={src} alt={alt} width={width} height={height} quality={88} sizes="(max-width: 768px) calc(100vw - 2rem), 768px" />
-        <span aria-hidden="true">Expand</span>
+        <span className="image-trigger-control" aria-hidden="true">
+          <svg viewBox="0 0 20 20"><path d="M7.5 3.5h-4v4M12.5 3.5h4v4M7.5 16.5h-4v-4M12.5 16.5h4v-4" /></svg>
+        </span>
       </button>
       {(caption || credit) && <figcaption>{caption && <span>{caption}</span>}<small>{credit}</small></figcaption>}
       <dialog ref={dialogRef} className="image-dialog" aria-label={`Enlarged image: ${alt}`} onClick={(event) => { if (event.target === event.currentTarget) close(); }}>

@@ -19,9 +19,12 @@ describe('catalog query behavior', () => {
     }
   });
 
-  it('searches names, descriptions, and tags case-insensitively', () => {
+  it('searches names, descriptions, tags, and category labels case-insensitively', () => {
     expect(filterCatalog(catalog, [], '  CONCEPT artist ')[0]?.name).toBe('Concept Artist');
     expect(filterCatalog(catalog, [], 'photography').map(({ name }) => name)).toContain('Robot Photographer');
+    for (const label of catalogLabels) {
+      expect(filterCatalog(catalog, [], label)).toEqual(catalog.filter(({ labels }) => labels.includes(label)));
+    }
     expect(filterCatalog(catalog, ['work'], 'nonexistent phrase')).toEqual([]);
   });
 

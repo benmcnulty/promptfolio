@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { ExternalLinkIcon } from './ExternalLinkIcon';
 import { PageMotifIcon } from './PageMotifIcon';
-import { AboutActionIcon } from './AboutActionIcon';
+import { AboutActionArrow, AboutActionIcon } from './AboutActionIcon';
 import { AboutCardMark } from './AboutCardMark';
 
 export function About() {
@@ -14,9 +13,9 @@ export function About() {
         <article><AboutCardMark kind="maker" /><p className="about-card-label">The maker</p><h2>About Ben McNulty</h2><p>Ben is a software engineer and technical writer focused on prompt and context engineering, agentic workflows, and QA automation. Promptfolio shows how he turns nuanced product intent into tested, accessible interfaces through careful orchestration, evaluation, and design review.</p></article>
       </div>
       <div className="about-actions" aria-label="Next steps">
-        <Link href="/listing" className="about-action about-action--catalog"><span className="about-action-icon"><AboutActionIcon kind="catalog" /></span><span><strong>Browse the catalog</strong><small>Explore all 39 GPTs</small></span><span className="about-action-arrow" aria-hidden="true">→</span></Link>
-        <a href="https://github.com/benmcnulty" target="_blank" rel="noopener noreferrer" className="about-action about-action--github"><span className="about-action-icon"><AboutActionIcon kind="github" /></span><span><strong>View GitHub</strong><small>Explore Ben’s other projects</small></span><ExternalLinkIcon /></a>
-        <a href="https://benlive.tv" target="_blank" rel="noopener noreferrer" className="about-action about-action--site"><span className="about-action-icon"><AboutActionIcon kind="site" /></span><span><strong>Visit BenLive.tv</strong><small>Ben’s personal site</small></span><ExternalLinkIcon /></a>
+        <Link href="/listing" className="about-action about-action--catalog"><span className="about-action-icon"><AboutActionIcon kind="catalog" /></span><span><strong>Browse the catalog</strong><small>Explore all 39 GPTs</small></span><AboutActionArrow /></Link>
+        <a href="https://github.com/benmcnulty" target="_blank" rel="noopener noreferrer" className="about-action about-action--github"><span className="about-action-icon"><AboutActionIcon kind="github" /></span><span><strong>View GitHub</strong><small>Explore Ben’s other projects</small></span><AboutActionArrow external /></a>
+        <a href="https://benlive.tv" target="_blank" rel="noopener noreferrer" className="about-action about-action--site"><span className="about-action-icon"><AboutActionIcon kind="site" /></span><span><strong>Visit BenLive.tv</strong><small>Ben’s personal site</small></span><AboutActionArrow external /></a>
       </div>
     </section>
   );

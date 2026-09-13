@@ -4,14 +4,18 @@ import { ThreadsButton } from './ThreadsButton';
 import { PoweredByOpenAIBadge } from './PoweredByOpenAI';
 import { CraftedAgentIcon, CraftedHeartIcon } from './CraftedIcons';
 import { AnimatedBrandMark } from './AnimatedBrandMark';
+import { CurrentPageHomeLink } from './CurrentPageHomeLink';
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-brand">
         <div className="footer-lockup">
-          <AnimatedBrandMark className="footer-mark" size={58} />
-          <div><strong>Promptfolio</strong><p>Custom GPT experiments for work, conversation, and art.</p></div>
+          <CurrentPageHomeLink className="footer-home-link">
+            <AnimatedBrandMark className="footer-mark" size={58} />
+            <strong>Promptfolio</strong><span className="sr-only"> home</span>
+          </CurrentPageHomeLink>
+          <p>Custom GPT experiments for work, conversation, and art.</p>
         </div>
       </div>
       <div className="footer-directory">

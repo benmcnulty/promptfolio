@@ -2,46 +2,39 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import type { MouseEvent } from 'react';
 import { AnimatedBrandMark } from './AnimatedBrandMark';
+import { CurrentPageHomeLink } from './CurrentPageHomeLink';
 import { ModeToggle } from './ui/mode-toggle';
 
 export function Header() {
   const pathname = usePathname();
-  const [compact, setCompact] = useState(false);
+  const keepCurrentPage = (event: MouseEvent<HTMLAnchorElement>, isCurrent: boolean) => {
+    if (!isCurrent) return;
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    });
+  };
 
-  useEffect(() => {
-    let frame = 0;
-    const update = () => {
-      frame = 0;
-      setCompact(window.scrollY > 20);
-    };
-    const scheduleUpdate = () => {
-      if (!frame) frame = window.requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener('scroll', scheduleUpdate, { passive: true });
-    window.addEventListener('pageshow', scheduleUpdate);
-    return () => {
-      window.removeEventListener('scroll', scheduleUpdate);
-      window.removeEventListener('pageshow', scheduleUpdate);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, [pathname]);
+  const catalogCurrent = pathname === '/listing';
+  const writingActive = pathname.startsWith('/blog');
+  const writingCurrent = pathname === '/blog';
+  const aboutCurrent = pathname === '/about';
 
   return (
-    <header className="site-header" data-compact={compact ? 'true' : 'false'}>
+    <header className="site-header">
       <div className="site-header-inner">
-        <Link href="/" className="brand">
+        <CurrentPageHomeLink className="brand">
           <AnimatedBrandMark className="brand-mark" size={40} priority />
-          <span><strong>Promptfolio</strong><small><span>by</span> Ben McNulty</small></span><span className="sr-only"> home</span>
-        </Link>
+          <span className="brand-type"><strong>Promptfolio</strong><small><span>by</span> Ben McNulty</small></span><span className="sr-only"> home</span>
+        </CurrentPageHomeLink>
         <div className="header-actions">
           <nav aria-label="Primary navigation" className="primary-nav">
-            <Link href="/listing" aria-current={pathname === '/listing' ? 'page' : undefined}>Catalog</Link>
-            <Link href="/blog" aria-current={pathname.startsWith('/blog') ? 'page' : undefined}>Writing</Link>
-            <Link href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>About</Link>
+            <Link href="/listing" aria-current={catalogCurrent ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, catalogCurrent)}>Catalog</Link>
+            <Link href="/blog" aria-current={writingActive ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, writingCurrent)}>Writing</Link>
+            <Link href="/about" aria-current={aboutCurrent ? 'page' : undefined} onClick={(event) => keepCurrentPage(event, aboutCurrent)}>About</Link>
           </nav>
           <ModeToggle />
         </div>

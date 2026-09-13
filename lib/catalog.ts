@@ -53,7 +53,7 @@ export const catalog = [
     description:
       "Crafted for active engagement and leadership in visual and written arts, combining expert guidance with advocacy for creative goals and challenging conventional ideas to foster innovation and exploration.",
     link: "https://chatgpt.com/g/g-H4LNiC2oY-art-collaborator",
-    image: "/art-collaborator.png",
+    image: "/art-collaborator.webp",
     alt: "Anthropomorphic chameleon with textured and multicolored skin, dressed in a light green suit and a blue scarf, set against a vibrant, abstract background.",
     listed: new Date("2024-01-15"),
     labels: ["featured", "chat", "art"],
@@ -311,7 +311,7 @@ export const catalog = [
     description:
       "A conversational agent designed to foster growth and improve outcomes by critically evaluating ideas, provoking deep thinking, enhancing understanding, questioning assumptions, and exploring perspectives.",
     link: "https://chatgpt.com/g/g-zdPFp2rZw-challenger",
-    image: "/challenger.png",
+    image: "/challenger.webp",
     alt: "Digital art of a friendly goat wearing a blue hoodie against a colorful graffiti background.",
     listed: new Date("2024-01-08"),
     labels: ["featured", "chat"],

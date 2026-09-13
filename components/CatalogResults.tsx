@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useCallback, useRef, useState, useSyncExternalStore, ViewTransition } from 'react';
+import { startTransition, useCallback, useRef, useState, useSyncExternalStore, ViewTransition } from 'react';
 import CatalogItem from '@/lib/types';
 import { CatalogLabelIcon } from './CatalogLabelIcon';
 import { ExternalLinkIcon } from './ExternalLinkIcon';
@@ -47,8 +47,13 @@ export function CatalogResults({ items }: { items: CatalogResult[] }) {
   const view = chosenView ?? detectedView;
   const detailsAreCollapsed = view === 'list';
   const [expandedName, setExpandedName] = useState<string | null>(null);
-  const chooseView = (nextView: CatalogView) => setChosenView(nextView);
+  const chooseView = (nextView: CatalogView) => {
+    startTransition(() => setChosenView(nextView));
+  };
   const toggleExpanded = (name: string) => {
+    // The card already animates its own geometry. Keeping this update outside a
+    // document View Transition prevents a second image snapshot from stretching
+    // over the live thumbnail while the rail expands.
     setExpandedName((current) => current === name ? null : name);
   };
   const imageSizes = view === 'list'
@@ -83,11 +88,12 @@ export function CatalogResults({ items }: { items: CatalogResult[] }) {
         {items.map((persona, index) => {
           const isExpanded = expandedName === persona.name;
           const detailsId = `catalog-details-${index}`;
+          const transitionSlug = persona.name.toLowerCase().replaceAll(/[^a-z0-9]+/g, '-');
           const tone = persona.labels.includes('art') ? 'lilac' : persona.labels.includes('chat') ? 'sage' : 'blue';
           return (
             <ViewTransition
               key={persona.name}
-              name={`catalog-${persona.name.toLowerCase().replaceAll(/[^a-z0-9]+/g, '-')}`}
+              name={`catalog-${transitionSlug}`}
               enter="catalog-item-enter"
               exit="catalog-item-exit"
               update="catalog-item-update"
@@ -98,16 +104,19 @@ export function CatalogResults({ items }: { items: CatalogResult[] }) {
               data-tone={tone}
             >
               <div className="catalog-entry-summary">
-                <div className="catalog-entry-image">
-                  <Image
-                    alt={persona.alt.trim()}
-                    src={persona.image}
-                    fill
-                    preload={index === 0}
-                    quality={80}
-                    sizes={view === 'list' && isExpanded ? '104px' : imageSizes}
-                  />
-                </div>
+                <ViewTransition name={`catalog-image-${transitionSlug}`} update="catalog-image-update">
+                  <div className="catalog-entry-image">
+                    <Image
+                      alt={persona.alt.trim()}
+                      src={persona.image}
+                      unoptimized={persona.image.endsWith('.webp')}
+                      fill
+                      preload={index === 0}
+                      quality={80}
+                      sizes={view === 'list' && isExpanded ? '104px' : imageSizes}
+                    />
+                  </div>
+                </ViewTransition>
                 <div className="catalog-entry-heading">
                   <h2>{persona.name}</h2>
                   <div className="catalog-entry-compact-labels" aria-label="Categories">

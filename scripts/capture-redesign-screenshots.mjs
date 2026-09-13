@@ -5,7 +5,7 @@ import sharp from 'sharp';
 const baseUrl = process.env.PROMPTFOLIO_CAPTURE_URL ?? 'http://127.0.0.1:4173';
 const outputDirectory = new URL('../public/promptfolio-redesign-2026/', import.meta.url);
 const captures = [
-  { route: '/', file: 'after-home-redesign.webp', width: 1440, height: 800 },
+  { route: '/', file: 'after-home-redesign.webp', socialSource: 'social-home-source.png', width: 1440, height: 800 },
   { route: '/listing', file: 'after-catalog-redesign.webp', width: 1440, height: 800, scrollY: 150 },
   { route: '/blog', file: 'after-writing-redesign.webp', width: 1440, height: 800 },
   { route: '/about', file: 'after-about-mobile-redesign.webp', width: 390, height: 780 },
@@ -36,6 +36,7 @@ try {
     const png = await page.screenshot({ animations: 'disabled' });
     const webp = await sharp(png).webp({ quality: 88, smartSubsample: true }).toBuffer();
     await writeFile(new URL(capture.file, outputDirectory), webp);
+    if (capture.socialSource) await writeFile(new URL(capture.socialSource, outputDirectory), png);
     await page.close();
   }
 } finally {

@@ -28,6 +28,7 @@ export function Persona({
         <Image
           alt={personaData.alt.trim()}
           src={personaData.image}
+          unoptimized={personaData.image.endsWith('.webp')}
           fill
           preload={preload}
           quality={80}

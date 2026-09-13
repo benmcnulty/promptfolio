@@ -16,11 +16,14 @@ export function filterCatalog(
 ): CatalogItem[] {
   const selected = parseCatalogFilters(filters.join(','));
   const query = search.trim().toLocaleLowerCase();
+  const queriedLabel = catalogLabels.find((label) => label === query);
   return items.filter((item) => {
     const matchesLabel = selected.length === 0
       || selected.some((label) => item.labels.includes(label));
-    const searchable = [item.name, item.description, ...item.tags].join(' ').toLocaleLowerCase();
-    return matchesLabel && (query === '' || searchable.includes(query));
+    const searchable = [item.name, item.description, ...item.tags, ...item.labels].join(' ').toLocaleLowerCase();
+    const matchesSearch = query === ''
+      || (queriedLabel ? item.labels.includes(queriedLabel) : searchable.includes(query));
+    return matchesLabel && matchesSearch;
   });
 }
 
