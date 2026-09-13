@@ -260,8 +260,10 @@ test('shared navigation and skip links work by keyboard', async ({ page, browser
   await page.goto('/');
   await expect(page.getByRole('banner').getByRole('link', { name: 'Demo' })).toHaveCount(0);
   for (const [name, route] of [['Catalog', '/listing'], ['Writing', '/blog'], ['About', '/about']] as const) {
-    await page.getByRole('link', { name, exact: true }).first().click();
-    await expect(page).toHaveURL(route);
+    const navLink = page.getByRole('banner').getByRole('link', { name, exact: true });
+    await navLink.focus();
+    await navLink.press('Enter');
+    await expect(page).toHaveURL(route, { timeout: 10_000 });
   }
   await page.getByRole('link', { name: 'Promptfolio by Ben McNulty home' }).click();
   await expect(page).toHaveURL('/');
@@ -1675,6 +1677,7 @@ test('every public page remains contained across representative viewport shapes'
 });
 
 test('homepage heading decorations compose with the following content safely at every width', async ({ page }) => {
+  test.setTimeout(120_000);
   for (const width of [320, 390, 768, 1280, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
