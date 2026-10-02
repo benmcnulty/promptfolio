@@ -8,6 +8,8 @@
 - `styles/`: Global CSS and Tailwind setup.  `utils/`: helpers (e.g., `cn`).
 
 ## Build, Test, and Development Commands
+These commands describe the complete maintainer checkout. The public repository is a source-available audit that intentionally omits media, generated captures and operational/deployment files; do not claim a turnkey public build or a fresh passing suite without the required inputs and an actual run. See README.md and LICENSE.
+
 - Use Node 22 and npm. Run all commands from this directory.
 - `npm run dev`: Start the loopback-only development server.
 - `npm run build`: Production build (compiles TS, bundles pages, MDX).
