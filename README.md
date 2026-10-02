@@ -9,7 +9,7 @@ The essay below is also published as [Rebuilding Promptfolio Without Losing Its 
 
 ## Reviewing the public source
 
-- Start with [`lib/catalog.ts`](lib/catalog.ts) and [`lib/blog.ts`](lib/blog.ts) for catalog/filtering and article data.
+- Start with [`lib/catalog.ts`](lib/catalog.ts) and [`lib/blog.ts`](lib/blog.ts) for catalog and article data, and [`utils/filterCatalog.ts`](utils/filterCatalog.ts) for catalog filtering.
 - Inspect [`app`](app) and [`components`](components) for the server-rendered routes, interactive controls and accessibility implementations.
 - The three published API implementations are [`listing`](app/api/listing/route.ts), [`blogdata`](app/api/blogdata/route.ts) and [`time`](app/api/time/route.ts).
 - [`AGENTS.md`](AGENTS.md) explains the maintainer workflow. Its build/test commands describe the complete maintainer checkout; omitted media and operational files prevent this public snapshot from establishing the same reproducible environment.
