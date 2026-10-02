@@ -7,6 +7,24 @@
 
 The essay below is also published as [Rebuilding Promptfolio Without Losing Its Spark](https://www.promptfolio.dev/blog/rebuilding-promptfolio-without-losing-its-spark). Image comparisons load from the public website rather than duplicating their media in this repository.
 
+## Reviewing the public source
+
+- Start with [`lib/catalog.ts`](lib/catalog.ts) and [`lib/blog.ts`](lib/blog.ts) for catalog/filtering and article data.
+- Inspect [`app`](app) and [`components`](components) for the server-rendered routes, interactive controls and accessibility implementations.
+- The three published API implementations are [`listing`](app/api/listing/route.ts), [`blogdata`](app/api/blogdata/route.ts) and [`time`](app/api/time/route.ts).
+- [`AGENTS.md`](AGENTS.md) explains the maintainer workflow. Its build/test commands describe the complete maintainer checkout; omitted media and operational files prevent this public snapshot from establishing the same reproducible environment.
+
+The 2026-10-02 portfolio review observed the live desktop homepage/catalog and an
+Automation search returning one result. That bounded observation does not verify
+all GPT destinations, mobile/keyboard journeys, analytics delivery or parity
+between this snapshot and the deployed site. The browser-suite descriptions in
+the essay document the redesign workflow; they are not a new test-run receipt.
+The screenshots below retain descriptive alternative text and their public-site provenance.
+
+Read [LICENSE](LICENSE) for this source-available snapshot's terms. Proposed
+changes should preserve the original article, catalog ordering, route/API contracts
+and third-party attribution, and state which checks can actually be reproduced.
+
 ---
 
 # Rebuilding Promptfolio Without Losing Its Spark
