@@ -2,6 +2,8 @@
 
 Validated locally on September 13, 2026 as the release candidate integrated into local `main`. The original checkout was `9d17a749d37b59c6348c2a61e622ee3b513cb7f1`.
 
+These results were produced on the full private tree on 2026-09-13. The public mirror omits media files, so `npm run check` does not pass on the mirror as published: the production build and 2 asset-related unit tests fail on the omitted files.
+
 ## Automated gates
 
 - ESLint flat configuration, TypeScript, Jest, and the Next.js production build pass.

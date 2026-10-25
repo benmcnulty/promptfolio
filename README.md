@@ -5,6 +5,9 @@
 > [!NOTE]
 > This repository is a source-available audit of Promptfolio’s implementation and commit history. Large media assets, generated captures, hosted automation, deployment configuration, and private operational files are intentionally omitted. The code is published for inspection and evaluation; this repository is not distributed as a turnkey or independently runnable build.
 
+> [!NOTE]
+> **Public mirror: what won't run.** Media files are omitted from this mirror by policy: the 45 images referenced by the catalog and articles are not included, among them the social/Open Graph source image and `favicon.ico`. Because those files are absent, `npm run build` currently fails at the `opengraph-image` step, and 2 of the 17 catalog unit tests fail on the missing files. Lint, typecheck, and the remaining 15 unit tests pass. The full gate passes on the complete private tree; these failures belong to the mirror, not the build.
+
 The essay below is also published as [Rebuilding Promptfolio Without Losing Its Spark](https://www.promptfolio.dev/blog/rebuilding-promptfolio-without-losing-its-spark). Image comparisons load from the public website rather than duplicating their media in this repository.
 
 ---
